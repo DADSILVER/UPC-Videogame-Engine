@@ -19,14 +19,16 @@ public:
 	void SetPlaneDistances(float _near, float _far);
 	float4x4 GetProjectionMatrix();
 	float4x4 GetViewMatrix();
-	void MoveCamera(moves_camera _move);
-
+	void GetInputMove();
 	void ResizeWindow(float _width, float _heigth);
+
+private:
+	void MoveCamera(moves_camera _move);
 
 private:
 
 	float m_aspectRatio;
-
+	bool m_Zoom;
 	Frustum* m_frustum;
 };
 

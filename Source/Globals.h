@@ -22,7 +22,8 @@ enum moves_camera
 	ROTATE_UP,
 	ROTATE_DOWN,
 	ROTATE_RIGHT,
-	ROTATE_LEFT
+	ROTATE_LEFT,
+	ROTATE_FREE
 };
 
 // Constants -----------

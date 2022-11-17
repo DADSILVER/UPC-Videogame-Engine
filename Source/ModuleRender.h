@@ -18,7 +18,6 @@ public:
 	update_status PostUpdate();
 	bool CleanUp();
 	void WindowResized(unsigned width, unsigned height);
-	void MoveCamera(moves_camera _move);
 
 private:
 	void* context;

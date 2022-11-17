@@ -91,9 +91,4 @@ void ModuleRender::WindowResized(unsigned _width, unsigned _height)
 	App->m_camera->ResizeWindow(_width, _height);
 }
 
-void ModuleRender::MoveCamera(moves_camera _move)
-{
-	App->m_camera->MoveCamera(_move);
-}
-
 

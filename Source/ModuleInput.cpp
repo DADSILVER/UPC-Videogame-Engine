@@ -30,78 +30,60 @@ bool ModuleInput::Init()
 // Called every draw update
 update_status ModuleInput::Update()
 {
-    SDL_Event sdlEvent;
+    
+	m_MouseMotion = { 0, 0 };
 
-    while (SDL_PollEvent(&sdlEvent) != 0)
+    while (SDL_PollEvent(&m_sdlEvent) != 0)
     {
-        switch (sdlEvent.type)
+        switch (m_sdlEvent.type)
         {
             case SDL_QUIT:
                 return UPDATE_STOP;
             case SDL_WINDOWEVENT:
-                if (sdlEvent.window.event == SDL_WINDOWEVENT_RESIZED || sdlEvent.window.event == SDL_WINDOWEVENT_SIZE_CHANGED)
-                    App->m_renderer->WindowResized(sdlEvent.window.data1, sdlEvent.window.data2);
+                if (m_sdlEvent.window.event == SDL_WINDOWEVENT_RESIZED || m_sdlEvent.window.event == SDL_WINDOWEVENT_SIZE_CHANGED)
+                    App->m_renderer->WindowResized(m_sdlEvent.window.data1, m_sdlEvent.window.data2);
                 break;
 			case SDL_KEYDOWN:
-				m_keyboard[sdlEvent.key.keysym.scancode] = KS_DOWN;
+				m_keyboard[m_sdlEvent.key.keysym.scancode] = KS_DOWN;
 				break;
 
 			case SDL_KEYUP:
-				m_keyboard[sdlEvent.key.keysym.scancode] = KS_IDLE;
+				m_keyboard[m_sdlEvent.key.keysym.scancode] = KS_IDLE;
 				break;
 
 			case SDL_MOUSEBUTTONDOWN:
-				m_mouse_buttons[sdlEvent.button.button - 1] = KS_DOWN;
+				m_mouseButtons[m_sdlEvent.button.button - 1] = KS_DOWN;
+				
+				
 				break;
-
+			case SDL_MOUSEMOTION:
+				//m_mouseButtons[m_sdlEvent.button.button - 1] = KS_IDLE;
+				m_MouseMotion.x = -m_sdlEvent.motion.yrel;
+				m_MouseMotion.y = -m_sdlEvent.motion.xrel;
+				break;
 			case SDL_MOUSEBUTTONUP:
-				m_mouse_buttons[sdlEvent.button.button - 1] = KS_IDLE;
+				m_mouseButtons[m_sdlEvent.button.button - 1] = KS_IDLE;
 				break;
         }
+
+
     }
-	if (m_keyboard[SDL_SCANCODE_W]) 
-	{
-		App->m_renderer->MoveCamera(MOVE_STRAIGHT);
-	}
-	if (m_keyboard[SDL_SCANCODE_S])
-	{
-		App->m_renderer->MoveCamera(MOVE_BACK);
-	}
-	if (m_keyboard[SDL_SCANCODE_D])
-	{
-		App->m_renderer->MoveCamera(MOVE_RIGTH);
-	}
-	if (m_keyboard[SDL_SCANCODE_A])
-	{
-		App->m_renderer->MoveCamera(MOVE_LEFT);
-	}
-	if (m_keyboard[SDL_SCANCODE_UP])
-	{
-		App->m_renderer->MoveCamera(ROTATE_UP);
-	}
-	if (m_keyboard[SDL_SCANCODE_DOWN])
-	{
-		App->m_renderer->MoveCamera(ROTATE_DOWN);
-	}
-	if (m_keyboard[SDL_SCANCODE_RIGHT])
-	{
-		App->m_renderer->MoveCamera(ROTATE_RIGHT);
-	}
-	if (m_keyboard[SDL_SCANCODE_LEFT])
-	{
-		App->m_renderer->MoveCamera(ROTATE_LEFT);
-	}
-	if (m_keyboard[SDL_mo])
-	{
-		App->m_renderer->MoveCamera(ROTATE_LEFT);
-	}
-
-
-
 
     keyboard = SDL_GetKeyboardState(NULL);
 
     return UPDATE_CONTINUE;
+}
+
+bool ModuleInput::GetKeyboardButton(int InScancode) {
+	return m_keyboard[InScancode];
+}
+
+bool ModuleInput::GetMouseButton(int InScancode) {
+	return m_mouseButtons[InScancode];
+}
+
+float2 ModuleInput::GetMouseMotion() {
+	return m_MouseMotion;
 }
 
 // Called before quitting
