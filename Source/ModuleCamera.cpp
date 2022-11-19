@@ -4,9 +4,14 @@
 #include <SDL_mouse.h>
 #include "Application.h"
 #include "ModuleInput.h"
+#include "ModuleTimer.h"
 
 ModuleCamera::ModuleCamera()
 {
+	m_aspectRatio = 0;
+	m_MoveDist = 0.6f;
+	m_RotateDegrees = 1.05f;
+	m_VelocityMult = 1.0f;
 }
 
 ModuleCamera::~ModuleCamera()
@@ -87,41 +92,41 @@ void ModuleCamera::MoveCamera(moves_camera _move)
 	switch (_move)
 	{
 	case MOVE_STRAIGHT:
-		m_frustum->SetPos(m_frustum->Pos() + (m_frustum->Front().Normalized() * 0.04f));
+		m_frustum->SetPos(m_frustum->Pos() + (m_frustum->Front().Normalized() * m_MoveDist * App->m_timer->GetDeltaTime()));
 		break;
 	case MOVE_BACK:
-		m_frustum->SetPos(m_frustum->Pos() - (m_frustum->Front().Normalized() * 0.04f));
+		m_frustum->SetPos(m_frustum->Pos() - (m_frustum->Front().Normalized() * m_MoveDist * App->m_timer->GetDeltaTime()));
 		break;
 	case MOVE_RIGTH:
-		m_frustum->SetPos(m_frustum->Pos() + (m_frustum->WorldRight().Normalized() * 0.04f));
+		m_frustum->SetPos(m_frustum->Pos() + (m_frustum->WorldRight().Normalized() * m_MoveDist * App->m_timer->GetDeltaTime()));
 		break;
 	case MOVE_LEFT:
-		m_frustum->SetPos(m_frustum->Pos() - (m_frustum->WorldRight().Normalized() * 0.04f));
+		m_frustum->SetPos(m_frustum->Pos() - (m_frustum->WorldRight().Normalized() * m_MoveDist * App->m_timer->GetDeltaTime()));
 		break;
 	case ROTATE_UP:
-		m_frustum->SetFront(float3x3::RotateAxisAngle(m_frustum->WorldRight() ,0.05f * DEGTORAD) * m_frustum->Front().Normalized());
-		m_frustum->SetUp(float3x3::RotateAxisAngle(m_frustum->WorldRight(), 0.05f * DEGTORAD) * m_frustum->Up().Normalized());
+		m_frustum->SetFront(float3x3::RotateAxisAngle(m_frustum->WorldRight() , m_RotateDegrees  * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Front().Normalized());
+		m_frustum->SetUp(float3x3::RotateAxisAngle(m_frustum->WorldRight(), m_RotateDegrees  * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Up().Normalized());
 		break;
 	case ROTATE_DOWN:
-		m_frustum->SetFront(float3x3::RotateAxisAngle(m_frustum->WorldRight(), -0.05f * DEGTORAD) * m_frustum->Front().Normalized());
-		m_frustum->SetUp(float3x3::RotateAxisAngle(m_frustum->WorldRight(), -0.05f * DEGTORAD) * m_frustum->Up().Normalized());
+		m_frustum->SetFront(float3x3::RotateAxisAngle(m_frustum->WorldRight(), -m_RotateDegrees  * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Front().Normalized() );
+		m_frustum->SetUp(float3x3::RotateAxisAngle(m_frustum->WorldRight(), -m_RotateDegrees  * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Up().Normalized() );
 		break;
 	case ROTATE_RIGHT:
-		m_frustum->SetFront(float3x3::RotateY(-0.05f * DEGTORAD) * m_frustum->Front().Normalized());
-		m_frustum->SetUp(float3x3::RotateY(-0.05f * DEGTORAD) * m_frustum->Up().Normalized());
+		m_frustum->SetFront(float3x3::RotateY(-m_RotateDegrees * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Front().Normalized());
+		m_frustum->SetUp(float3x3::RotateY(-m_RotateDegrees * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Up().Normalized());
 		break;
 	case ROTATE_LEFT:
-		m_frustum->SetFront(float3x3::RotateY(0.05f * DEGTORAD) * m_frustum->Front().Normalized());
-		m_frustum->SetUp(float3x3::RotateY(0.05f * DEGTORAD) * m_frustum->Up().Normalized());
+		m_frustum->SetFront(float3x3::RotateY(m_RotateDegrees * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Front().Normalized());
+		m_frustum->SetUp(float3x3::RotateY(m_RotateDegrees * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Up().Normalized());
 		m_frustum->WorldRight();
 		break;
 	case ROTATE_FREE:
 		float2 motion = App->m_input->GetMouseMotion();
-		m_frustum->SetFront(float3x3::RotateAxisAngle(m_frustum->WorldRight(), motion.x * DEGTORAD) * m_frustum->Front().Normalized());
-		m_frustum->SetUp(float3x3::RotateAxisAngle(m_frustum->WorldRight(), motion.x * DEGTORAD) * m_frustum->Up().Normalized());
+		m_frustum->SetFront(float3x3::RotateAxisAngle(m_frustum->WorldRight(), motion.x * 10 * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Front().Normalized());
+		m_frustum->SetUp(float3x3::RotateAxisAngle(m_frustum->WorldRight(), motion.x * 10 * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Up().Normalized());
 
-		m_frustum->SetFront(float3x3::RotateY(motion.y * DEGTORAD) * m_frustum->Front().Normalized());
-		m_frustum->SetUp(float3x3::RotateY(motion.y * DEGTORAD) * m_frustum->Up().Normalized());
+		m_frustum->SetFront(float3x3::RotateY(motion.y * 10 * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Front().Normalized());
+		m_frustum->SetUp(float3x3::RotateY(motion.y * 10 * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Up().Normalized());
 		m_frustum->WorldRight();
 		break;
 	}

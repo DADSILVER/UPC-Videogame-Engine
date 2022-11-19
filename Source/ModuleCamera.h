@@ -27,8 +27,13 @@ private:
 
 private:
 
-	float m_aspectRatio;
 	bool m_Zoom;
+
 	Frustum* m_frustum;
+
+	float m_aspectRatio;
+	float m_MoveDist;
+	float m_RotateDegrees;
+	float m_VelocityMult;
 };
 

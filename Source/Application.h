@@ -11,6 +11,7 @@ class ModuleInput;
 class ModuleRenderExercise;
 class ModuleDebugDraw;
 class ModuleCamera;
+class ModuleTimer;
 
 class Application
 {
@@ -31,6 +32,7 @@ public:
 	ModuleRenderExercise* m_rendererExercise = nullptr;
 	ModuleDebugDraw* m_debugDraw = nullptr;
 	ModuleCamera* m_camera = nullptr;
+	ModuleTimer* m_timer = nullptr;
 
 private:
 

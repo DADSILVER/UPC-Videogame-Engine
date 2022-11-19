@@ -29,6 +29,8 @@ enum moves_camera
 // Constants -----------
 #define DEGTORAD 0.01745329251f
 #define RADTODEG 1.0f / DEGTORAD
+#define LOW_LIMIT 0.0167f          // 60fps
+#define HIGH_LIMIT 0.1f            // 10fps
 
 // Configuration -----------
 #define SCREEN_WIDTH 640

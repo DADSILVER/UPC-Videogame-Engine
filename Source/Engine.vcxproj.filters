@@ -154,7 +154,10 @@
     <ClCompile Include="libs\MathGeoLib_Source\Geometry\TriangleMesh.cpp">
       <Filter>MatGeoLib</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleCamera.cpp" />
+    <ClCompile Include="ModuleCamera.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleTimer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Module.h">
@@ -418,7 +421,10 @@
     <ClInclude Include="libs\MathGeoLib_Source\Math\vec2d.h">
       <Filter>MatGeoLib</Filter>
     </ClInclude>
-    <ClInclude Include="ModuleCamera.h" />
+    <ClInclude Include="ModuleCamera.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleTimer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Modules">
