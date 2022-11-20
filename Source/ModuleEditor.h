@@ -13,7 +13,7 @@ public:
 	update_status Update();
 	update_status PostUpdate();
 	bool CleanUp();
-	void WindowResized(unsigned width, unsigned height);
+	void NewTestImgUI();
 
 private:
 	ImGuiIO m_io;

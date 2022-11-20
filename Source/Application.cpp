@@ -17,15 +17,15 @@ Application::Application()
 {
 	// Order matters: they will Init/start/update in this order
 	modules.push_back(m_window = new ModuleWindow());
+	modules.push_back(m_timer = new ModuleTimer());
 	modules.push_back(m_renderer = new ModuleRender());
+	modules.push_back(m_Editor = new ModuleEditor());
 	modules.push_back(m_input = new ModuleInput());
 	modules.push_back(m_program = new ModuleProgram());
 	modules.push_back(m_rendererExercise = new ModuleRenderExercise());
 	modules.push_back(m_debugDraw = new ModuleDebugDraw());
 	modules.push_back(m_camera = new ModuleCamera());
-	modules.push_back(m_timer = new ModuleTimer());
 	modules.push_back(m_texture = new ModuleTexture());
-	modules.push_back(m_Editor = new ModuleEditor());
 }
 
 Application::~Application()

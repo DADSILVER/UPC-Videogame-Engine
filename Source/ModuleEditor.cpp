@@ -22,17 +22,12 @@ ModuleEditor::~ModuleEditor()
 bool ModuleEditor::Init()
 {
 
-
-    SDL_GL_SetSwapInterval(1); // Enable vsync
-
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     m_io = ImGui::GetIO(); (void)m_io;
     m_io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;       // Enable Keyboard Controls
-    //io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
-    m_io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;           // Enable Docking
-    m_io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;         // Enable Multi-Viewport / Platform Windows
+    m_io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
 
     // Setup Dear ImGui style
     //ImGui::StyleColorsDark();
@@ -50,12 +45,45 @@ bool ModuleEditor::Init()
 update_status ModuleEditor::PreUpdate()
 {
     ImGui_ImplOpenGL3_NewFrame();
-    ImGui_ImplSDL2_NewFrame();
+    ImGui_ImplSDL2_NewFrame(App->m_window->window);
     ImGui::NewFrame();
     return UPDATE_CONTINUE;
 }
 
 update_status ModuleEditor::Update()
+{
+    NewTestImgUI();
+    return UPDATE_CONTINUE;
+}
+
+update_status ModuleEditor::PostUpdate()
+{
+    ImGui::Render();
+    //glViewport(0, 0, (int)m_io.DisplaySize.x, (int)m_io.DisplaySize.y);
+    glClearColor(m_clear_color.x * m_clear_color.w, m_clear_color.y * m_clear_color.w, m_clear_color.z * m_clear_color.w, m_clear_color.w);
+    //glClear(GL_COLOR_BUFFER_BIT);
+    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
+
+    ImGui::UpdatePlatformWindows();
+    ImGui::RenderPlatformWindowsDefault();
+    SDL_GL_MakeCurrent(App->m_window->window, App->m_renderer->context);
+
+    //SDL_GL_SwapWindow(App->m_window->window);
+
+    return UPDATE_CONTINUE;
+}
+
+bool ModuleEditor::CleanUp()
+{
+    ImGui_ImplOpenGL3_Shutdown();
+    ImGui_ImplSDL2_Shutdown();
+    ImGui::DestroyContext();
+    return false;
+}
+
+
+void ModuleEditor::NewTestImgUI() 
 {
     static float f = 0.0f;
     static int counter = 0;
@@ -76,39 +104,5 @@ update_status ModuleEditor::Update()
 
     ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
     ImGui::End();
-    return UPDATE_CONTINUE;
-}
-
-update_status ModuleEditor::PostUpdate()
-{
-    ImGui::Render();
-    glViewport(0, 0, (int)m_io.DisplaySize.x, (int)m_io.DisplaySize.y);
-    glClearColor(m_clear_color.x * m_clear_color.w, m_clear_color.y * m_clear_color.w, m_clear_color.z * m_clear_color.w, m_clear_color.w);
-    glClear(GL_COLOR_BUFFER_BIT);
-    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
-    // Update and Render additional Platform Windows
-        // (Platform functions may change the current OpenGL context, so we save/restore it to make it easier to paste this code elsewhere.
-        //  For this specific demo app we could also call SDL_GL_MakeCurrent(window, gl_context) directly)
-    if (m_io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
-    {
-        SDL_Window* backup_current_window = SDL_GL_GetCurrentWindow();
-        SDL_GLContext backup_current_context = SDL_GL_GetCurrentContext();
-        ImGui::UpdatePlatformWindows();
-        ImGui::RenderPlatformWindowsDefault();
-        SDL_GL_MakeCurrent(backup_current_window, backup_current_context);
-    }
-
-    SDL_GL_SwapWindow(App->m_window->window);
-
-    return UPDATE_CONTINUE;
-}
-
-bool ModuleEditor::CleanUp()
-{
-    ImGui_ImplOpenGL3_Shutdown();
-    ImGui_ImplSDL2_Shutdown();
-    ImGui::DestroyContext();
-    return false;
 }
 
