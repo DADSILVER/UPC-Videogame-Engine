@@ -38,3 +38,4 @@ enum moves_camera
 #define FULLSCREEN false
 #define VSYNC true
 #define TITLE "Super Awesome Engine"
+#define GLSL_VERSION "#version 440"

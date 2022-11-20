@@ -1,16 +1,12 @@
 #pragma once
 #include "Module.h"
-#include "Globals.h"
-
-struct SDL_Texture;
-struct SDL_Renderer;
-struct SDL_Rect;
-
-class ModuleRender : public Module
+#include <imgui.h>
+class ModuleEditor :
+	public Module
 {
 public:
-	ModuleRender();
-	~ModuleRender();
+	ModuleEditor();
+	~ModuleEditor();
 
 	bool Init();
 	update_status PreUpdate();
@@ -19,9 +15,10 @@ public:
 	bool CleanUp();
 	void WindowResized(unsigned width, unsigned height);
 
-public:
-	void* context;
-
 private:
-	int m_win_width, m_win_height;
+	ImGuiIO m_io;
+	ImVec4 m_clear_color;
+	bool show_demo_window = true;
+	bool show_another_window = false;
+	void* m_context;
 };
