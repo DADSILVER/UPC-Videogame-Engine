@@ -29,6 +29,10 @@ private:
 
 	int m_win_width, m_win_height, m_program;
 	unsigned m_vbo;
+	unsigned m_vao;
+	unsigned m_ebo;
+	unsigned m_Texture;
+
 	Frustum* m_frustum;
 
 	float4x4 m_model;

@@ -3,22 +3,26 @@
 #include "SDL.h"
 #include "libs/glew-2.1.0/include/GL/glew.h"
 #include "Application.h"
+
 #include "ModuleProgram.h"
 #include "ModuleDebugDraw.h"
 #include "ModuleWindow.h"
 #include "ModuleCamera.h"
+#include "ModuleTexture.h"
+
+
 #include "Geometry/Frustum.h"
 #include "Math/MathAll.h"
-#include "Application.h"
+#include "DirectXTex.h"
+
 
 ModuleRenderExercise::ModuleRenderExercise()
 {
-	m_model = float4x4::FromTRS(float3(2.0f, 0.0f, 0.0f),
+	m_model = float4x4::identity;
+		
+		float4x4::FromTRS(float3(2.0f, 0.0f, 0.0f),
 		float4x4::RotateZ(pi / 4.0f),
-		//float4x4::identity,
 		float3(2.0f, 1.0f, 1.0f));
-	//m_model.Transpose();
-	//m_view = float4x4::LookAt(float3(0.0f, 4.0f, 8.0f), float3(0.0f, 0.0f, 0.0f), -float3::unitZ , float3::unitY, float3::unitY);
 }
 
 bool ModuleRenderExercise::Init()
@@ -37,7 +41,6 @@ update_status ModuleRenderExercise::PreUpdate()
 
 update_status ModuleRenderExercise::Update()
 {
-	//RenderVBO();
 	App->m_debugDraw->Draw(App->m_camera->GetViewMatrix(), App->m_camera->GetProjectionMatrix(), SCREEN_WIDTH, SCREEN_HEIGHT);
 	RenderTriangle();
 	return UPDATE_CONTINUE;
@@ -51,7 +54,11 @@ update_status ModuleRenderExercise::PostUpdate()
 
 bool ModuleRenderExercise::CleanUp()
 {
-	DestroyVBO();
+	glDeleteProgram(m_program);
+	glDeleteBuffers(1, &m_vbo);
+	glDeleteVertexArrays(1, &m_vao);
+	glDeleteBuffers(1, &m_ebo);
+	glDeleteTextures(1, &m_Texture);
 	delete m_frustum;
 	return true;
 }
@@ -59,26 +66,82 @@ bool ModuleRenderExercise::CleanUp()
 // This function must be called one time at creation of vertex buffer
 void ModuleRenderExercise::CreateTriangleVBO()
 {
-	float m_vtx_data[] = { -1.0f, -1.0f, 0.0f, 
-							1.0f, -1.0f, 0.0f,
-							0.0f, 1.0f, 0.0f, 
-							-1.0f, -1.0f, 0.0f,
-							0.0f, -2.0f, 0.0f,
-							1.0f, -1.0f, 0.0f 
+
+	float m_vtx_data[] = { 
+				// positions          // colors           // texture coords
+				 0.5f,  0.5f, 0.0f,   /*1.0f, 0.0f, 0.0f,*/   1.0f, 1.0f,   // top right
+				 0.5f, -0.5f, 0.0f,   /*0.0f, 1.0f, 0.0f,*/   1.0f, 0.0f,   // bottom right
+				-0.5f, -0.5f, 0.0f,   /*0.0f, 0.0f, 1.0f,*/   0.0f, 0.0f,   // bottom left
+				-0.5f,  0.5f, 0.0f,	  /*1.0f, 1.0f, 0.0f,*/   0.0f, 1.0f    // top left 
 	};
+
+	unsigned int m_index[] = {  // note that we start from 0!
+		3, 1, 0,   // first triangle
+		3, 2, 1    // second triangle
+	};
+
+	//vao
+	glGenVertexArrays(1, &m_vao);
+	glBindVertexArray(m_vao);
+
+	//vbo
 	glGenBuffers(1, &m_vbo);
 	glBindBuffer(GL_ARRAY_BUFFER, m_vbo); // set vbo active
 	glBufferData(GL_ARRAY_BUFFER, sizeof(m_vtx_data), m_vtx_data, GL_STATIC_DRAW);
-}
+	
+	//ebo
+	glGenBuffers(1, &m_ebo);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_ebo);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(m_index), m_index, GL_STATIC_DRAW);
 
-void ModuleRenderExercise::DestroyVBO()
-{
-	glDeleteBuffers(1, &m_vbo);
-}
+	//texture
+	App->m_texture->LoadTexture("Test-image-Baboon.ppm");
+	glGenTextures(1, &m_Texture);  
+	glBindTexture(GL_TEXTURE_2D, m_Texture);
 
-// This function must be called each frame for drawing the triangle
-void ModuleRenderExercise::RenderVBO()
-{
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+	DirectX::TexMetadata metadata = App->m_texture->GetMetadata();
+	int internalFormat, format, type;
+	switch (metadata.format)
+	{
+	case DXGI_FORMAT_R8G8B8A8_UNORM_SRGB:
+	case DXGI_FORMAT_R8G8B8A8_UNORM:
+		internalFormat = GL_RGBA8;
+		format = GL_RGBA;
+		type = GL_UNSIGNED_BYTE;
+		break;
+	case DXGI_FORMAT_B8G8R8A8_UNORM_SRGB:
+	case DXGI_FORMAT_B8G8R8A8_UNORM:
+		internalFormat = GL_RGBA8;
+		format = GL_BGRA;
+		type = GL_UNSIGNED_BYTE;
+		break;
+	case DXGI_FORMAT_B5G6R5_UNORM:
+		internalFormat = GL_RGB8;
+		format = GL_BGR;
+		type = GL_UNSIGNED_BYTE;
+		break;
+	default:
+		assert(false && "Unsupported format");
+	}
+
+	glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, metadata.width, metadata.height, 0, format, type, App->m_texture->GetImage()->GetImage(0,0,0)->pixels);
+	glGenerateMipmap(GL_TEXTURE_2D);
+
+
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+	glEnableVertexAttribArray(1);
+
+
+
+	
 }
 
 void ModuleRenderExercise::RenderTriangle()
@@ -89,12 +152,19 @@ void ModuleRenderExercise::RenderTriangle()
 	glUniformMatrix4fv(1, 1, GL_TRUE, &App->m_camera->GetViewMatrix()[0][0]);
 	glUniformMatrix4fv(0, 1, GL_TRUE, &App->m_camera->GetProjectionMatrix()[0][0]);
 
-	glBindBuffer(GL_ARRAY_BUFFER, m_vbo);
-	glEnableVertexAttribArray(0);
-	// size = 3 float per vertex
-	// stride = 0 is equivalent to stride = sizeof(float)*3
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
-	glDrawArrays(GL_TRIANGLES, 0, 6);
+	
+	//Enable texture
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, m_Texture);
+	glUniform1i(glGetUniformLocation(m_program, "mytexture"), 0);
+	glBindVertexArray(m_vao);
+	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+	
+	
+	glBindTexture(GL_TEXTURE_2D, m_Texture);
+	
+	
 }
 
 void ModuleRenderExercise::CreateFrustum()

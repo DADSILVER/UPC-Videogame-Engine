@@ -157,7 +157,10 @@
     <ClCompile Include="ModuleCamera.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleTimer.cpp" />
+    <ClCompile Include="ModuleTimer.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleTexture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Module.h">
@@ -424,7 +427,11 @@
     <ClInclude Include="ModuleCamera.h">
       <Filter>Modules</Filter>
     </ClInclude>
-    <ClInclude Include="ModuleTimer.h" />
+    <ClInclude Include="ModuleTimer.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ModuleTexture.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Modules">
@@ -462,5 +469,8 @@
     <None Include="libs\MathGeoLib_Source\Geometry\TriangleMesh_IntersectRay_SSE.inl">
       <Filter>MatGeoLib</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Engine.rc" />
   </ItemGroup>
 </Project>

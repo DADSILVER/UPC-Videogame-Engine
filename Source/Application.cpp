@@ -8,6 +8,7 @@
 #include "ModuleDebugDraw.h"
 #include "ModuleCamera.h"
 #include "ModuleTimer.h"
+#include "ModuleTexture.h"
 
 using namespace std;
 
@@ -22,6 +23,7 @@ Application::Application()
 	modules.push_back(m_debugDraw = new ModuleDebugDraw());
 	modules.push_back(m_camera = new ModuleCamera());
 	modules.push_back(m_timer = new ModuleTimer());
+	modules.push_back(m_texture = new ModuleTexture());
 }
 
 Application::~Application()
