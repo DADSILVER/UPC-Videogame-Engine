@@ -21,9 +21,8 @@ ModuleEditor::~ModuleEditor()
 
 bool ModuleEditor::Init()
 {
-
     // Setup Dear ImGui context
-    IMGUI_CHECKVERSION();
+    engLOG("Version ImgUI: %d.\n", IMGUI_CHECKVERSION());
     ImGui::CreateContext();
     m_io = ImGui::GetIO(); (void)m_io;
     m_io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;       // Enable Keyboard Controls
@@ -33,11 +32,14 @@ bool ModuleEditor::Init()
     //ImGui::StyleColorsDark();
     ImGui::StyleColorsLight();
 
+    return true;
+}
+
+bool ModuleEditor::Start()
+{
     // Setup Platform/Renderer backends
     ImGui_ImplSDL2_InitForOpenGL(App->m_window->window, App->m_renderer->context);
     ImGui_ImplOpenGL3_Init(GLSL_VERSION);
-
-
 
     return true;
 }
@@ -53,6 +55,7 @@ update_status ModuleEditor::PreUpdate()
 update_status ModuleEditor::Update()
 {
     NewTestImgUI();
+    NewHelloWorld();
     return UPDATE_CONTINUE;
 }
 
@@ -104,5 +107,23 @@ void ModuleEditor::NewTestImgUI()
 
     ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
     ImGui::End();
+}
+
+void ModuleEditor::NewHelloWorld()
+{
+    static char buf[32];
+    //static float f=10.0f;
+    ImGui::Begin("Hello, world 2!");
+    ImGui::Text("Hello, world %d", 123);
+    ImGui::Checkbox("Demo Window", &show_demo_window);
+
+    if (show_demo_window)
+    {
+        ImGui::ShowDemoWindow(&show_demo_window);
+    }
+    ImGui::InputText("string", buf, IM_ARRAYSIZE(buf));
+    //ImGui::SliderFloat("float", &f, 0.0f, 1.0f);
+    ImGui::End();
+
 }
 

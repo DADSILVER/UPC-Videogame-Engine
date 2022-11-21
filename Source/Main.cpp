@@ -42,12 +42,20 @@ int main(int argc, char ** argv)
 				engLOG("Application Init exits with error -----");
 				state = MAIN_EXIT;
 			}
+
+			engLOG("Application Start --------------");
+			if (App->Start() == false)
+			{
+				engLOG("Application Start exits with error -----");
+				state = MAIN_EXIT;
+			}
 			else
 			{
 				state = MAIN_UPDATE;
 				engLOG("Application Update --------------");
 			}
-
+			
+			
 			break;
 
 		case MAIN_UPDATE:
