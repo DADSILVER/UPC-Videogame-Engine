@@ -3,30 +3,6 @@
 #include "Globals.h"
 #include "DirectXTex.h"
 
-ModuleTexture::ModuleTexture()
-{
-}
-
-ModuleTexture::~ModuleTexture()
-{
-}
-
-bool ModuleTexture::Init()
-{
-	
-    //LoadTexture("Test-image-Baboon.ppm");
-	if (m_Image) 
-	{
-		//DirectX::FlipRotate(*m_Image->GetImages(), DirectX::TEX_FR_FLIP_VERTICAL, *m_Image);
-	}
-	
-    return true;
-}
-
-update_status ModuleTexture::Update()
-{
-	return UPDATE_CONTINUE;
-}
 
 bool ModuleTexture::CleanUp()
 {

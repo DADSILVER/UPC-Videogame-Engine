@@ -1,8 +1,13 @@
+
 #include "Globals.h"
 #include "Application.h"
+
 #include "ModuleRender.h"
 #include "ModuleWindow.h"
 #include "ModuleCamera.h"
+#include "ModuleProgram.h"
+#include "Model.h"
+
 #include "SDL.h"
 #include "libs/glew-2.1.0/include/GL/glew.h"
 
@@ -48,6 +53,15 @@ bool ModuleRender::Init()
 
 
 	glClearColor(0.5f, 0.5f, 0.5f, 0.5f);
+
+
+
+	//Load Model
+	Model* BakerHause = new Model();
+	BakerHause->Load("BakerHouse.fbx");
+
+	m_program = App->m_program->CreateProgram();
+
 	return true;
 }
 
@@ -65,7 +79,6 @@ update_status ModuleRender::PreUpdate()
 // Called every draw update
 update_status ModuleRender::Update()
 {
-
 	return UPDATE_CONTINUE;
 }
 

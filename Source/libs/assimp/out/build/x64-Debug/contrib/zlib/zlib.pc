@@ -1,0 +1,13 @@
+prefix=C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/assimp/out/install/x64-Debug
+exec_prefix=C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/assimp/out/install/x64-Debug
+libdir=
+sharedlibdir=
+includedir=
+
+Name: zlib
+Description: zlib compression library
+Version: 
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

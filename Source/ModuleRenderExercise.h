@@ -17,10 +17,6 @@ public:
 
 	void CreateTriangleVBO();
 
-	void DestroyVBO();
-
-	void RenderVBO();
-
 	void RenderTriangle();
 
 	void CreateFrustum();

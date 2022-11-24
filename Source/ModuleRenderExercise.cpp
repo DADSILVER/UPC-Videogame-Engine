@@ -10,6 +10,8 @@
 #include "ModuleCamera.h"
 #include "ModuleTexture.h"
 
+#include "Model.h"
+
 
 #include "Geometry/Frustum.h"
 #include "Math/MathAll.h"
@@ -27,8 +29,13 @@ ModuleRenderExercise::ModuleRenderExercise()
 
 bool ModuleRenderExercise::Init()
 {
+	//Load Model
+	Model* BakerHause = new Model();
+	BakerHause->Load("BakerHouse.fbx");
+
 	//CreateFrustum();
 	CreateTriangleVBO();
+
 	m_program = App->m_program->CreateProgram();
 	
 	return true;

@@ -3,22 +3,21 @@
 #include <string>
 #include "DirectXTex.h"
 
+struct TextureInfo
+{
+	std::string m_FileName = "";
+	unsigned m_Texture = 0;
+};
+
+
 class ModuleTexture :
     public Module
 {
 public:
-	ModuleTexture();
-	~ModuleTexture();
-
-	bool Init();
-	//update_status PreUpdate();
-	update_status Update();
-	//update_status PostUpdate();
 	bool CleanUp();
 
-	void LoadTexture(std::string const &InPath);
+	TextureInfo LoadTexture(std::string const &InPath);
 	DirectX::TexMetadata GetMetadata();
-
 	DirectX::ScratchImage *GetImage();
 
 private:
