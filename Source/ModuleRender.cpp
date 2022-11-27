@@ -57,8 +57,8 @@ bool ModuleRender::Init()
 
 
 	//Load Model
-	Model* BakerHause = new Model();
-	BakerHause->Load("BakerHouse.fbx");
+	//Model* BakerHause = new Model();
+	//BakerHause->Load("BakerHouse.fbx");
 
 	m_program = App->m_program->CreateProgram();
 

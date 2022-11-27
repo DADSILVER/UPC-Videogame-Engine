@@ -2,6 +2,8 @@
 #include "Module.h"
 #include "Geometry/Frustum.h"
 
+class Model;
+
 class ModuleRenderExercise :
     public Module
 {
@@ -21,6 +23,8 @@ public:
 
 	void CreateFrustum();
 
+	Model GetModel();
+
 private:
 
 	int m_win_width, m_win_height, m_program;
@@ -34,5 +38,7 @@ private:
 	float4x4 m_model;
 	float4x4 m_proj;
 	float4x4 m_view;
+
+	Model* m_BakerHause;
 };
 

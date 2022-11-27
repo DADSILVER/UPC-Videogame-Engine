@@ -1,6 +1,7 @@
 #pragma once
 #include "Module.h"
 #include "Geometry/Frustum.h"
+#include "Math/float3.h"
 
 class ModuleCamera :
     public Module
@@ -22,8 +23,13 @@ public:
 	void GetInputMove();
 	void ResizeWindow(float _width, float _heigth);
 
+	
+
 private:
 	void MoveCamera(moves_camera _move);
+	void LookAt(float3 inLookUp);
+	void OrbitAround();
+	float lenght2(vec inDirection);
 
 private:
 
@@ -35,5 +41,7 @@ private:
 	float m_MoveDist;
 	float m_RotateDegrees;
 	float m_VelocityMult;
+	float m_DistanceToObject;
+	float m_AngelY;
 };
 

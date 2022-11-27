@@ -58,6 +58,7 @@ int ModuleProgram::CreateProgram()
 	m_vertex = CompileShader(GL_VERTEX_SHADER, LoadShaderSource("vertexShader.glsl"));
 
 	unsigned program_id = glCreateProgram();
+	engLOG("program: %d", program_id);
 	glAttachShader(program_id, m_vertex);
 	glAttachShader(program_id, m_fragment);
 	glLinkProgram(program_id);

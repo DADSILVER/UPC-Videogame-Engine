@@ -5,11 +5,27 @@
 #include "Application.h"
 #include "ModuleRender.h"
 #include "ModuleCamera.h"
+#include "ModuleTexture.h"
+#include "ModuleProgram.h"
 
 #include <GL/glew.h>
 #include <Math/float2.h>
 
 
+Mesh::Mesh(const aiMesh* mesh)
+{
+	LoadVBO(mesh);
+	LoadEBO(mesh);
+	m_MaterialIndex = mesh->mMaterialIndex;
+	CreateVAO();
+}
+
+Mesh::~Mesh()
+{
+	glDeleteBuffers(1, &m_vbo);
+	glDeleteBuffers(1, &m_ebo);
+	glDeleteVertexArrays(1, &m_vao);
+}
 
 void Mesh::LoadVBO(const aiMesh* InMesh)
 {
@@ -47,16 +63,20 @@ void Mesh::LoadEBO(const aiMesh* InMesh)
 
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, index_size, nullptr, GL_STATIC_DRAW);
 
-	unsigned* indices = (unsigned*)(glMapBuffer(GL_ELEMENT_ARRAY_BUFFER, GL_MAP_WRITE_BIT));
-
+	unsigned* indices = (unsigned*)(glMapBuffer(GL_ELEMENT_ARRAY_BUFFER, GL_WRITE_ONLY));
+	float x = 0, y = 0, z = 0;
 	for (unsigned i = 0; i < InMesh->mNumFaces; ++i)
 	{
 		assert(InMesh->mFaces[i].mNumIndices == 3); // note: assume triangles = 3 indices per face
 		*(indices++) = InMesh->mFaces[i].mIndices[0];
+		x =+ InMesh->mFaces[i].mIndices[0];
 		*(indices++) = InMesh->mFaces[i].mIndices[1];
+		y =+ InMesh->mFaces[i].mIndices[1];
 		*(indices++) = InMesh->mFaces[i].mIndices[2];
+		z =+ InMesh->mFaces[i].mIndices[2];
 	}
 	glUnmapBuffer(GL_ELEMENT_ARRAY_BUFFER);
+	m_CenterOfMesh = { x / InMesh->mNumVertices,y / InMesh->mNumVertices,z / InMesh->mNumVertices };
 	m_NumIndices = InMesh->mNumFaces * 3;
 }
 
@@ -75,7 +95,7 @@ void Mesh::CreateVAO()
 	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, (void*)(sizeof(float) * 3 * m_NumVetices));
 }
 
-void Mesh::Draw(const std::vector<unsigned>& InModelTexture)
+void Mesh::Draw(const std::vector<TextureInfo> InModelTexture)
 {
 	unsigned program = App->m_renderer->m_program;
 	float4x4 model = float4x4::identity;
@@ -89,8 +109,15 @@ void Mesh::Draw(const std::vector<unsigned>& InModelTexture)
 
 	//Enable texture
 	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, InModelTexture[m_MaterialIndex]);			
+	glBindTexture(GL_TEXTURE_2D, InModelTexture[m_MaterialIndex].m_Texture);			
 	glUniform1i(glGetUniformLocation(program, "mytexture"), 0);
 	glBindVertexArray(m_vao);
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_ebo);
+	glDrawElements(GL_TRIANGLES, m_NumIndices, GL_UNSIGNED_INT, nullptr);
+}
+
+float3 Mesh::GetCenterOfMesh()
+{
+	return m_CenterOfMesh;
 }

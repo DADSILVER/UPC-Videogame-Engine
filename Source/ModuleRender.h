@@ -1,10 +1,12 @@
 #pragma once
 #include "Module.h"
 #include "Globals.h"
+#include "Geometry/Frustum.h"
 
 struct SDL_Texture;
 struct SDL_Renderer;
 struct SDL_Rect;
+//class Frustum;
 
 class ModuleRender : public Module
 {
@@ -30,6 +32,5 @@ private:
 	unsigned m_vao;
 	unsigned m_ebo;
 	unsigned m_Texture;
-
 	Frustum* m_frustum;
 };

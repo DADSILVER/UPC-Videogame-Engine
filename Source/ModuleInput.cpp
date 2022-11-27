@@ -36,7 +36,7 @@ update_status ModuleInput::Update()
 
     while (SDL_PollEvent(&m_sdlEvent) != 0)
     {
-		ImGui_ImplSDL2_ProcessEvent(&m_sdlEvent);
+		//ImGui_ImplSDL2_ProcessEvent(&m_sdlEvent);
 
         switch (m_sdlEvent.type)
         {

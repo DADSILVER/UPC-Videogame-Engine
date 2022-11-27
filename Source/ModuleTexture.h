@@ -23,5 +23,6 @@ public:
 private:
 	DirectX::TexMetadata m_MetaData;
 	DirectX::ScratchImage *m_Image;
+
 };
 

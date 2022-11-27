@@ -30,11 +30,13 @@ ModuleRenderExercise::ModuleRenderExercise()
 bool ModuleRenderExercise::Init()
 {
 	//Load Model
-	Model* BakerHause = new Model();
-	BakerHause->Load("BakerHouse.fbx");
+	m_BakerHause = new Model();
+	//m_BakerHause->Load("BakerHouse.fbx");
+	m_BakerHause->Load("robot.fbx");
+	
 
 	//CreateFrustum();
-	CreateTriangleVBO();
+	//CreateTriangleVBO();
 
 	m_program = App->m_program->CreateProgram();
 	
@@ -49,7 +51,8 @@ update_status ModuleRenderExercise::PreUpdate()
 update_status ModuleRenderExercise::Update()
 {
 	App->m_debugDraw->Draw(App->m_camera->GetViewMatrix(), App->m_camera->GetProjectionMatrix(), SCREEN_WIDTH, SCREEN_HEIGHT);
-	RenderTriangle();
+	//RenderTriangle();
+	m_BakerHause->Draw();
 	return UPDATE_CONTINUE;
 }
 
@@ -186,4 +189,9 @@ void ModuleRenderExercise::CreateFrustum()
 	m_frustum->SetUp(float3::unitY);
 	m_proj = m_frustum->ProjectionMatrix();
 	m_view = m_frustum->ViewMatrix();
+}
+
+Model ModuleRenderExercise::GetModel()
+{
+	return *m_BakerHause;
 }
