@@ -20,6 +20,7 @@ public:
 	void Draw();
 
 	float3 GetCenterOfModel();
+	void SetModelMatrix(float4x4 InModel);
 
 
 private:

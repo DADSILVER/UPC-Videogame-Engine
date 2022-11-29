@@ -33,8 +33,8 @@ enum moves_camera
 #define HIGH_LIMIT 0.1f            // 10fps
 
 // Configuration -----------
-#define SCREEN_WIDTH 1800
-#define SCREEN_HEIGHT 1000 
+#define SCREEN_WIDTH 1200
+#define SCREEN_HEIGHT 800
 #define FULLSCREEN false
 #define VSYNC true
 #define TITLE "Super Awesome Engine"

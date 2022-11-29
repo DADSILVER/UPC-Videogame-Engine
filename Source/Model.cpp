@@ -53,13 +53,18 @@ void Model::LoadMaterials(const aiScene* InScene)
 		{
 			std::string filePath = file.data;
 			size_t pos = 0;
-			char delimiter = 92;
-			while ((pos = filePath.find(92)) != std::string::npos) {
+			while ((pos = filePath.find(92)) != std::string::npos || (pos = filePath.find('/')) != std::string::npos)
+			{
 				filePath.erase(0, pos + 1);
 			}
 			filePath = "textures/" + filePath;
-
-			m_Material.push_back(App->m_texture->LoadTexture(filePath));
+			TextureInfo material;
+			material.m_FileName = filePath;
+			if (App->m_texture->LoadTexture(material))
+			{
+				m_Material.push_back(material);
+			}
+			
 		}
 	}
 }
@@ -74,4 +79,12 @@ void Model::Draw()
 float3 Model::GetCenterOfModel()
 {
 	return m_CenterOfModel;
+}
+
+ void Model::SetModelMatrix(float4x4 InModel)
+{
+	 for (size_t i = 0; i < m_Meshes.size(); i++)
+	 {
+		 m_Meshes[i]->SetModelMatrix(InModel);
+	 }
 }

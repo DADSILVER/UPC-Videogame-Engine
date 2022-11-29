@@ -24,15 +24,38 @@ ModuleRenderExercise::ModuleRenderExercise()
 		
 		float4x4::FromTRS(float3(2.0f, 0.0f, 0.0f),
 		float4x4::RotateZ(pi / 4.0f),
-		float3(0.01f, 0.01f, 0.01f));
+		//float3(0.01f, 0.01f, 0.01f)
+		float3(1.0f, 1.0f, 1.0f)
+		);
 }
 
 bool ModuleRenderExercise::Init()
 {
 	//Load Model
 	m_BakerHause = new Model();
-	//m_BakerHause->Load("source/BakerHouse.fbx");
-	m_BakerHause->Load("source/rosaria.fbx");
+	m_BakerHause->Load("source/BakerHouse.fbx");
+	m_BakerHause->SetModelMatrix(
+		float4x4::FromTRS(float3(10.0f, 0.0f, 0.0f),
+			float4x4::RotateZ(0),
+			//float3(0.01f, 0.01f, 0.01f)
+			float3(1.0f, 1.0f, 1.0f)
+		)
+	);
+
+	m_NotTextureModel = new Model();
+	m_NotTextureModel->Load("source/substancerobot_export.fbx");
+	m_NotTextureModel->SetModelMatrix(
+		float4x4::FromTRS(float3(-10.0f, 0.0f, 0.0f),
+			float4x4::RotateZ(0),
+			float3(0.5f, 0.5f, 0.5f)
+			//float3(1.0f, 1.0f, 1.0f)
+		)
+	);
+	
+	
+	
+	//m_BakerHause->Load("source/dragon.fbx");
+	//m_BakerHause->Load("source/fnaf-foxy.fbx");
 	
 
 	//CreateFrustum();
@@ -53,6 +76,7 @@ update_status ModuleRenderExercise::Update()
 	App->m_debugDraw->Draw(App->m_camera->GetViewMatrix(), App->m_camera->GetProjectionMatrix(), SCREEN_WIDTH, SCREEN_HEIGHT);
 	//RenderTriangle();
 	m_BakerHause->Draw();
+	m_NotTextureModel->Draw();
 	return UPDATE_CONTINUE;
 }
 
@@ -105,7 +129,7 @@ void ModuleRenderExercise::CreateTriangleVBO()
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(m_index), m_index, GL_STATIC_DRAW);
 
 	//texture
-	App->m_texture->LoadTexture("Test-image-Baboon.ppm");
+	//App->m_texture->LoadTexture("Test-image-Baboon.ppm");
 	glGenTextures(1, &m_Texture);  
 	glBindTexture(GL_TEXTURE_2D, m_Texture);
 

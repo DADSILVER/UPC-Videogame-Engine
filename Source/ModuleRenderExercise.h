@@ -40,5 +40,6 @@ private:
 	float4x4 m_view;
 
 	Model* m_BakerHause;
+	Model* m_NotTextureModel;
 };
 

@@ -16,7 +16,7 @@ class ModuleTexture :
 public:
 	bool CleanUp();
 
-	TextureInfo LoadTexture(std::string const &InPath);
+	bool LoadTexture(TextureInfo& InOutTextureInfo);
 	DirectX::TexMetadata GetMetadata();
 	DirectX::ScratchImage *GetImage();
 

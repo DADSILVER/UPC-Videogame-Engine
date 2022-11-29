@@ -10,21 +10,22 @@ bool ModuleTexture::CleanUp()
 	return true;
 }
 
-TextureInfo ModuleTexture::LoadTexture(std::string const &InPath)
+bool ModuleTexture::LoadTexture(TextureInfo &InOutTextureInfo)
 {
 	m_Image = new DirectX::ScratchImage;
 	DirectX::ScratchImage *NotFlip = new DirectX::ScratchImage;
     HRESULT loadResult;
-    std::string extension = InPath.substr(InPath.size() - 4, 4);
-    std::wstring widePath = std::wstring(InPath.begin(), InPath.end());
+    std::string extension = InOutTextureInfo.m_FileName.substr(InOutTextureInfo.m_FileName.size() - 4, 4);
+    std::wstring widePath = std::wstring(InOutTextureInfo.m_FileName.begin(), InOutTextureInfo.m_FileName.end());
 
 	if (extension == ".dds")
 	{
 		loadResult = LoadFromDDSFile(widePath.c_str(), DirectX::DDS_FLAGS_NONE, &m_MetaData, *NotFlip);
 		if (FAILED(loadResult))
 		{
-			engLOG("Material convertor error : DDS texture loading failed (\%s)", InPath);
+			engLOG("Material convertor error : DDS texture loading failed (\%s)", InOutTextureInfo.m_FileName);
 			NotFlip = nullptr;
+			return 0;
 		}
 	}
 	else if (extension == ".tga")
@@ -32,8 +33,9 @@ TextureInfo ModuleTexture::LoadTexture(std::string const &InPath)
 		loadResult = DirectX::LoadFromTGAFile(widePath.c_str(), &m_MetaData, *NotFlip);
 		if (FAILED(loadResult))
 		{
-			engLOG("Material convertor error : DDS texture loading failed (\%s)", InPath);
+			engLOG("Material convertor error : DDS texture loading failed (\%s)", InOutTextureInfo.m_FileName);
 			NotFlip = nullptr;
+			return 0;
 		}
 	}
 	else
@@ -41,8 +43,9 @@ TextureInfo ModuleTexture::LoadTexture(std::string const &InPath)
 		loadResult = LoadFromWICFile(widePath.c_str(), DirectX::WIC_FLAGS_DEFAULT_SRGB, &m_MetaData, *NotFlip);
 		if (FAILED(loadResult))
 		{
-			engLOG("Material convertor error : DDS texture loading failed (\%s)", InPath);
+			engLOG("Material convertor error : DDS texture loading failed (\%s)", InOutTextureInfo.m_FileName);
 			NotFlip = nullptr;
+			return 0;
 		}
 	}
 	DirectX::FlipRotate(NotFlip->GetImages(), NotFlip->GetImageCount(), NotFlip->GetMetadata(), DirectX::TEX_FR_FLIP_VERTICAL, *m_Image);
@@ -80,18 +83,18 @@ TextureInfo ModuleTexture::LoadTexture(std::string const &InPath)
 		type = GL_UNSIGNED_BYTE;
 		break;
 	default:
-		assert(false && "Unsupported format");
+		engLOG("Unsupported format\n");
+		return 0;
+		//assert(false && "Unsupported format");
 	}
 
 	glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, metadata.width, metadata.height, 0, format, type, GetImage()->GetImage(0, 0, 0)->pixels);
 	glGenerateMipmap(GL_TEXTURE_2D);
 
-	TextureInfo textureOut;
-	textureOut.m_FileName = InPath;
-	textureOut.m_Texture = texture;
+	InOutTextureInfo.m_Texture = texture;
 
 
-	return textureOut;
+	return 1;
 }
 
 DirectX::TexMetadata ModuleTexture::GetMetadata()

@@ -14,6 +14,12 @@
 
 Mesh::Mesh(const aiMesh* mesh)
 {
+	m_model = float4x4::FromTRS(float3(0.0f, 0.0f, 0.0f),
+		//float4x4::RotateX(-pi/2),
+		float4x4::RotateX(0),
+		//float3(0.01f, 0.01f, 0.01f)
+		float3(1.0f, 1.0f, 1.0f)
+	);
 	LoadVBO(mesh);
 	LoadEBO(mesh);
 	m_MaterialIndex = mesh->mMaterialIndex;
@@ -98,25 +104,33 @@ void Mesh::CreateVAO()
 void Mesh::Draw(const std::vector<TextureInfo> InModelTexture)
 {
 	unsigned program = App->m_renderer->m_program;
-	float4x4 model = float4x4::FromTRS(float3(0.0f, 0.0f, 0.0f),
-		float4x4::RotateZ(0),
-		float3(0.01f, 0.01f, 0.01f));
+	
 
 	glUseProgram(program);
 
-	glUniformMatrix4fv(2, 1, GL_TRUE, &model[0][0]);
+	glUniformMatrix4fv(2, 1, GL_TRUE, &m_model[0][0]);
 	glUniformMatrix4fv(1, 1, GL_TRUE, &App->m_camera->GetViewMatrix()[0][0]);
 	glUniformMatrix4fv(0, 1, GL_TRUE, &App->m_camera->GetProjectionMatrix()[0][0]);
 
 
 	//Enable texture
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, InModelTexture[m_MaterialIndex].m_Texture);			
-	glUniform1i(glGetUniformLocation(program, "mytexture"), 0);
+	if (InModelTexture.size() > 0)
+	{
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, InModelTexture[m_MaterialIndex].m_Texture);
+		glUniform1i(glGetUniformLocation(program, "mytexture"), 0);
+	}
+	else 
+	{
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, 0);
+		glUniform1i(glGetUniformLocation(program, "mytexture"), 0);
+	}
 	glBindVertexArray(m_vao);
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_ebo);
 	glDrawElements(GL_TRIANGLES, m_NumIndices, GL_UNSIGNED_INT, nullptr);
+	
 }
 
 float3 Mesh::GetCenterOfMesh()
