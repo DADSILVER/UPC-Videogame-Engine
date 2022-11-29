@@ -1,6 +1,9 @@
 #pragma once
 #include "Module.h"
 #include <imgui.h>
+
+#include "Console.h"
+
 class ModuleEditor :
 	public Module
 {
@@ -24,4 +27,6 @@ private:
 	bool show_demo_window = true;
 	bool show_another_window = false;
 	void* m_context;
+
+	Console m_console;
 };

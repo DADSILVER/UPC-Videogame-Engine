@@ -20,7 +20,7 @@ Application::Application()
 	modules.push_back(m_timer = new ModuleTimer());
 	modules.push_back(m_renderer = new ModuleRender());
 	modules.push_back(m_texture = new ModuleTexture());
-	//modules.push_back(m_Editor = new ModuleEditor());
+	modules.push_back(m_Editor = new ModuleEditor());
 	modules.push_back(m_input = new ModuleInput());
 	modules.push_back(m_program = new ModuleProgram());
 	modules.push_back(m_rendererExercise = new ModuleRenderExercise());

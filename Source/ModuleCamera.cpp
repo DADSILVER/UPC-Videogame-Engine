@@ -182,7 +182,6 @@ void ModuleCamera::LookAt(float3 inLookAt)
 {
 	vec direction = inLookAt - m_frustum->Pos();
 	m_DistanceToObject = direction.Length();
-	engLOG("%f", m_DistanceToObject);
 
 
 	direction.Normalize();

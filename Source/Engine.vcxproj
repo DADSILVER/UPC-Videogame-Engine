@@ -145,6 +145,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Console.cpp" />
     <ClCompile Include="libs\imgui-docking\imgui.cpp" />
     <ClCompile Include="libs\imgui-docking\imgui_demo.cpp" />
     <ClCompile Include="libs\imgui-docking\imgui_draw.cpp" />
@@ -211,6 +212,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Console.h" />
     <ClInclude Include="debugdraw.h" />
     <ClInclude Include="debug_draw.hpp" />
     <ClInclude Include="Dummy.h" />

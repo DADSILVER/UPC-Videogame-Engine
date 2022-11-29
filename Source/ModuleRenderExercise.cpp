@@ -24,15 +24,15 @@ ModuleRenderExercise::ModuleRenderExercise()
 		
 		float4x4::FromTRS(float3(2.0f, 0.0f, 0.0f),
 		float4x4::RotateZ(pi / 4.0f),
-		float3(2.0f, 1.0f, 1.0f));
+		float3(0.01f, 0.01f, 0.01f));
 }
 
 bool ModuleRenderExercise::Init()
 {
 	//Load Model
 	m_BakerHause = new Model();
-	//m_BakerHause->Load("BakerHouse.fbx");
-	m_BakerHause->Load("robot.fbx");
+	//m_BakerHause->Load("source/BakerHouse.fbx");
+	m_BakerHause->Load("source/rosaria.fbx");
 	
 
 	//CreateFrustum();

@@ -2,8 +2,9 @@
 
 #include<list>
 #include "Globals.h"
-#include "Module.h"
+//#include "Module.h"
 
+class Module;
 class ModuleRender;
 class ModuleWindow;
 class ModuleProgram;

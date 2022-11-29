@@ -167,28 +167,29 @@
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="libs\imgui-docking\imgui.cpp">
-      <Filter>imgui</Filter>
+      <Filter>ImgUI lib</Filter>
     </ClCompile>
     <ClCompile Include="libs\imgui-docking\imgui_demo.cpp">
-      <Filter>imgui</Filter>
+      <Filter>ImgUI lib</Filter>
     </ClCompile>
     <ClCompile Include="libs\imgui-docking\imgui_draw.cpp">
-      <Filter>imgui</Filter>
+      <Filter>ImgUI lib</Filter>
     </ClCompile>
     <ClCompile Include="libs\imgui-docking\imgui_impl_opengl3.cpp">
-      <Filter>imgui</Filter>
+      <Filter>ImgUI lib</Filter>
     </ClCompile>
     <ClCompile Include="libs\imgui-docking\imgui_impl_sdl.cpp">
-      <Filter>imgui</Filter>
+      <Filter>ImgUI lib</Filter>
     </ClCompile>
     <ClCompile Include="libs\imgui-docking\imgui_tables.cpp">
-      <Filter>imgui</Filter>
+      <Filter>ImgUI lib</Filter>
     </ClCompile>
     <ClCompile Include="libs\imgui-docking\imgui_widgets.cpp">
-      <Filter>imgui</Filter>
+      <Filter>ImgUI lib</Filter>
     </ClCompile>
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="Console.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Module.h">
@@ -466,34 +467,35 @@
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="libs\imgui-docking\imconfig.h">
-      <Filter>imgui</Filter>
+      <Filter>ImgUI lib</Filter>
     </ClInclude>
     <ClInclude Include="libs\imgui-docking\imgui.h">
-      <Filter>imgui</Filter>
+      <Filter>ImgUI lib</Filter>
     </ClInclude>
     <ClInclude Include="libs\imgui-docking\imgui_impl_opengl3.h">
-      <Filter>imgui</Filter>
+      <Filter>ImgUI lib</Filter>
     </ClInclude>
     <ClInclude Include="libs\imgui-docking\imgui_impl_opengl3_loader.h">
-      <Filter>imgui</Filter>
+      <Filter>ImgUI lib</Filter>
     </ClInclude>
     <ClInclude Include="libs\imgui-docking\imgui_impl_sdl.h">
-      <Filter>imgui</Filter>
+      <Filter>ImgUI lib</Filter>
     </ClInclude>
     <ClInclude Include="libs\imgui-docking\imgui_internal.h">
-      <Filter>imgui</Filter>
+      <Filter>ImgUI lib</Filter>
     </ClInclude>
     <ClInclude Include="libs\imgui-docking\imstb_rectpack.h">
-      <Filter>imgui</Filter>
+      <Filter>ImgUI lib</Filter>
     </ClInclude>
     <ClInclude Include="libs\imgui-docking\imstb_textedit.h">
-      <Filter>imgui</Filter>
+      <Filter>ImgUI lib</Filter>
     </ClInclude>
     <ClInclude Include="libs\imgui-docking\imstb_truetype.h">
-      <Filter>imgui</Filter>
+      <Filter>ImgUI lib</Filter>
     </ClInclude>
     <ClInclude Include="Model.h" />
     <ClInclude Include="Mesh.h" />
+    <ClInclude Include="Console.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Modules">
@@ -508,8 +510,11 @@
     <Filter Include="MatGeoLib">
       <UniqueIdentifier>{79e2218c-146d-4940-bb8d-c2bd9e914e83}</UniqueIdentifier>
     </Filter>
-    <Filter Include="imgui">
+    <Filter Include="ImgUI lib">
       <UniqueIdentifier>{afcdcd2b-09a8-420f-be59-437f97a14fc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImgUI panels">
+      <UniqueIdentifier>{4ae2d924-b8a7-4c38-a1f3-a27d3eb74b1b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

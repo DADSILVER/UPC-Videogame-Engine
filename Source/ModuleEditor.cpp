@@ -1,10 +1,15 @@
 #include "ModuleEditor.h"
+
 #include "imgui.h"
 #include "imgui_impl_sdl.h"
 #include "imgui_impl_opengl3.h"
+
 #include "Application.h"
+#include "Console.h"
+
 #include "ModuleWindow.h"
 #include "ModuleRender.h"
+
 #include <gl/GL.h>
 
 
@@ -56,6 +61,7 @@ update_status ModuleEditor::Update()
 {
     NewTestImgUI();
     NewHelloWorld();
+    m_console.Draw();
     return UPDATE_CONTINUE;
 }
 

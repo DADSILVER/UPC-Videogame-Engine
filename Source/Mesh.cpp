@@ -98,7 +98,9 @@ void Mesh::CreateVAO()
 void Mesh::Draw(const std::vector<TextureInfo> InModelTexture)
 {
 	unsigned program = App->m_renderer->m_program;
-	float4x4 model = float4x4::identity;
+	float4x4 model = float4x4::FromTRS(float3(0.0f, 0.0f, 0.0f),
+		float4x4::RotateZ(0),
+		float3(0.01f, 0.01f, 0.01f));
 
 	glUseProgram(program);
 

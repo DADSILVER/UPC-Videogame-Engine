@@ -51,7 +51,15 @@ void Model::LoadMaterials(const aiScene* InScene)
 	{
 		if (InScene->mMaterials[i]->GetTexture(aiTextureType_DIFFUSE, 0, &file) == AI_SUCCESS)
 		{
-			m_Material.push_back(App->m_texture->LoadTexture(file.data));
+			std::string filePath = file.data;
+			size_t pos = 0;
+			char delimiter = 92;
+			while ((pos = filePath.find(92)) != std::string::npos) {
+				filePath.erase(0, pos + 1);
+			}
+			filePath = "textures/" + filePath;
+
+			m_Material.push_back(App->m_texture->LoadTexture(filePath));
 		}
 	}
 }
