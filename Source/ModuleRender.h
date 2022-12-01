@@ -19,6 +19,7 @@ public:
 	void WindowResized(unsigned width, unsigned height);
 
 	Model GetModel();
+	void LoadModel(const char* inFileName);
 
 public:
 	void* context;

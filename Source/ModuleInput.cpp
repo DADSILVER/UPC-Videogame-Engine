@@ -59,8 +59,6 @@ update_status ModuleInput::Update()
 
 			case SDL_MOUSEBUTTONDOWN:
 				m_mouseButtons[m_sdlEvent.button.button - 1] = KS_DOWN;
-				
-				
 				break;
 			case SDL_MOUSEMOTION:
 				m_MouseMotion.x = -m_sdlEvent.motion.yrel;
@@ -68,6 +66,9 @@ update_status ModuleInput::Update()
 				break;
 			case SDL_MOUSEBUTTONUP:
 				m_mouseButtons[m_sdlEvent.button.button - 1] = KS_IDLE;
+				break;
+			case SDL_DROPFILE:
+				App->m_Renderer->LoadModel(m_sdlEvent.drop.file);
 				break;
         }
 

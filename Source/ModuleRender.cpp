@@ -143,4 +143,11 @@ Model ModuleRender::GetModel()
 	return *m_BakerHause;
 }
 
+void ModuleRender::LoadModel(const char* inFileName)
+{
+	delete m_BakerHause;
+	m_BakerHause = new Model();
+	m_BakerHause->Load(inFileName);
+}
+
 
