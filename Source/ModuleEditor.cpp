@@ -27,7 +27,8 @@ ModuleEditor::~ModuleEditor()
 bool ModuleEditor::Init()
 {
     // Setup Dear ImGui context
-    engLOG("Version ImgUI: %d.\n", IMGUI_CHECKVERSION());
+    
+    IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     m_io = ImGui::GetIO(); (void)m_io;
     m_io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;       // Enable Keyboard Controls
@@ -59,8 +60,8 @@ update_status ModuleEditor::PreUpdate()
 
 update_status ModuleEditor::Update()
 {
-    NewTestImgUI();
-    NewHelloWorld();
+    //NewTestImgUI();
+    //NewHelloWorld();
     m_console.Draw();
     return UPDATE_CONTINUE;
 }

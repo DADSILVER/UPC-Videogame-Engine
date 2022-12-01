@@ -1,6 +1,10 @@
 #include "ModuleProgram.h"
 #include <GL/glew.h>
 
+#include "Application.h"
+
+#include "ModuleEditor.h"
+
 ModuleProgram::ModuleProgram()
 {
 }
@@ -43,7 +47,7 @@ int ModuleProgram::CompileShader(GLenum type, const char* _source)
 			int written = 0;
 			char* info = (char*)malloc(len);
 			glGetShaderInfoLog(shader_id, len, &written, info);
-			engLOG("Log Info: %s", info);
+			App->m_Editor->m_console.AddLog(engLOG("Log Info: %s", info));
 			free(info);
 		}
 	}
@@ -58,7 +62,7 @@ int ModuleProgram::CreateProgram()
 	m_vertex = CompileShader(GL_VERTEX_SHADER, LoadShaderSource("vertexShader.glsl"));
 
 	unsigned program_id = glCreateProgram();
-	engLOG("program: %d", program_id);
+	App->m_Editor->m_console.AddLog(engLOG("program: %d", program_id));
 	glAttachShader(program_id, m_vertex);
 	glAttachShader(program_id, m_fragment);
 	glLinkProgram(program_id);
@@ -73,7 +77,7 @@ int ModuleProgram::CreateProgram()
 			int written = 0;
 			char* info = (char*)malloc(len);
 			glGetProgramInfoLog(program_id, len, &written, info);
-			engLOG("Program Log Info: %s", info);
+			App->m_Editor->m_console.AddLog(engLOG("Program Log Info: %s", info));
 			free(info);
 		}
 	}

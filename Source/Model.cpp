@@ -4,12 +4,13 @@
 #include "assimp/material.h"
 
 #include "Model.h"
-
-
 #include "Mesh.h"
+
 #include "Globals.h"
 #include "Application.h"
+
 #include "ModuleTexture.h"
+#include "ModuleEditor.h"
 
 
 void Model::Load(const char* inFileName)
@@ -22,7 +23,7 @@ void Model::Load(const char* inFileName)
 	}
 	else
 	{
-		engLOG("Error loading %s: %s", inFileName, aiGetErrorString());
+		App->m_Editor->m_console.AddLog(engLOG("Error loading %s: %s", inFileName, aiGetErrorString()));
 	}
 }
 

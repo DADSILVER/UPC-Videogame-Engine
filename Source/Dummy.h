@@ -6,13 +6,13 @@ class ModuleDummy : public Module
 {
 	bool Init()
 	{
-		engLOG("Dummy Init!");
+		App->m_Editor->m_console.AddLog(engLOG("Dummy Init!");
 		return true;
 	}
 
 	bool CleanUp()
 	{
-		engLOG("Dummy CleanUp!");
+		App->m_Editor->m_console.AddLog(engLOG("Dummy CleanUp!");
 		return true;
 	}
 };

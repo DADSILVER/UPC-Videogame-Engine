@@ -1,6 +1,9 @@
 #include <stdlib.h>
 #include "Application.h"
+
 #include "ModuleRender.h"
+#include "ModuleEditor.h"
+
 #include "Globals.h"
 
 #include "SDL/include/SDL.h"
@@ -29,30 +32,31 @@ int main(int argc, char ** argv)
 		{
 		case MAIN_CREATION:
 
-			engLOG("Application Creation --------------");
+			
 			App = new Application();
+			App->m_Editor->m_console.AddLog(engLOG("Application Creation --------------"));
 			state = MAIN_START;
 			break;
 
 		case MAIN_START:
 
-			engLOG("Application Init --------------");
+			App->m_Editor->m_console.AddLog(engLOG("Application Init --------------"));
 			if (App->Init() == false)
 			{
-				engLOG("Application Init exits with error -----");
+				App->m_Editor->m_console.AddLog(engLOG("Application Init exits with error -----"));
 				state = MAIN_EXIT;
 			}
 
-			engLOG("Application Start --------------");
+			App->m_Editor->m_console.AddLog(engLOG("Application Start --------------"));
 			if (App->Start() == false)
 			{
-				engLOG("Application Start exits with error -----");
+				App->m_Editor->m_console.AddLog(engLOG("Application Start exits with error -----"));
 				state = MAIN_EXIT;
 			}
 			else
 			{
 				state = MAIN_UPDATE;
-				engLOG("Application Update --------------");
+				App->m_Editor->m_console.AddLog(engLOG("Application Update --------------"));
 			}
 			
 			
@@ -64,7 +68,7 @@ int main(int argc, char ** argv)
 
 			if (update_return == UPDATE_ERROR)
 			{
-				engLOG("Application Update exits with error -----");
+				App->m_Editor->m_console.AddLog(engLOG("Application Update exits with error -----"));
 				state = MAIN_EXIT;
 			}
 
@@ -75,10 +79,10 @@ int main(int argc, char ** argv)
 
 		case MAIN_FINISH:
 
-			engLOG("Application CleanUp --------------");
+			App->m_Editor->m_console.AddLog(engLOG("Application CleanUp --------------"));
 			if (App->CleanUp() == false)
 			{
-				engLOG("Application CleanUp exits with error -----");
+				App->m_Editor->m_console.AddLog(engLOG("Application CleanUp exits with error -----"));
 			}
 			else
 				main_return = EXIT_SUCCESS;
@@ -91,7 +95,8 @@ int main(int argc, char ** argv)
 
 	}
 
+	App->m_Editor->m_console.AddLog(engLOG("Bye :)\n"));
 	delete App;
-	engLOG("Bye :)\n");
+	
 	return main_return;
 }

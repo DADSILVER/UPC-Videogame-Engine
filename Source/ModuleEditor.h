@@ -28,5 +28,6 @@ private:
 	bool show_another_window = false;
 	void* m_context;
 
+public:
 	Console m_console;
 };

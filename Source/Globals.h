@@ -2,9 +2,10 @@
 #include <windows.h>
 #include <stdio.h>
 
-#define engLOG(format, ...) log(__FILE__, __LINE__, format, __VA_ARGS__);
+#define engLOG(format, ...) log(__FILE__, __LINE__, format, __VA_ARGS__)
 
-void log(const char file[], int line, const char* format, ...);
+char* log(const char file[], int line, const char* format, ...);
+
 
 enum update_status
 {

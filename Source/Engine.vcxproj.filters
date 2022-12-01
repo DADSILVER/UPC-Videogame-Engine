@@ -187,9 +187,15 @@
     <ClCompile Include="libs\imgui-docking\imgui_widgets.cpp">
       <Filter>ImgUI lib</Filter>
     </ClCompile>
-    <ClCompile Include="Model.cpp" />
-    <ClCompile Include="Mesh.cpp" />
-    <ClCompile Include="Console.cpp" />
+    <ClCompile Include="Console.cpp">
+      <Filter>ImgUI panels</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Module.h">
@@ -493,9 +499,15 @@
     <ClInclude Include="libs\imgui-docking\imstb_truetype.h">
       <Filter>ImgUI lib</Filter>
     </ClInclude>
-    <ClInclude Include="Model.h" />
-    <ClInclude Include="Mesh.h" />
-    <ClInclude Include="Console.h" />
+    <ClInclude Include="Console.h">
+      <Filter>ImgUI panels</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Modules">
@@ -515,6 +527,9 @@
     </Filter>
     <Filter Include="ImgUI panels">
       <UniqueIdentifier>{4ae2d924-b8a7-4c38-a1f3-a27d3eb74b1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{7f5214f4-844c-453e-a530-51c075f7094b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

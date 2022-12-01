@@ -1,12 +1,15 @@
+#include "ModuleRender.h"
+
+#include "Model.h"
 
 #include "Globals.h"
 #include "Application.h"
 
-#include "ModuleRender.h"
+#include "ModuleEditor.h"
 #include "ModuleWindow.h"
 #include "ModuleCamera.h"
 #include "ModuleProgram.h"
-#include "Model.h"
+
 
 #include "SDL.h"
 #include "libs/glew-2.1.0/include/GL/glew.h"
@@ -31,7 +34,7 @@ bool ModuleRender::Init()
 	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24); // we want to have a depth buffer with 24 bits
 	SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8); // we want to have a stencil buffer with 8 bits
 	
-	engLOG("Creating Renderer context");
+	App->m_Editor->m_console.AddLog(engLOG("Creating Renderer context"));
 	App->m_renderer->context = SDL_GL_CreateContext(App->m_window->window);
 	SDL_GL_MakeCurrent(App->m_window->window, App->m_renderer->context);
 
@@ -39,13 +42,13 @@ bool ModuleRender::Init()
 
 	GLenum err = glewInit();
 	// … check for errors
-	engLOG("Using Glew %s", glewGetString(GLEW_VERSION));
+	App->m_Editor->m_console.AddLog(engLOG("Using Glew %s", glewGetString(GLEW_VERSION)));
 	// Should be 2.0
 
-	engLOG("Vendor: %s", glGetString(GL_VENDOR));
-	engLOG("Renderer: %s", glGetString(GL_RENDERER));
-	engLOG("OpenGL version supported %s", glGetString(GL_VERSION));
-	engLOG("GLSL: %s\n", glGetString(GL_SHADING_LANGUAGE_VERSION));
+	App->m_Editor->m_console.AddLog(engLOG("Vendor: %s", glGetString(GL_VENDOR)));
+	App->m_Editor->m_console.AddLog(engLOG("Renderer: %s", glGetString(GL_RENDERER)));
+	App->m_Editor->m_console.AddLog(engLOG("OpenGL version supported %s", glGetString(GL_VERSION)));
+	App->m_Editor->m_console.AddLog(engLOG("GLSL: %s\n", glGetString(GL_SHADING_LANGUAGE_VERSION)));
 
 	glEnable(GL_DEPTH_TEST); // Enable depth test
 	glEnable(GL_CULL_FACE); // Enable cull backward faces
@@ -91,7 +94,7 @@ update_status ModuleRender::PostUpdate()
 // Called before quitting
 bool ModuleRender::CleanUp()
 {
-	engLOG("Destroying renderer");
+	App->m_Editor->m_console.AddLog(engLOG("Destroying renderer"));
 	SDL_GL_DeleteContext(context);
 
 	//Destroy window
