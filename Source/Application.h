@@ -29,20 +29,20 @@ public:
 	bool CleanUp();
 
 public:
-	ModuleRender* m_renderer = nullptr;
-	ModuleWindow* m_window = nullptr;
-	ModuleInput* m_input = nullptr;
-	ModuleProgram* m_program = nullptr;
-	ModuleRenderExercise* m_rendererExercise = nullptr;
-	ModuleDebugDraw* m_debugDraw = nullptr;
-	ModuleCamera* m_camera = nullptr;
-	ModuleTimer* m_timer = nullptr;
-	ModuleTexture* m_texture = nullptr;
+	ModuleRender* m_Renderer = nullptr;
+	ModuleWindow* m_Window = nullptr;
+	ModuleInput* m_Input = nullptr;
+	ModuleProgram* m_Program = nullptr;
+	ModuleRenderExercise* m_RendererExercise = nullptr;
+	ModuleDebugDraw* m_DebugDraw = nullptr;
+	ModuleCamera* m_Camera = nullptr;
+	ModuleTimer* m_Timer = nullptr;
+	ModuleTexture* m_Texture = nullptr;
 	ModuleEditor* m_Editor = nullptr;
 
 private:
 
-	std::list<Module*> modules;
+	std::list<Module*> m_modules;
 
 };
 

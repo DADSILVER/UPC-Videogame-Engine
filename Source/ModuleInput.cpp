@@ -47,7 +47,7 @@ update_status ModuleInput::Update()
                 return UPDATE_STOP;
             case SDL_WINDOWEVENT:
                 if (m_sdlEvent.window.event == SDL_WINDOWEVENT_RESIZED || m_sdlEvent.window.event == SDL_WINDOWEVENT_SIZE_CHANGED)
-                    App->m_renderer->WindowResized(m_sdlEvent.window.data1, m_sdlEvent.window.data2);
+                    App->m_Renderer->WindowResized(m_sdlEvent.window.data1, m_sdlEvent.window.data2);
                 break;
 			case SDL_KEYDOWN:
 				m_keyboard[m_sdlEvent.key.keysym.scancode] = KS_DOWN;
@@ -63,7 +63,6 @@ update_status ModuleInput::Update()
 				
 				break;
 			case SDL_MOUSEMOTION:
-				//m_mouseButtons[m_sdlEvent.button.button - 1] = KS_IDLE;
 				m_MouseMotion.x = -m_sdlEvent.motion.yrel;
 				m_MouseMotion.y = -m_sdlEvent.motion.xrel;
 				break;
@@ -74,8 +73,6 @@ update_status ModuleInput::Update()
 
 
     }
-
-    keyboard = SDL_GetKeyboardState(NULL);
 
     return UPDATE_CONTINUE;
 }

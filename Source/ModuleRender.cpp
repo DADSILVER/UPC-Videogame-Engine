@@ -35,8 +35,8 @@ bool ModuleRender::Init()
 	SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8); // we want to have a stencil buffer with 8 bits
 	
 	App->m_Editor->m_console.AddLog(engLOG("Creating Renderer context"));
-	App->m_renderer->context = SDL_GL_CreateContext(App->m_window->window);
-	SDL_GL_MakeCurrent(App->m_window->window, App->m_renderer->context);
+	App->m_Renderer->context = SDL_GL_CreateContext(App->m_Window->window);
+	SDL_GL_MakeCurrent(App->m_Window->window, App->m_Renderer->context);
 
 	
 
@@ -63,7 +63,7 @@ bool ModuleRender::Init()
 	//Model* BakerHause = new Model();
 	//BakerHause->Load("BakerHouse.fbx");
 
-	m_program = App->m_program->CreateProgram();
+	m_Program = App->m_Program->CreateProgram();
 
 	return true;
 }
@@ -71,7 +71,7 @@ bool ModuleRender::Init()
 update_status ModuleRender::PreUpdate()
 {
 	
-	SDL_GetWindowSize(App->m_window->window, &m_win_width, &m_win_height);
+	SDL_GetWindowSize(App->m_Window->window, &m_win_width, &m_win_height);
 	glViewport(0, 0, m_win_width, m_win_height);
 	
 
@@ -87,7 +87,7 @@ update_status ModuleRender::Update()
 
 update_status ModuleRender::PostUpdate()
 {
-	//SDL_GL_SwapWindow(App->m_window->window);
+	//SDL_GL_SwapWindow(App->m_Window->window);
 	return UPDATE_CONTINUE;
 }
 
@@ -104,7 +104,7 @@ bool ModuleRender::CleanUp()
 
 void ModuleRender::WindowResized(unsigned _width, unsigned _height)
 {
-	App->m_camera->ResizeWindow(_width, _height);
+	App->m_Camera->ResizeWindow(_width, _height);
 }
 
 

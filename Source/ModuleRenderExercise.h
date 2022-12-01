@@ -27,7 +27,7 @@ public:
 
 private:
 
-	int m_win_width, m_win_height, m_program;
+	int m_win_width, m_win_height, m_Program;
 	unsigned m_vbo;
 	unsigned m_vao;
 	unsigned m_ebo;

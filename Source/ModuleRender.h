@@ -23,7 +23,7 @@ public:
 
 public:
 	void* context;
-	int m_program;
+	int m_Program;
 
 private:
 

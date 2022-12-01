@@ -1,11 +1,13 @@
 #pragma once
 #include "Module.h"
-#include "Globals.h"
+
 #include "SDL_scancode.h"
-#include "Math/float2.h"
+
+#include "Globals.h"
 #include "SDL/include/SDL.h"
 
-typedef unsigned __int8 Uint8;
+#include "Math/float2.h"
+
 
 
 enum KeyState
@@ -32,7 +34,6 @@ public:
 
 private:
 	SDL_Event m_sdlEvent;
-	const Uint8 *keyboard = NULL;
 	KeyState m_keyboard[SDL_NUM_SCANCODES] = { KS_IDLE };
 	KeyState m_mouseButtons[5] = { KS_IDLE };
 	float2 m_MouseMotion = { 0, 0 };

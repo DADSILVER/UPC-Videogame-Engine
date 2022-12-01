@@ -61,7 +61,7 @@ bool ModuleRenderExercise::Init()
 	//CreateFrustum();
 	//CreateTriangleVBO();
 
-	m_program = App->m_program->CreateProgram();
+	m_Program = App->m_Program->CreateProgram();
 	
 	return true;
 }
@@ -73,7 +73,7 @@ update_status ModuleRenderExercise::PreUpdate()
 
 update_status ModuleRenderExercise::Update()
 {
-	App->m_debugDraw->Draw(App->m_camera->GetViewMatrix(), App->m_camera->GetProjectionMatrix(), SCREEN_WIDTH, SCREEN_HEIGHT);
+	App->m_DebugDraw->Draw(App->m_Camera->GetViewMatrix(), App->m_Camera->GetProjectionMatrix(), SCREEN_WIDTH, SCREEN_HEIGHT);
 	//RenderTriangle();
 	m_BakerHause->Draw();
 	m_NotTextureModel->Draw();
@@ -82,13 +82,13 @@ update_status ModuleRenderExercise::Update()
 
 update_status ModuleRenderExercise::PostUpdate()
 {
-	SDL_GL_SwapWindow(App->m_window->window);
+	SDL_GL_SwapWindow(App->m_Window->window);
 	return UPDATE_CONTINUE;
 }
 
 bool ModuleRenderExercise::CleanUp()
 {
-	glDeleteProgram(m_program);
+	glDeleteProgram(m_Program);
 	glDeleteBuffers(1, &m_vbo);
 	glDeleteVertexArrays(1, &m_vao);
 	glDeleteBuffers(1, &m_ebo);
@@ -129,7 +129,7 @@ void ModuleRenderExercise::CreateTriangleVBO()
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(m_index), m_index, GL_STATIC_DRAW);
 
 	//texture
-	//App->m_texture->LoadTexture("Test-image-Baboon.ppm");
+	//App->m_Texture->LoadTexture("Test-image-Baboon.ppm");
 	glGenTextures(1, &m_Texture);  
 	glBindTexture(GL_TEXTURE_2D, m_Texture);
 
@@ -138,7 +138,7 @@ void ModuleRenderExercise::CreateTriangleVBO()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-	DirectX::TexMetadata metadata = App->m_texture->GetMetadata();
+	DirectX::TexMetadata metadata = App->m_Texture->GetMetadata();
 	int internalFormat, format, type;
 	switch (metadata.format)
 	{
@@ -163,7 +163,7 @@ void ModuleRenderExercise::CreateTriangleVBO()
 		assert(false && "Unsupported format");
 	}
 
-	glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, metadata.width, metadata.height, 0, format, type, App->m_texture->GetImage()->GetImage(0,0,0)->pixels);
+	glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, metadata.width, metadata.height, 0, format, type, App->m_Texture->GetImage()->GetImage(0,0,0)->pixels);
 	glGenerateMipmap(GL_TEXTURE_2D);
 
 
@@ -181,16 +181,16 @@ void ModuleRenderExercise::CreateTriangleVBO()
 void ModuleRenderExercise::RenderTriangle()
 {
 
-	glUseProgram(m_program);
+	glUseProgram(m_Program);
 	glUniformMatrix4fv(2, 1, GL_TRUE, &m_model[0][0]);
-	glUniformMatrix4fv(1, 1, GL_TRUE, &App->m_camera->GetViewMatrix()[0][0]);
-	glUniformMatrix4fv(0, 1, GL_TRUE, &App->m_camera->GetProjectionMatrix()[0][0]);
+	glUniformMatrix4fv(1, 1, GL_TRUE, &App->m_Camera->GetViewMatrix()[0][0]);
+	glUniformMatrix4fv(0, 1, GL_TRUE, &App->m_Camera->GetProjectionMatrix()[0][0]);
 
 	
 	//Enable texture
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, m_Texture);
-	glUniform1i(glGetUniformLocation(m_program, "mytexture"), 0);
+	glUniform1i(glGetUniformLocation(m_Program, "mytexture"), 0);
 	glBindVertexArray(m_vao);
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 

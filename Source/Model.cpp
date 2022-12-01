@@ -61,7 +61,7 @@ void Model::LoadMaterials(const aiScene* InScene)
 			filePath = "textures/" + filePath;
 			TextureInfo material;
 			material.m_FileName = filePath;
-			if (App->m_texture->LoadTexture(material))
+			if (App->m_Texture->LoadTexture(material))
 			{
 				m_Material.push_back(material);
 			}

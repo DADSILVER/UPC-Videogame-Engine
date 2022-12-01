@@ -101,33 +101,33 @@ void ModuleCamera::MoveCamera(moves_camera _move)
 	switch (_move)
 	{
 	case MOVE_STRAIGHT:
-		m_frustum->SetPos(m_frustum->Pos() + (m_frustum->Front().Normalized() * m_MoveDist * App->m_timer->GetDeltaTime()));
+		m_frustum->SetPos(m_frustum->Pos() + (m_frustum->Front().Normalized() * m_MoveDist * App->m_Timer->GetDeltaTime()));
 		break;
 	case MOVE_BACK:
-		m_frustum->SetPos(m_frustum->Pos() - (m_frustum->Front().Normalized() * m_MoveDist * App->m_timer->GetDeltaTime()));
+		m_frustum->SetPos(m_frustum->Pos() - (m_frustum->Front().Normalized() * m_MoveDist * App->m_Timer->GetDeltaTime()));
 		break;
 	case MOVE_RIGTH:
-		m_frustum->SetPos(m_frustum->Pos() + (m_frustum->WorldRight().Normalized() * m_MoveDist * App->m_timer->GetDeltaTime()));
+		m_frustum->SetPos(m_frustum->Pos() + (m_frustum->WorldRight().Normalized() * m_MoveDist * App->m_Timer->GetDeltaTime()));
 		break;
 	case MOVE_LEFT:
-		m_frustum->SetPos(m_frustum->Pos() - (m_frustum->WorldRight().Normalized() * m_MoveDist * App->m_timer->GetDeltaTime()));
+		m_frustum->SetPos(m_frustum->Pos() - (m_frustum->WorldRight().Normalized() * m_MoveDist * App->m_Timer->GetDeltaTime()));
 		break;
 	case ROTATE_UP:		
-		Rotate(0, m_RotateDegrees * DEGTORAD * App->m_timer->GetDeltaTime());
+		Rotate(0, m_RotateDegrees * DEGTORAD * App->m_Timer->GetDeltaTime());
 		break;
 	case ROTATE_DOWN:
 		
-		Rotate(0, -m_RotateDegrees * DEGTORAD * App->m_timer->GetDeltaTime());
+		Rotate(0, -m_RotateDegrees * DEGTORAD * App->m_Timer->GetDeltaTime());
 		break;
 	case ROTATE_RIGHT:
-		Rotate(-m_RotateDegrees * DEGTORAD * App->m_timer->GetDeltaTime(), 0);
+		Rotate(-m_RotateDegrees * DEGTORAD * App->m_Timer->GetDeltaTime(), 0);
 		break;
 	case ROTATE_LEFT:
-		Rotate(m_RotateDegrees * DEGTORAD * App->m_timer->GetDeltaTime(), 0);
+		Rotate(m_RotateDegrees * DEGTORAD * App->m_Timer->GetDeltaTime(), 0);
 		break;
 	case ROTATE_FREE:
-		float2 motion = App->m_input->GetMouseMotion();
-		Rotate(motion.y * 10 * DEGTORAD * App->m_timer->GetDeltaTime(), motion.x * 10 * DEGTORAD * App->m_timer->GetDeltaTime());
+		float2 motion = App->m_Input->GetMouseMotion();
+		Rotate(motion.y * 10 * DEGTORAD * App->m_Timer->GetDeltaTime(), motion.x * 10 * DEGTORAD * App->m_Timer->GetDeltaTime());
 
 		break;
 	}
@@ -160,14 +160,14 @@ void ModuleCamera::Rotate(float InPitch, float InYaw)
 
 void ModuleCamera::OrbitAround()
 {
-	float2 motion = App->m_input->GetMouseMotion();
+	float2 motion = App->m_Input->GetMouseMotion();
 	
 	// Get orbit point (object transform)
-	float3 direction = m_frustum->Pos() - App->m_rendererExercise->GetModel().GetCenterOfModel();
+	float3 direction = m_frustum->Pos() - App->m_RendererExercise->GetModel().GetCenterOfModel();
 
 	// Rotate it
-	direction = Quat(m_frustum->Up(), motion.y * DEGTORAD * App->m_timer->GetDeltaTime()).Transform(direction);
-	direction = Quat(m_frustum->WorldRight(), motion.x * DEGTORAD * App->m_timer->GetDeltaTime()).Transform(direction);
+	direction = Quat(m_frustum->Up(), motion.y * DEGTORAD * App->m_Timer->GetDeltaTime()).Transform(direction);
+	direction = Quat(m_frustum->WorldRight(), motion.x * DEGTORAD * App->m_Timer->GetDeltaTime()).Transform(direction);
 
 	float3 directionNormalize = direction;
 	directionNormalize.Normalize();
@@ -176,10 +176,10 @@ void ModuleCamera::OrbitAround()
 		&& directionNormalize.y >= -0.96f)
 	{
 		// Set camera to where the rotated vector points from its starting position
-		m_frustum->SetPos(direction + App->m_rendererExercise->GetModel().GetCenterOfModel());
+		m_frustum->SetPos(direction + App->m_RendererExercise->GetModel().GetCenterOfModel());
 
 		// Rotate camera to the orbit center
-		LookAt(App->m_rendererExercise->GetModel().GetCenterOfModel());
+		LookAt(App->m_RendererExercise->GetModel().GetCenterOfModel());
 	}
 
 	
@@ -206,11 +206,11 @@ void ModuleCamera::LookAt(float3 inLookAt)
 
 void ModuleCamera::GetInputMove() 
 {
-	if (App->m_input->GetKeyboardButton(SDL_SCANCODE_W))
+	if (App->m_Input->GetKeyboardButton(SDL_SCANCODE_W))
 	{
 		MoveCamera(MOVE_STRAIGHT);
 	}
-	if (App->m_input->GetKeyboardButton(SDL_SCANCODE_R))
+	if (App->m_Input->GetKeyboardButton(SDL_SCANCODE_R))
 	{
 		m_Zoom = true;
 	}
@@ -218,42 +218,42 @@ void ModuleCamera::GetInputMove()
 	{
 		m_Zoom = false;
 	}
-	if (App->m_input->GetKeyboardButton(SDL_SCANCODE_F))
+	if (App->m_Input->GetKeyboardButton(SDL_SCANCODE_F))
 	{
-		LookAt(App->m_rendererExercise->GetModel().GetCenterOfModel());
+		LookAt(App->m_RendererExercise->GetModel().GetCenterOfModel());
 	}
-	if (App->m_input->GetKeyboardButton(SDL_SCANCODE_S))
+	if (App->m_Input->GetKeyboardButton(SDL_SCANCODE_S))
 	{
 		MoveCamera(MOVE_BACK);
 	}
-	if (App->m_input->GetKeyboardButton(SDL_SCANCODE_D))
+	if (App->m_Input->GetKeyboardButton(SDL_SCANCODE_D))
 	{
 		MoveCamera(MOVE_RIGTH);
 	}
-	if (App->m_input->GetKeyboardButton(SDL_SCANCODE_A))
+	if (App->m_Input->GetKeyboardButton(SDL_SCANCODE_A))
 	{
 		MoveCamera(MOVE_LEFT);
 	}
-	if (App->m_input->GetKeyboardButton(SDL_SCANCODE_UP))
+	if (App->m_Input->GetKeyboardButton(SDL_SCANCODE_UP))
 	{
 		MoveCamera(ROTATE_UP);
 	}
-	if (App->m_input->GetKeyboardButton(SDL_SCANCODE_DOWN))
+	if (App->m_Input->GetKeyboardButton(SDL_SCANCODE_DOWN))
 	{
 		MoveCamera(ROTATE_DOWN);
 	}
-	if (App->m_input->GetKeyboardButton(SDL_SCANCODE_RIGHT))
+	if (App->m_Input->GetKeyboardButton(SDL_SCANCODE_RIGHT))
 	{
 		MoveCamera(ROTATE_RIGHT);
 	}
-	if (App->m_input->GetKeyboardButton(SDL_SCANCODE_LEFT))
+	if (App->m_Input->GetKeyboardButton(SDL_SCANCODE_LEFT))
 	{
 		MoveCamera(ROTATE_LEFT);
 	}
-	if (App->m_input->GetMouseButton(SDL_BUTTON_RIGHT - 1))
+	if (App->m_Input->GetMouseButton(SDL_BUTTON_RIGHT - 1))
 	{
 		
-		if (App->m_input->GetKeyboardButton(SDL_SCANCODE_LALT)) 
+		if (App->m_Input->GetKeyboardButton(SDL_SCANCODE_LALT)) 
 		{
 			OrbitAround();
 		}

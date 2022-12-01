@@ -103,14 +103,14 @@ void Mesh::CreateVAO()
 
 void Mesh::Draw(const std::vector<TextureInfo> InModelTexture)
 {
-	unsigned program = App->m_renderer->m_program;
+	unsigned program = App->m_Renderer->m_Program;
 	
 
 	glUseProgram(program);
 
 	glUniformMatrix4fv(2, 1, GL_TRUE, &m_model[0][0]);
-	glUniformMatrix4fv(1, 1, GL_TRUE, &App->m_camera->GetViewMatrix()[0][0]);
-	glUniformMatrix4fv(0, 1, GL_TRUE, &App->m_camera->GetProjectionMatrix()[0][0]);
+	glUniformMatrix4fv(1, 1, GL_TRUE, &App->m_Camera->GetViewMatrix()[0][0]);
+	glUniformMatrix4fv(0, 1, GL_TRUE, &App->m_Camera->GetProjectionMatrix()[0][0]);
 
 
 	//Enable texture
