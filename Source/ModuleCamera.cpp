@@ -8,7 +8,7 @@
 #include <SDL_mouse.h>
 #include "Application.h"
 
-#include "ModuleRenderExercise.h"
+#include "ModuleRender.h"
 #include "ModuleInput.h"
 #include "ModuleTimer.h"
 
@@ -163,11 +163,11 @@ void ModuleCamera::OrbitAround()
 	float2 motion = App->m_Input->GetMouseMotion();
 	
 	// Get orbit point (object transform)
-	float3 direction = m_frustum->Pos() - App->m_RendererExercise->GetModel().GetCenterOfModel();
+	float3 direction = m_frustum->Pos() - App->m_Renderer->GetModel().GetCenterOfModel();
 
 	// Rotate it
-	direction = Quat(m_frustum->Up(), motion.y * DEGTORAD * App->m_Timer->GetDeltaTime()).Transform(direction);
-	direction = Quat(m_frustum->WorldRight(), motion.x * DEGTORAD * App->m_Timer->GetDeltaTime()).Transform(direction);
+	direction = Quat(m_frustum->Up(), motion.y * 10 * DEGTORAD * App->m_Timer->GetDeltaTime()).Transform(direction);
+	direction = Quat(m_frustum->WorldRight(), motion.x * 10 * DEGTORAD * App->m_Timer->GetDeltaTime()).Transform(direction);
 
 	float3 directionNormalize = direction;
 	directionNormalize.Normalize();
@@ -176,10 +176,10 @@ void ModuleCamera::OrbitAround()
 		&& directionNormalize.y >= -0.96f)
 	{
 		// Set camera to where the rotated vector points from its starting position
-		m_frustum->SetPos(direction + App->m_RendererExercise->GetModel().GetCenterOfModel());
+		m_frustum->SetPos(direction + App->m_Renderer->GetModel().GetCenterOfModel());
 
 		// Rotate camera to the orbit center
-		LookAt(App->m_RendererExercise->GetModel().GetCenterOfModel());
+		LookAt(App->m_Renderer->GetModel().GetCenterOfModel());
 	}
 
 	
@@ -220,7 +220,7 @@ void ModuleCamera::GetInputMove()
 	}
 	if (App->m_Input->GetKeyboardButton(SDL_SCANCODE_F))
 	{
-		LookAt(App->m_RendererExercise->GetModel().GetCenterOfModel());
+		LookAt(App->m_Renderer->GetModel().GetCenterOfModel());
 	}
 	if (App->m_Input->GetKeyboardButton(SDL_SCANCODE_S))
 	{

@@ -135,5 +135,5 @@ void Mesh::Draw(const std::vector<TextureInfo> InModelTexture)
 
 float3 Mesh::GetCenterOfMesh()
 {
-	return m_CenterOfMesh;
+	return (m_model * m_CenterOfMesh.ToPos4()).xyz();
 }

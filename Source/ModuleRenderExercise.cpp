@@ -31,26 +31,27 @@ ModuleRenderExercise::ModuleRenderExercise()
 
 bool ModuleRenderExercise::Init()
 {
-	//Load Model
-	m_BakerHause = new Model();
-	m_BakerHause->Load("source/BakerHouse.fbx");
-	m_BakerHause->SetModelMatrix(
-		float4x4::FromTRS(float3(10.0f, 0.0f, 0.0f),
-			float4x4::RotateZ(0),
-			//float3(0.01f, 0.01f, 0.01f)
-			float3(1.0f, 1.0f, 1.0f)
-		)
-	);
+	////Load Model BakerHouse
+	//m_BakerHause = new Model();
+	//m_BakerHause->Load("source/BakerHouse.fbx");
+	//m_BakerHause->SetModelMatrix(
+	//	float4x4::FromTRS(float3(10.0f, 0.0f, 0.0f),
+	//		float4x4::RotateZ(0),
+	//		//float3(0.01f, 0.01f, 0.01f)
+	//		float3(1.0f, 1.0f, 1.0f)
+	//	)
+	//);
 
-	m_NotTextureModel = new Model();
-	m_NotTextureModel->Load("source/substancerobot_export.fbx");
-	m_NotTextureModel->SetModelMatrix(
-		float4x4::FromTRS(float3(-10.0f, 0.0f, 0.0f),
-			float4x4::RotateZ(0),
-			float3(0.5f, 0.5f, 0.5f)
-			//float3(1.0f, 1.0f, 1.0f)
-		)
-	);
+	////Load Model substancerobot_export without textures
+	//m_NotTextureModel = new Model();
+	//m_NotTextureModel->Load("source/substancerobot_export.fbx");
+	//m_NotTextureModel->SetModelMatrix(
+	//	float4x4::FromTRS(float3(-10.0f, 0.0f, 0.0f),
+	//		float4x4::RotateZ(0),
+	//		float3(0.5f, 0.5f, 0.5f)
+	//		//float3(1.0f, 1.0f, 1.0f)
+	//	)
+	//);
 	
 	
 	
@@ -61,7 +62,7 @@ bool ModuleRenderExercise::Init()
 	//CreateFrustum();
 	//CreateTriangleVBO();
 
-	m_Program = App->m_Program->CreateProgram();
+	//m_Program = App->m_Program->CreateProgram();
 	
 	return true;
 }
@@ -73,16 +74,16 @@ update_status ModuleRenderExercise::PreUpdate()
 
 update_status ModuleRenderExercise::Update()
 {
-	App->m_DebugDraw->Draw(App->m_Camera->GetViewMatrix(), App->m_Camera->GetProjectionMatrix(), SCREEN_WIDTH, SCREEN_HEIGHT);
-	//RenderTriangle();
-	m_BakerHause->Draw();
-	m_NotTextureModel->Draw();
+	//App->m_DebugDraw->Draw(App->m_Camera->GetViewMatrix(), App->m_Camera->GetProjectionMatrix(), SCREEN_WIDTH, SCREEN_HEIGHT);
+	////RenderTriangle();
+	//m_BakerHause->Draw();
+	//m_NotTextureModel->Draw();
 	return UPDATE_CONTINUE;
 }
 
 update_status ModuleRenderExercise::PostUpdate()
 {
-	SDL_GL_SwapWindow(App->m_Window->window);
+	//SDL_GL_SwapWindow(App->m_Window->window);
 	return UPDATE_CONTINUE;
 }
 

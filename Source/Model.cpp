@@ -12,9 +12,12 @@
 #include "ModuleTexture.h"
 #include "ModuleEditor.h"
 
+#include "Console.h"
+
 
 void Model::Load(const char* inFileName)
 {
+	App->m_Editor->m_console.AddLog(engLOG("Model load from: %s\n", inFileName));
 	const aiScene* scene = aiImportFile(inFileName, aiProcessPreset_TargetRealtime_MaxQuality);
 	if (scene)
 	{
@@ -36,7 +39,7 @@ void Model::LoadMeshes(const aiScene* InScene)
 	for (unsigned i = 0; i < InScene->mNumMeshes; ++i)
 	{
 		Mesh* mesh = new Mesh(InScene->mMeshes[i]);
-		m_CenterOfModel =+ mesh->GetCenterOfMesh();
+		m_CenterOfModel += mesh->GetCenterOfMesh();
 		m_Meshes.push_back(mesh);		
 	}
 
@@ -79,7 +82,13 @@ void Model::Draw()
 
 float3 Model::GetCenterOfModel()
 {
-	return m_CenterOfModel;
+	m_CenterOfModel = { 0,0,0 };
+	for (unsigned i = 0; i < m_Meshes.size(); ++i)
+	{
+		m_CenterOfModel += m_Meshes[i]->GetCenterOfMesh();
+	}
+
+	return m_CenterOfModel / m_Meshes.size();
 }
 
  void Model::SetModelMatrix(float4x4 InModel)

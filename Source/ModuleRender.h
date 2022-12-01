@@ -3,10 +3,7 @@
 #include "Globals.h"
 #include "Geometry/Frustum.h"
 
-struct SDL_Texture;
-struct SDL_Renderer;
-struct SDL_Rect;
-//class Frustum;
+class Model;
 
 class ModuleRender : public Module
 {
@@ -21,6 +18,8 @@ public:
 	bool CleanUp();
 	void WindowResized(unsigned width, unsigned height);
 
+	Model GetModel();
+
 public:
 	void* context;
 	int m_Program;
@@ -28,9 +27,7 @@ public:
 private:
 
 	int m_win_width, m_win_height;
-	unsigned m_vbo;
-	unsigned m_vao;
-	unsigned m_ebo;
-	unsigned m_Texture;
-	Frustum* m_frustum;
+
+	Model* m_BakerHause;
+	Model* m_NotTextureModel;
 };

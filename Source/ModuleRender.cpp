@@ -6,9 +6,11 @@
 #include "Application.h"
 
 #include "ModuleEditor.h"
+#include "ModuleInput.h"
 #include "ModuleWindow.h"
 #include "ModuleCamera.h"
 #include "ModuleProgram.h"
+#include "ModuleDebugDraw.h"
 
 
 #include "SDL.h"
@@ -59,9 +61,27 @@ bool ModuleRender::Init()
 
 
 
-	//Load Model
-	//Model* BakerHause = new Model();
-	//BakerHause->Load("BakerHouse.fbx");
+	//Load Model BakerHouse
+	m_BakerHause = new Model();
+	m_BakerHause->Load("source/BakerHouse.fbx");
+	m_BakerHause->SetModelMatrix(
+		float4x4::FromTRS(float3(10.0f, 0.0f, 0.0f),
+			float4x4::RotateZ(0),
+			//float3(0.01f, 0.01f, 0.01f)
+			float3(1.0f, 1.0f, 1.0f)
+		)
+	);
+
+	//Load Model substancerobot_export without textures
+	m_NotTextureModel = new Model();
+	m_NotTextureModel->Load("source/substancerobot_export.fbx");
+	m_NotTextureModel->SetModelMatrix(
+		float4x4::FromTRS(float3(-10.0f, 0.0f, 0.0f),
+			float4x4::RotateZ(0),
+			float3(0.5f, 0.5f, 0.5f)
+			//float3(1.0f, 1.0f, 1.0f)
+		)
+	);
 
 	m_Program = App->m_Program->CreateProgram();
 
@@ -82,12 +102,21 @@ update_status ModuleRender::PreUpdate()
 // Called every draw update
 update_status ModuleRender::Update()
 {
+	if (App->m_Input->GetKeyboardButton(SDL_SCANCODE_ESCAPE))
+	{
+		return UPDATE_STOP;
+	}
+
+	App->m_DebugDraw->Draw(App->m_Camera->GetViewMatrix(), App->m_Camera->GetProjectionMatrix(), SCREEN_WIDTH, SCREEN_HEIGHT);
+	m_BakerHause->Draw();
+	m_NotTextureModel->Draw();
+
 	return UPDATE_CONTINUE;
 }
 
 update_status ModuleRender::PostUpdate()
 {
-	//SDL_GL_SwapWindow(App->m_Window->window);
+	SDL_GL_SwapWindow(App->m_Window->window);
 	return UPDATE_CONTINUE;
 }
 
@@ -96,15 +125,22 @@ bool ModuleRender::CleanUp()
 {
 	App->m_Editor->m_console.AddLog(engLOG("Destroying renderer"));
 	SDL_GL_DeleteContext(context);
-
-	//Destroy window
+	glDeleteProgram(m_Program);
+	delete m_BakerHause;
+	delete m_BakerHause;
 
 	return true;
 }
 
+
 void ModuleRender::WindowResized(unsigned _width, unsigned _height)
 {
 	App->m_Camera->ResizeWindow(_width, _height);
+}
+
+Model ModuleRender::GetModel()
+{
+	return *m_BakerHause;
 }
 
 
