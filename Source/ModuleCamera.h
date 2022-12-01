@@ -15,11 +15,14 @@ public:
 	update_status Update();
 	update_status PostUpdate();
 	bool CleanUp();
+
 	void SetFOV(float _horizontalFov);
 	void SetAspectRatio(float _width, float _heigth);
 	void SetPlaneDistances(float _near, float _far);
+
 	float4x4 GetProjectionMatrix();
 	float4x4 GetViewMatrix();
+
 	void GetInputMove();
 	void ResizeWindow(float _width, float _heigth);
 
@@ -27,6 +30,7 @@ public:
 
 private:
 	void MoveCamera(moves_camera _move);
+	void Rotate(float InPitch, float InYaw);
 	void LookAt(float3 inLookUp);
 	void OrbitAround();
 	float lenght2(vec inDirection);
@@ -41,7 +45,6 @@ private:
 	float m_MoveDist;
 	float m_RotateDegrees;
 	float m_VelocityMult;
-	float m_DistanceToObject;
 	float m_AngelY;
 };
 

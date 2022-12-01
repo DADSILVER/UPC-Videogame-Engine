@@ -20,7 +20,6 @@ ModuleCamera::ModuleCamera()
 	m_MoveDist = 0.6f;
 	m_RotateDegrees = 1.05f;
 	m_VelocityMult = 1.0f;
-	m_DistanceToObject = 0.0f;
 	m_AngelY = 0;
 }
 
@@ -113,76 +112,83 @@ void ModuleCamera::MoveCamera(moves_camera _move)
 	case MOVE_LEFT:
 		m_frustum->SetPos(m_frustum->Pos() - (m_frustum->WorldRight().Normalized() * m_MoveDist * App->m_timer->GetDeltaTime()));
 		break;
-	case ROTATE_UP:
-		m_AngelY = m_AngelY + App->m_timer->GetDeltaTime() * m_RotateDegrees ;
-		if (m_AngelY > 70)
-		{
-			m_RotateDegrees = 0;
-			m_AngelY = 70;
-		}
-
-		m_frustum->SetFront(float3x3::RotateAxisAngle(m_frustum->WorldRight() , App->m_timer->GetDeltaTime() * m_RotateDegrees * DEGTORAD) * m_frustum->Front().Normalized());
-		m_frustum->SetUp(float3x3::RotateAxisAngle(m_frustum->WorldRight(), App->m_timer->GetDeltaTime() * m_RotateDegrees * DEGTORAD) * m_frustum->Up().Normalized());
+	case ROTATE_UP:		
+		Rotate(0, m_RotateDegrees * DEGTORAD * App->m_timer->GetDeltaTime());
 		break;
 	case ROTATE_DOWN:
-		m_AngelY = m_AngelY - (App->m_timer->GetDeltaTime() * m_RotateDegrees);
-		if (m_AngelY < -70)
-		{
-			m_RotateDegrees = 0;
-			m_AngelY = -70;
-		}
-		m_frustum->SetFront(float3x3::RotateAxisAngle(m_frustum->WorldRight(), -m_RotateDegrees  * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Front().Normalized() );
-		m_frustum->SetUp(float3x3::RotateAxisAngle(m_frustum->WorldRight(), -m_RotateDegrees  * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Up().Normalized() );
+		
+		Rotate(0, -m_RotateDegrees * DEGTORAD * App->m_timer->GetDeltaTime());
 		break;
 	case ROTATE_RIGHT:
-		m_frustum->SetFront(float3x3::RotateY(-m_RotateDegrees * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Front().Normalized());
-		m_frustum->SetUp(float3x3::RotateY(-m_RotateDegrees * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Up().Normalized());
+		Rotate(-m_RotateDegrees * DEGTORAD * App->m_timer->GetDeltaTime(), 0);
 		break;
 	case ROTATE_LEFT:
-		m_frustum->SetFront(float3x3::RotateY(m_RotateDegrees * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Front().Normalized());
-		m_frustum->SetUp(float3x3::RotateY(m_RotateDegrees * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Up().Normalized());
-		m_frustum->WorldRight();
+		Rotate(m_RotateDegrees * DEGTORAD * App->m_timer->GetDeltaTime(), 0);
 		break;
 	case ROTATE_FREE:
 		float2 motion = App->m_input->GetMouseMotion();
-		m_frustum->SetFront(float3x3::RotateAxisAngle(m_frustum->WorldRight(), motion.x * 10 * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Front().Normalized());
-		m_frustum->SetUp(float3x3::RotateAxisAngle(m_frustum->WorldRight(), motion.x * 10 * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Up().Normalized());
+		Rotate(motion.y * 10 * DEGTORAD * App->m_timer->GetDeltaTime(), motion.x * 10 * DEGTORAD * App->m_timer->GetDeltaTime());
 
-		m_frustum->SetFront(float3x3::RotateY(motion.y * 10 * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Front().Normalized());
-		m_frustum->SetUp(float3x3::RotateY(motion.y * 10 * DEGTORAD * App->m_timer->GetDeltaTime()) * m_frustum->Up().Normalized());
-		
 		break;
 	}
-	m_RotateDegrees = 1.05f;
+	
 }
+
+void ModuleCamera::Rotate(float InPitch, float InYaw)
+{
+	// TODO : change to quat
+
+	
+	if ((float3x3::RotateAxisAngle(m_frustum->WorldRight(), InYaw) * m_frustum->Front().Normalized()).y > 0.96f
+		|| (float3x3::RotateAxisAngle(m_frustum->WorldRight(), InYaw) * m_frustum->Front().Normalized()).y < -0.96f)
+	{
+		InYaw = 0;
+	}
+	
+	m_frustum->SetFront(float3x3::RotateAxisAngle(m_frustum->WorldRight(), InYaw) * m_frustum->Front().Normalized());
+	m_frustum->SetUp(float3x3::RotateAxisAngle(m_frustum->WorldRight(), InYaw) * m_frustum->Up().Normalized());
+
+	m_frustum->SetFront(float3x3::RotateY(InPitch) * m_frustum->Front().Normalized());
+	m_frustum->SetUp(float3x3::RotateY(InPitch) * m_frustum->Up().Normalized());
+
+	//m_frustum->Transform(Quat::RotateY(InYaw)); 
+	//m_frustum->SetUp(Quat(m_frustum->Up(), InPitch).Transform(m_frustum->Up().Normalized()));
+	//m_frustum->Transform();
+	//m_frustum->SetFront(m_frustum->Front(Quat::RotateAxisAngle(m_frustum->WorldRight(), InPitch).Transform(m_frustum->Front().Normalized())));
+}
+
 
 void ModuleCamera::OrbitAround()
 {
 	float2 motion = App->m_input->GetMouseMotion();
 	
 	// Get orbit point (object transform)
-	float3 vector_to_camera = m_frustum->Pos() - App->m_rendererExercise->GetModel().GetCenterOfModel();
+	float3 direction = m_frustum->Pos() - App->m_rendererExercise->GetModel().GetCenterOfModel();
 
 	// Rotate it
-	vector_to_camera = Quat(m_frustum->Up(), motion.y * DEGTORAD * App->m_timer->GetDeltaTime()).Transform(vector_to_camera);
-	vector_to_camera = Quat(m_frustum->WorldRight(), motion.x * DEGTORAD * App->m_timer->GetDeltaTime()).Transform(vector_to_camera);
+	direction = Quat(m_frustum->Up(), motion.y * DEGTORAD * App->m_timer->GetDeltaTime()).Transform(direction);
+	direction = Quat(m_frustum->WorldRight(), motion.x * DEGTORAD * App->m_timer->GetDeltaTime()).Transform(direction);
 
-	// Set camera to where the rotated vector points from its starting position
-	m_frustum->SetPos(vector_to_camera + App->m_rendererExercise->GetModel().GetCenterOfModel());
+	float3 directionNormalize = direction;
+	directionNormalize.Normalize();
 
-	// Rotate camera to the orbit center
-	LookAt(App->m_rendererExercise->GetModel().GetCenterOfModel());
+	if (directionNormalize.y <= 0.96f
+		&& directionNormalize.y >= -0.96f)
+	{
+		// Set camera to where the rotated vector points from its starting position
+		m_frustum->SetPos(direction + App->m_rendererExercise->GetModel().GetCenterOfModel());
+
+		// Rotate camera to the orbit center
+		LookAt(App->m_rendererExercise->GetModel().GetCenterOfModel());
+	}
+
+	
 }
 
-float ModuleCamera::lenght2(vec inDirection) {
-	return inDirection.x * inDirection.x + inDirection.y * inDirection.y + inDirection.z * inDirection.z;
-}
 
 void ModuleCamera::LookAt(float3 inLookAt)
 {
 	vec direction = inLookAt - m_frustum->Pos();
-	m_DistanceToObject = direction.Length();
-
 
 	direction.Normalize();
 	vec up = vec::unitY;
@@ -260,7 +266,6 @@ void ModuleCamera::GetInputMove()
 
 void ModuleCamera::ResizeWindow(float _width, float _heigth)
 {
-	//SetAspectRatio(_width, _heigth);
 	m_frustum->SetHorizontalFovAndAspectRatio(m_frustum->HorizontalFov(), _width/ _heigth);
 }
 
