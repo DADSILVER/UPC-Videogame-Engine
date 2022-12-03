@@ -44,7 +44,7 @@ bool ModuleEditor::Init()
 bool ModuleEditor::Start()
 {
     // Setup Platform/Renderer backends
-    ImGui_ImplSDL2_InitForOpenGL(App->m_Window->window, App->m_Renderer->context);
+    ImGui_ImplSDL2_InitForOpenGL(App->m_Window->m_Window, App->m_Renderer->m_Context);
     ImGui_ImplOpenGL3_Init(GLSL_VERSION);
 
     return true;
@@ -53,7 +53,7 @@ bool ModuleEditor::Start()
 update_status ModuleEditor::PreUpdate()
 {
     ImGui_ImplOpenGL3_NewFrame();
-    ImGui_ImplSDL2_NewFrame(App->m_Window->window);
+    ImGui_ImplSDL2_NewFrame(App->m_Window->m_Window);
     ImGui::NewFrame();
     return UPDATE_CONTINUE;
 }
@@ -77,9 +77,9 @@ update_status ModuleEditor::PostUpdate()
 
     ImGui::UpdatePlatformWindows();
     ImGui::RenderPlatformWindowsDefault();
-    SDL_GL_MakeCurrent(App->m_Window->window, App->m_Renderer->context);
+    SDL_GL_MakeCurrent(App->m_Window->m_Window, App->m_Renderer->m_Context);
 
-    SDL_GL_SwapWindow(App->m_Window->window);
+    SDL_GL_SwapWindow(App->m_Window->m_Window);
 
     return UPDATE_CONTINUE;
 }

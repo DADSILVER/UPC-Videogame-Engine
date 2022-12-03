@@ -36,8 +36,8 @@ bool ModuleRender::Init()
 	SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8); // we want to have a stencil buffer with 8 bits
 	
 	App->m_Editor->m_console.AddLog(engLOG("Creating Renderer context"));
-	App->m_Renderer->context = SDL_GL_CreateContext(App->m_Window->window);
-	SDL_GL_MakeCurrent(App->m_Window->window, App->m_Renderer->context);
+	App->m_Renderer->m_Context = SDL_GL_CreateContext(App->m_Window->m_Window);
+	SDL_GL_MakeCurrent(App->m_Window->m_Window, App->m_Renderer->m_Context);
 
 	
 
@@ -90,7 +90,7 @@ bool ModuleRender::Init()
 update_status ModuleRender::PreUpdate()
 {
 	
-	SDL_GetWindowSize(App->m_Window->window, &m_win_width, &m_win_height);
+	SDL_GetWindowSize(App->m_Window->m_Window, &m_win_width, &m_win_height);
 	glViewport(0, 0, m_win_width, m_win_height);
 	
 
@@ -123,7 +123,7 @@ update_status ModuleRender::PostUpdate()
 bool ModuleRender::CleanUp()
 {
 	App->m_Editor->m_console.AddLog(engLOG("Destroying renderer"));
-	SDL_GL_DeleteContext(context);
+	SDL_GL_DeleteContext(m_Context);
 	glDeleteProgram(m_Program);
 	delete m_BakerHause;
 	delete m_NotTextureModel;

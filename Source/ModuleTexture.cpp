@@ -100,12 +100,12 @@ bool ModuleTexture::LoadTexture(TextureInfo &InOutTextureInfo)
 	return 1;
 }
 
-DirectX::TexMetadata ModuleTexture::GetMetadata()
+const DirectX::TexMetadata& ModuleTexture::GetMetadata()
 {
 	return m_MetaData;
 }
 
-DirectX::ScratchImage *ModuleTexture::GetImage()
+DirectX::ScratchImage* ModuleTexture::GetImage()
 {
 	return m_Image;
 }

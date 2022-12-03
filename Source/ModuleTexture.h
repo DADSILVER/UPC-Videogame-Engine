@@ -17,8 +17,8 @@ public:
 	bool CleanUp();
 
 	bool LoadTexture(TextureInfo& InOutTextureInfo);
-	DirectX::TexMetadata GetMetadata();
-	DirectX::ScratchImage *GetImage();
+	const DirectX::TexMetadata& GetMetadata();
+	DirectX::ScratchImage* GetImage();
 
 private:
 	DirectX::TexMetadata m_MetaData;

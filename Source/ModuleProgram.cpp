@@ -56,13 +56,13 @@ int ModuleProgram::CompileShader(GLenum InType, const char* InSource)
 
 int ModuleProgram::CreateProgram()
 {
-	m_fragment = CompileShader(GL_FRAGMENT_SHADER, LoadShaderSource("fragmentShader.glsl"));
-	m_vertex = CompileShader(GL_VERTEX_SHADER, LoadShaderSource("vertexShader.glsl"));
+	m_Fragment = CompileShader(GL_FRAGMENT_SHADER, LoadShaderSource("fragmentShader.glsl"));
+	m_Vertex = CompileShader(GL_VERTEX_SHADER, LoadShaderSource("vertexShader.glsl"));
 
 	unsigned program_id = glCreateProgram();
 	App->m_Editor->m_console.AddLog(engLOG("program: %d", program_id));
-	glAttachShader(program_id, m_vertex);
-	glAttachShader(program_id, m_fragment);
+	glAttachShader(program_id, m_Vertex);
+	glAttachShader(program_id, m_Fragment);
 	glLinkProgram(program_id);
 	int res;
 	glGetProgramiv(program_id, GL_LINK_STATUS, &res);
@@ -79,8 +79,8 @@ int ModuleProgram::CreateProgram()
 			free(info);
 		}
 	}
-	glDeleteShader(m_vertex);
-	glDeleteShader(m_fragment);
+	glDeleteShader(m_Vertex);
+	glDeleteShader(m_Fragment);
 	return program_id;
 }
 

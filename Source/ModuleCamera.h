@@ -18,21 +18,21 @@ public:
 	bool CleanUp();
 
 	void SetFOV(const float& InhorizontalFov);
-	void SetAspectRatio(float Inwidth, float Inheigth);
-	void SetPlaneDistances(float Innear, float Infar);
-	void SetPosition(float3 InPos);
+	void SetAspectRatio(const float& Inwidth, const float& Inheigth);
+	void SetPlaneDistances(const float& Innear, const float& Infar);
+	void SetPosition(const float3& InPos);
 
 	float4x4 GetProjectionMatrix() const;
 	float4x4 GetViewMatrix() const;
 
 	void GetInputMove();
-	void ResizeWindow(float Inwidth, float Inheigth);
-	void LookAt(float3 InLookUp);
+	void ResizeWindow(const float& Inwidth, const float& Inheigth);
+	void LookAt(const float3& InLookUp);
 	
 
 private:
 	void MoveCamera(moves_camera _move);
-	void Rotate(float InPitch, float InYaw);	
+	void Rotate(const float& InPitch, const float& InYaw);
 	void OrbitAround();
 
 private:

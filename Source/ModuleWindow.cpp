@@ -36,9 +36,9 @@ bool ModuleWindow::Init()
 			flags |= SDL_WINDOW_FULLSCREEN;
 		}
 
-		window = SDL_CreateWindow(TITLE, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, flags);
+		m_Window = SDL_CreateWindow(TITLE, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, flags);
 
-		if(window == NULL)
+		if(m_Window == NULL)
 		{
 			App->m_Editor->m_console.AddLog(engLOG("Window could not be created! SDL_Error: %s\n", SDL_GetError()));
 			ret = false;
@@ -47,7 +47,7 @@ bool ModuleWindow::Init()
 		{
 			//Get window surface
 			
-			screen_surface = SDL_GetWindowSurface(window);
+			m_Screen_Surface = SDL_GetWindowSurface(m_Window);
 		}
 	}
 
@@ -60,9 +60,9 @@ bool ModuleWindow::CleanUp()
 	App->m_Editor->m_console.AddLog(engLOG("Destroying SDL window and quitting all SDL systems"));
 
 	//Destroy window
-	if(window != NULL)
+	if(m_Window != NULL)
 	{
-		SDL_DestroyWindow(window);
+		SDL_DestroyWindow(m_Window);
 	}
 
 	//Quit SDL subsystems

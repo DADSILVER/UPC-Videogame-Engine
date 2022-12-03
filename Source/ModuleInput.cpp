@@ -78,11 +78,11 @@ update_status ModuleInput::Update()
     return UPDATE_CONTINUE;
 }
 
-bool ModuleInput::GetKeyboardButton(int InScancode) {
+const bool& ModuleInput::GetKeyboardButton(int InScancode) {
 	return m_keyboard[InScancode];
 }
 
-bool ModuleInput::GetMouseButton(int InScancode) {
+const bool& ModuleInput::GetMouseButton(int InScancode) {
 	return m_mouseButtons[InScancode];
 }
 

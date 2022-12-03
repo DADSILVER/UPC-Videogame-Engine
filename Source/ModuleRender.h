@@ -25,7 +25,7 @@ public:
 	void LoadModel(const char* InFileName);
 
 public:
-	void* context;
+	void* m_Context;
 	int m_Program;
 
 private:

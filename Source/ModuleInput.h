@@ -9,7 +9,7 @@
 #include "Math/float2.h"
 
 
-
+// TODO
 enum KeyState
 {
 	KS_IDLE = 0,
@@ -27,8 +27,8 @@ public:
 
 	bool Init();
 	update_status Update();
-	bool GetKeyboardButton(int InScancode);
-	bool GetMouseButton(int InScancode);
+	const bool& GetKeyboardButton(int InScancode);
+	const bool& GetMouseButton(int InScancode);
 	float2 GetMouseMotion();
 	bool CleanUp();
 

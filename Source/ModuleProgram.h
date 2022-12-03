@@ -16,7 +16,7 @@ private:
 	int CompileShader(GLenum InType, const char* InSource);
 
 public:
-	int m_fragment;
-	int m_vertex;
+	int m_Fragment;
+	int m_Vertex;
 };
 

@@ -4,7 +4,12 @@
 
 bool ModuleTimer::Init()
 {
-    m_LastDeltaTime = float (Clock::Time());
+    return true;
+}
+
+bool ModuleTimer::Start()
+{
+    m_LastDeltaTime = float(Clock::Time());
     return true;
 }
 
@@ -24,7 +29,7 @@ bool ModuleTimer::CleanUp()
     return true;
 }
 
-float ModuleTimer::GetDeltaTime()
+const float ModuleTimer::GetDeltaTime() const
 {
     float OutDeltaTime = float(Clock::Time() - m_LastDeltaTime) / 1000.0f;
     if (OutDeltaTime < LOW_LIMIT) {

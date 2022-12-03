@@ -77,17 +77,17 @@ void ModuleCamera::SetFOV(const float& InHorizontalFov)
 	m_frustum->SetHorizontalFovAndAspectRatio(InHorizontalFov, m_aspectRatio);
 }
 
-void ModuleCamera::SetAspectRatio(float InWidth, float InHeigth)
+void ModuleCamera::SetAspectRatio(const float& InWidth, const float& InHeigth)
 {
 	m_aspectRatio = InWidth / InHeigth;
 }
 
-void ModuleCamera::SetPlaneDistances(float InNear, float InFar)
+void ModuleCamera::SetPlaneDistances(const float& InNear, const float& InFar)
 {
 		m_frustum->SetViewPlaneDistances(InNear, InFar);
 }
 
-void ModuleCamera::SetPosition(float3 InPos)
+void ModuleCamera::SetPosition(const float3& InPos)
 {
 	m_frustum->SetPos(InPos);
 }
@@ -140,7 +140,7 @@ void ModuleCamera::MoveCamera(moves_camera InMove)
 	
 }
 
-void ModuleCamera::Rotate(float InPitch, float InYaw)
+void ModuleCamera::Rotate(const float& InPitch, const float& InYaw)
 {
 	// TODO : change to quat
 
@@ -190,7 +190,7 @@ void ModuleCamera::OrbitAround()
 	
 }
 
-void ModuleCamera::LookAt(float3 InLookAt)
+void ModuleCamera::LookAt(const float3& InLookAt)
 {
 	vec direction = InLookAt - m_frustum->Pos();
 
@@ -268,7 +268,7 @@ void ModuleCamera::GetInputMove()
 	}
 }
 
-void ModuleCamera::ResizeWindow(float InWidth, float InHeigth)
+void ModuleCamera::ResizeWindow(const float& InWidth, const float& InHeigth)
 {
 	m_frustum->SetHorizontalFovAndAspectRatio(m_frustum->HorizontalFov(), InWidth / InHeigth);
 }
