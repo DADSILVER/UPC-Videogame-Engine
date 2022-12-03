@@ -79,7 +79,7 @@ update_status ModuleEditor::PostUpdate()
     ImGui::RenderPlatformWindowsDefault();
     SDL_GL_MakeCurrent(App->m_Window->window, App->m_Renderer->context);
 
-    //SDL_GL_SwapWindow(App->m_Window->window);
+    SDL_GL_SwapWindow(App->m_Window->window);
 
     return UPDATE_CONTINUE;
 }

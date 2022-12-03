@@ -80,18 +80,64 @@ void Model::Draw()
 	}
 }
 
-float3 Model::GetCenterOfModel()
+const float3& Model::GetCenterOfModel()
 {
 	m_CenterOfModel = { 0,0,0 };
 	for (unsigned i = 0; i < m_Meshes.size(); ++i)
 	{
 		m_CenterOfModel += m_Meshes[i]->GetCenterOfMesh();
 	}
-
 	return m_CenterOfModel / m_Meshes.size();
 }
 
- void Model::SetModelMatrix(float4x4 InModel)
+const float3& Model::GetInitVisionPos()
+{
+	float3 ActMaxVertes, ActMinVertes;
+	if (m_Meshes.size() > 0)
+	{
+		ActMaxVertes = m_Meshes[0]->GetMaxVertices();
+		ActMinVertes = m_Meshes[0]->GetMinVertices();
+	}
+	for (unsigned i = 1; i < m_Meshes.size(); ++i)
+	{
+		float3 MaxVertes = m_Meshes[i]->GetMaxVertices();
+		float3 MinVertes = m_Meshes[i]->GetMinVertices();
+
+		//Chekking max
+		if (MaxVertes.x > ActMaxVertes.x)
+		{
+			ActMaxVertes.x = MaxVertes.x;
+		}
+		if (MaxVertes.y > ActMaxVertes.y)
+		{
+			ActMaxVertes.y = MaxVertes.y;
+		}
+		if (MaxVertes.z > ActMaxVertes.z)
+		{
+			ActMaxVertes.z = MaxVertes.z;
+		}
+
+		//Chekking min
+		if (MinVertes.x < ActMinVertes.x)
+		{
+			ActMinVertes.x = MinVertes.x;
+		}
+		if (MinVertes.y < ActMinVertes.y)
+		{
+			ActMinVertes.y = MinVertes.y;
+		}
+		if (MinVertes.z < ActMinVertes.z)
+		{
+			ActMinVertes.z = MinVertes.z;
+		}
+	}
+	m_InitVisionPos.Set(ActMaxVertes.x + (ActMaxVertes.x - ActMinVertes.x )/4,
+		ActMaxVertes.y + (ActMaxVertes.y - ActMinVertes.y) / 4,
+		ActMaxVertes.z + (ActMaxVertes.z - ActMinVertes.z) / 4);
+	return m_InitVisionPos;
+}
+
+ void Model::SetModelMatrix(const float4x4& InModel)
 {
 	 for (size_t i = 0; i < m_Meshes.size(); i++)
 	 {

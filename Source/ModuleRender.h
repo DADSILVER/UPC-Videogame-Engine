@@ -1,9 +1,11 @@
 #pragma once
 #include "Module.h"
+
 #include "Globals.h"
 #include "Geometry/Frustum.h"
 
-class Model;
+#include "Model.h"
+
 
 class ModuleRender : public Module
 {
@@ -18,7 +20,8 @@ public:
 	bool CleanUp();
 	void WindowResized(unsigned width, unsigned height);
 
-	Model GetModel();
+	inline Model GetModel() {return *m_BakerHause;}
+
 	void LoadModel(const char* inFileName);
 
 public:

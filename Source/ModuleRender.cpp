@@ -65,7 +65,7 @@ bool ModuleRender::Init()
 	m_BakerHause = new Model();
 	m_BakerHause->Load("source/BakerHouse.fbx");
 	m_BakerHause->SetModelMatrix(
-		float4x4::FromTRS(float3(10.0f, 0.0f, 0.0f),
+		float4x4::FromTRS(float3(10.0f, -10.0f, 0.0f),
 			float4x4::RotateZ(0),
 			//float3(0.01f, 0.01f, 0.01f)
 			float3(1.0f, 1.0f, 1.0f)
@@ -116,7 +116,7 @@ update_status ModuleRender::Update()
 
 update_status ModuleRender::PostUpdate()
 {
-	SDL_GL_SwapWindow(App->m_Window->window);
+	//SDL_GL_SwapWindow(App->m_Window->window);
 	return UPDATE_CONTINUE;
 }
 
@@ -138,16 +138,13 @@ void ModuleRender::WindowResized(unsigned _width, unsigned _height)
 	App->m_Camera->ResizeWindow(_width, _height);
 }
 
-Model ModuleRender::GetModel()
-{
-	return *m_BakerHause;
-}
-
 void ModuleRender::LoadModel(const char* inFileName)
 {
 	delete m_BakerHause;
 	m_BakerHause = new Model();
 	m_BakerHause->Load(inFileName);
+	App->m_Camera->SetPosition(m_BakerHause->GetInitVisionPos());
+	App->m_Camera->LookAt(m_BakerHause->GetCenterOfModel());
 }
 
 

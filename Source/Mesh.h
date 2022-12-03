@@ -11,16 +11,18 @@ class Mesh
 {
 
 public:
-	Mesh(const aiMesh* mesh);
+	Mesh(const aiMesh* InMesh);
 	~Mesh();
 	void LoadVBO(const aiMesh* InMesh);
 	void LoadEBO(const aiMesh* InMesh);
 	void CreateVAO();
-	void Draw(const std::vector<TextureInfo> InModelTexture);
+	void Draw(const std::vector<TextureInfo>& InModelTexture);
 
-	float3 GetCenterOfMesh();
+	inline const float3& GetCenterOfMesh() {return (m_model * m_CenterOfMesh.ToPos4()).xyz();}
+	inline const float3& GetMaxVertices()	{return (m_model * m_MaxOfMesh.ToPos4()).xyz();}
+	inline const float3& GetMinVertices()	{return (m_model * m_MinOfMesh.ToPos4()).xyz();}
 
-	inline void SetModelMatrix(float4x4 InModel) {m_model = InModel;}
+	inline void SetModelMatrix(const float4x4& InModel) {m_model = InModel;}
 
 private:
 
@@ -33,6 +35,9 @@ private:
 	int m_MaterialIndex = 0;
 
 	float3 m_CenterOfMesh = { 0,0,0 };
+	float3 m_MaxOfMesh = { 0,0,0 };
+	float3 m_MinOfMesh = { 0,0,0 };
+
 
 	float4x4 m_model;
 	

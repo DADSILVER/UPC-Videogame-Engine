@@ -32,7 +32,7 @@ bool ModuleCamera::Init()
 	m_aspectRatio = float(SCREEN_WIDTH) / float(SCREEN_HEIGHT);
 	m_frustum = new Frustum();
 	m_frustum->SetKind(FrustumSpaceGL, FrustumRightHanded);
-	m_frustum->SetViewPlaneDistances(0.1f, 100.0f);
+	m_frustum->SetViewPlaneDistances(0.1f, 1000.0f);
 	m_frustum->SetHorizontalFovAndAspectRatio(DEGTORAD * 90.0f, m_aspectRatio);
 	m_frustum->SetPos(float3(0.0f, 2.0f, 8.0f));
 	m_frustum->SetFront(-float3::unitZ);
@@ -48,6 +48,7 @@ update_status ModuleCamera::PreUpdate()
 
 update_status ModuleCamera::Update()
 {
+	//TODO: Improve
 	GetInputMove();
 	if(m_Zoom)
 	{
@@ -71,34 +72,39 @@ bool ModuleCamera::CleanUp()
     return true;
 }
 
-void ModuleCamera::SetFOV(float _horizontalFov)
+void ModuleCamera::SetFOV(float InHorizontalFov)
 {
-	m_frustum->SetHorizontalFovAndAspectRatio(_horizontalFov, m_aspectRatio);
+	m_frustum->SetHorizontalFovAndAspectRatio(InHorizontalFov, m_aspectRatio);
 }
 
-void ModuleCamera::SetAspectRatio(float _width, float _heigth)
+void ModuleCamera::SetAspectRatio(float InWidth, float InHeigth)
 {
-	m_aspectRatio = _width / _heigth;
+	m_aspectRatio = InWidth / InHeigth;
 }
 
-void ModuleCamera::SetPlaneDistances(float _near, float _far)
+void ModuleCamera::SetPlaneDistances(float InNear, float InFar)
 {
-		m_frustum->SetViewPlaneDistances(_near, _far);
+		m_frustum->SetViewPlaneDistances(InNear, InFar);
 }
 
-float4x4 ModuleCamera::GetProjectionMatrix()
+void ModuleCamera::SetPosition(float3 InPos)
+{
+	m_frustum->SetPos(InPos);
+}
+
+float4x4 ModuleCamera::GetProjectionMatrix() const
 {
 	return m_frustum->ProjectionMatrix();
 }
 
-float4x4 ModuleCamera::GetViewMatrix()
+float4x4 ModuleCamera::GetViewMatrix() const
 {
 	return m_frustum->ViewMatrix();
 }
 
-void ModuleCamera::MoveCamera(moves_camera _move)
+void ModuleCamera::MoveCamera(moves_camera InMove)
 {
-	switch (_move)
+	switch (InMove)
 	{
 	case MOVE_STRAIGHT:
 		m_frustum->SetPos(m_frustum->Pos() + (m_frustum->Front().Normalized() * m_MoveDist * App->m_Timer->GetDeltaTime()));
@@ -157,7 +163,6 @@ void ModuleCamera::Rotate(float InPitch, float InYaw)
 	//m_frustum->SetFront(m_frustum->Front(Quat::RotateAxisAngle(m_frustum->WorldRight(), InPitch).Transform(m_frustum->Front().Normalized())));
 }
 
-
 void ModuleCamera::OrbitAround()
 {
 	float2 motion = App->m_Input->GetMouseMotion();
@@ -185,10 +190,9 @@ void ModuleCamera::OrbitAround()
 	
 }
 
-
-void ModuleCamera::LookAt(float3 inLookAt)
+void ModuleCamera::LookAt(float3 InLookAt)
 {
-	vec direction = inLookAt - m_frustum->Pos();
+	vec direction = InLookAt - m_frustum->Pos();
 
 	direction.Normalize();
 	vec up = vec::unitY;
@@ -264,9 +268,9 @@ void ModuleCamera::GetInputMove()
 	}
 }
 
-void ModuleCamera::ResizeWindow(float _width, float _heigth)
+void ModuleCamera::ResizeWindow(float InWidth, float InHeigth)
 {
-	m_frustum->SetHorizontalFovAndAspectRatio(m_frustum->HorizontalFov(), _width/ _heigth);
+	m_frustum->SetHorizontalFovAndAspectRatio(m_frustum->HorizontalFov(), InWidth / InHeigth);
 }
 
 

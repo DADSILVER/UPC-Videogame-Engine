@@ -19,13 +19,15 @@ public:
 	void LoadMaterials(const aiScene* inScene);
 	void Draw();
 
-	float3 GetCenterOfModel();
-	void SetModelMatrix(float4x4 InModel);
+	const float3& GetCenterOfModel();
+	const float3& GetInitVisionPos();
+	void SetModelMatrix(const float4x4& InModel);
 
 
 private:
 	std::vector<TextureInfo> m_Material;
 	std::vector<Mesh*> m_Meshes;
 	float3 m_CenterOfModel = { 0,0,0 };
+	float3 m_InitVisionPos = { 0,0,0 };
 };
 

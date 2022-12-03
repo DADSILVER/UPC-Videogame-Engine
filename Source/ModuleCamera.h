@@ -1,5 +1,6 @@
 #pragma once
 #include "Module.h"
+
 #include "Geometry/Frustum.h"
 #include "Math/float3.h"
 
@@ -16,24 +17,23 @@ public:
 	update_status PostUpdate();
 	bool CleanUp();
 
-	void SetFOV(float _horizontalFov);
-	void SetAspectRatio(float _width, float _heigth);
-	void SetPlaneDistances(float _near, float _far);
+	void SetFOV(float InhorizontalFov);
+	void SetAspectRatio(float Inwidth, float Inheigth);
+	void SetPlaneDistances(float Innear, float Infar);
+	void SetPosition(float3 InPos);
 
-	float4x4 GetProjectionMatrix();
-	float4x4 GetViewMatrix();
+	float4x4 GetProjectionMatrix() const;
+	float4x4 GetViewMatrix() const;
 
 	void GetInputMove();
-	void ResizeWindow(float _width, float _heigth);
-
+	void ResizeWindow(float Inwidth, float Inheigth);
+	void LookAt(float3 InLookUp);
 	
 
 private:
 	void MoveCamera(moves_camera _move);
-	void Rotate(float InPitch, float InYaw);
-	void LookAt(float3 inLookUp);
+	void Rotate(float InPitch, float InYaw);	
 	void OrbitAround();
-	float lenght2(vec inDirection);
 
 private:
 
