@@ -12,8 +12,8 @@ public:
 	int CreateProgram();
 
 private:
-	char* LoadShaderSource(const char* shader_file_name);
-	int CompileShader(GLenum _type, const char* _source);
+	char* LoadShaderSource(const char* InShader_file_name);
+	int CompileShader(GLenum InType, const char* InSource);
 
 public:
 	int m_fragment;

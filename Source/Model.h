@@ -4,8 +4,8 @@
 #include "ModuleTexture.h"
 #include "Math/float3.h"
 
-class aiScene;
-class aiMesh;
+struct aiScene;
+struct aiMesh;
 class Mesh;
 
 
@@ -19,7 +19,7 @@ public:
 	void LoadMaterials(const aiScene* inScene);
 	void Draw();
 
-	const float3& GetCenterOfModel();
+	const float3 GetCenterOfModel();
 	const float3& GetInitVisionPos();
 	void SetModelMatrix(const float4x4& InModel);
 

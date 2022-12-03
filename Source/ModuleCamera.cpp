@@ -72,7 +72,7 @@ bool ModuleCamera::CleanUp()
     return true;
 }
 
-void ModuleCamera::SetFOV(float InHorizontalFov)
+void ModuleCamera::SetFOV(const float& InHorizontalFov)
 {
 	m_frustum->SetHorizontalFovAndAspectRatio(InHorizontalFov, m_aspectRatio);
 }

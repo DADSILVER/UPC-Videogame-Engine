@@ -18,14 +18,14 @@ Application::Application()
 	// Order matters: they will Init/start/update in this order
 	m_modules.push_back(m_Window = new ModuleWindow());
 	m_modules.push_back(m_Timer = new ModuleTimer());
-	m_modules.push_back(m_Renderer = new ModuleRender());
-	m_modules.push_back(m_Texture = new ModuleTexture());
 	m_modules.push_back(m_Editor = new ModuleEditor());
 	m_modules.push_back(m_Input = new ModuleInput());
-	m_modules.push_back(m_Program = new ModuleProgram());
-	m_modules.push_back(m_RendererExercise = new ModuleRenderExercise());
-	m_modules.push_back(m_DebugDraw = new ModuleDebugDraw());
 	m_modules.push_back(m_Camera = new ModuleCamera());
+	m_modules.push_back(m_Program = new ModuleProgram());
+	m_modules.push_back(m_Texture = new ModuleTexture());
+	m_modules.push_back(m_DebugDraw = new ModuleDebugDraw());
+	m_modules.push_back(m_RendererExercise = new ModuleRenderExercise());
+	m_modules.push_back(m_Renderer = new ModuleRender());
 	
 }
 

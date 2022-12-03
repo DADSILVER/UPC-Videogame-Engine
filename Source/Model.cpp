@@ -14,7 +14,6 @@
 
 #include "Console.h"
 
-
 void Model::Load(const char* inFileName)
 {
 	App->m_Editor->m_console.AddLog(engLOG("Model load from: %s\n", inFileName));
@@ -44,7 +43,6 @@ void Model::LoadMeshes(const aiScene* InScene)
 	}
 
 }
-
 
 void Model::LoadMaterials(const aiScene* InScene)
 {
@@ -80,14 +78,15 @@ void Model::Draw()
 	}
 }
 
-const float3& Model::GetCenterOfModel()
+const float3 Model::GetCenterOfModel()
 {
 	m_CenterOfModel = { 0,0,0 };
 	for (unsigned i = 0; i < m_Meshes.size(); ++i)
 	{
 		m_CenterOfModel += m_Meshes[i]->GetCenterOfMesh();
 	}
-	return m_CenterOfModel / m_Meshes.size();
+	//TODO: Set m_CenterOfModel its better than this?
+	return m_CenterOfModel / (float)m_Meshes.size();
 }
 
 const float3& Model::GetInitVisionPos()
@@ -137,7 +136,7 @@ const float3& Model::GetInitVisionPos()
 	return m_InitVisionPos;
 }
 
- void Model::SetModelMatrix(const float4x4& InModel)
+void Model::SetModelMatrix(const float4x4& InModel)
 {
 	 for (size_t i = 0; i < m_Meshes.size(); i++)
 	 {

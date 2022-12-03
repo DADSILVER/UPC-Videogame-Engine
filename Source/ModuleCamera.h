@@ -17,7 +17,7 @@ public:
 	update_status PostUpdate();
 	bool CleanUp();
 
-	void SetFOV(float InhorizontalFov);
+	void SetFOV(const float& InhorizontalFov);
 	void SetAspectRatio(float Inwidth, float Inheigth);
 	void SetPlaneDistances(float Innear, float Infar);
 	void SetPosition(float3 InPos);

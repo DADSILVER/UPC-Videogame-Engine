@@ -13,11 +13,11 @@ ModuleProgram::~ModuleProgram()
 {
 }
 
-char* ModuleProgram::LoadShaderSource(const char* _shader_file_name)
+char* ModuleProgram::LoadShaderSource(const char* InShader_file_name)
 {
 	char* data = nullptr;
 	FILE* file = nullptr;
-	fopen_s(&file, _shader_file_name, "rb");
+	fopen_s(&file, InShader_file_name, "rb");
 	if (file)
 	{
 		fseek(file, 0, SEEK_END);
@@ -31,10 +31,10 @@ char* ModuleProgram::LoadShaderSource(const char* _shader_file_name)
 	return data;
 }
 
-int ModuleProgram::CompileShader(GLenum type, const char* _source)
+int ModuleProgram::CompileShader(GLenum InType, const char* InSource)
 {
-	unsigned shader_id = glCreateShader(type);
-	glShaderSource(shader_id, 1, &_source, 0);
+	unsigned shader_id = glCreateShader(InType);
+	glShaderSource(shader_id, 1, &InSource, 0);
 	glCompileShader(shader_id);
 	int res = GL_FALSE;
 	glGetShaderiv(shader_id, GL_COMPILE_STATUS, &res);
@@ -53,8 +53,6 @@ int ModuleProgram::CompileShader(GLenum type, const char* _source)
 	}
 	return shader_id;
 }
-
-
 
 int ModuleProgram::CreateProgram()
 {

@@ -5,7 +5,7 @@
 #include "Math/float3.h"
 #include "Math/float4x4.h"
 
-class aiMesh;
+struct aiMesh;
 
 class Mesh
 {
@@ -18,9 +18,9 @@ public:
 	void CreateVAO();
 	void Draw(const std::vector<TextureInfo>& InModelTexture);
 
-	inline const float3& GetCenterOfMesh() {return (m_model * m_CenterOfMesh.ToPos4()).xyz();}
-	inline const float3& GetMaxVertices()	{return (m_model * m_MaxOfMesh.ToPos4()).xyz();}
-	inline const float3& GetMinVertices()	{return (m_model * m_MinOfMesh.ToPos4()).xyz();}
+	inline const float3 GetCenterOfMesh()	{return (m_model * m_CenterOfMesh.ToPos4()).xyz();}
+	inline const float3 GetMaxVertices()	{return (m_model * m_MaxOfMesh.ToPos4()).xyz();}
+	inline const float3 GetMinVertices()	{return (m_model * m_MinOfMesh.ToPos4()).xyz();}
 
 	inline void SetModelMatrix(const float4x4& InModel) {m_model = InModel;}
 

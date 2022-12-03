@@ -12,7 +12,6 @@
 #include "ModuleProgram.h"
 #include "ModuleDebugDraw.h"
 
-
 #include "SDL.h"
 #include "libs/glew-2.1.0/include/GL/glew.h"
 
@@ -127,22 +126,21 @@ bool ModuleRender::CleanUp()
 	SDL_GL_DeleteContext(context);
 	glDeleteProgram(m_Program);
 	delete m_BakerHause;
-	delete m_BakerHause;
+	delete m_NotTextureModel;
 
 	return true;
 }
 
-
-void ModuleRender::WindowResized(unsigned _width, unsigned _height)
+void ModuleRender::WindowResized(float InWidth, float InHeight)
 {
-	App->m_Camera->ResizeWindow(_width, _height);
+	App->m_Camera->ResizeWindow(InWidth, InHeight);
 }
 
-void ModuleRender::LoadModel(const char* inFileName)
+void ModuleRender::LoadModel(const char* InFileName)
 {
 	delete m_BakerHause;
 	m_BakerHause = new Model();
-	m_BakerHause->Load(inFileName);
+	m_BakerHause->Load(InFileName);
 	App->m_Camera->SetPosition(m_BakerHause->GetInitVisionPos());
 	App->m_Camera->LookAt(m_BakerHause->GetCenterOfModel());
 }

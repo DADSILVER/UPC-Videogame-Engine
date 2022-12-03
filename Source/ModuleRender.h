@@ -18,11 +18,11 @@ public:
 	update_status Update();
 	update_status PostUpdate();
 	bool CleanUp();
-	void WindowResized(unsigned width, unsigned height);
+	void WindowResized(float InWidth, float InHeight);
 
 	inline Model GetModel() {return *m_BakerHause;}
 
-	void LoadModel(const char* inFileName);
+	void LoadModel(const char* InFileName);
 
 public:
 	void* context;

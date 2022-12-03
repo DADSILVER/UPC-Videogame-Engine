@@ -61,8 +61,8 @@ update_status ModuleInput::Update()
 				m_mouseButtons[m_sdlEvent.button.button - 1] = KS_DOWN;
 				break;
 			case SDL_MOUSEMOTION:
-				m_MouseMotion.x = -m_sdlEvent.motion.yrel;
-				m_MouseMotion.y = -m_sdlEvent.motion.xrel;
+				m_MouseMotion.x = (float)-m_sdlEvent.motion.yrel;
+				m_MouseMotion.y = (float)-m_sdlEvent.motion.xrel;
 				break;
 			case SDL_MOUSEBUTTONUP:
 				m_mouseButtons[m_sdlEvent.button.button - 1] = KS_IDLE;
