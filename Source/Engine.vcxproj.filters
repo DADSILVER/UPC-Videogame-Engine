@@ -196,6 +196,7 @@
     <ClCompile Include="Model.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="PanelConfigurationWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Module.h">
@@ -508,6 +509,7 @@
     <ClInclude Include="Model.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="PanelConfigurationWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Modules">

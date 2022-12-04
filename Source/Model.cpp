@@ -14,18 +14,18 @@
 
 #include "Console.h"
 
-void Model::Load(const char* inFileName)
+void Model::Load(const char* InFileName)
 {
-	App->m_Editor->m_console.AddLog(engLOG("Model load from: %s\n", inFileName));
-	const aiScene* scene = aiImportFile(inFileName, aiProcessPreset_TargetRealtime_MaxQuality);
+	App->m_Editor->m_console.AddLog(engLOG("Model load from: %s\n", InFileName));
+	const aiScene* scene = aiImportFile(InFileName, aiProcessPreset_TargetRealtime_MaxQuality);
 	if (scene)
 	{
-		LoadMaterials(scene);
+		LoadMaterials(scene, InFileName);
 		LoadMeshes(scene);
 	}
 	else
 	{
-		App->m_Editor->m_console.AddLog(engLOG("Error loading %s: %s", inFileName, aiGetErrorString()));
+		App->m_Editor->m_console.AddLog(engLOG("Error loading %s: %s", InFileName, aiGetErrorString()));
 	}
 }
 
@@ -44,27 +44,45 @@ void Model::LoadMeshes(const aiScene* InScene)
 
 }
 
-void Model::LoadMaterials(const aiScene* InScene)
+bool Model::LoadMaterials(const aiScene* InScene,const char* InFileName)
 {
 	aiString file;
-	
 	m_Material.reserve(InScene->mNumMaterials);
 	for (unsigned i = 0; i < InScene->mNumMaterials; ++i)
 	{
 		if (InScene->mMaterials[i]->GetTexture(aiTextureType_DIFFUSE, 0, &file) == AI_SUCCESS)
 		{
-			std::string filePath = file.data;
+			TextureInfo material;
+			material.m_FileName = file.data;
+			if (App->m_Texture->LoadTexture(material)) 
+			{
+				m_Material.push_back(material);
+				return true;
+			}
+
+			std::string filePath = file.data;	
+			std::string relativeFilePath = InFileName;
 			size_t pos = 0;
 			while ((pos = filePath.find(92)) != std::string::npos || (pos = filePath.find('/')) != std::string::npos)
 			{
+				
 				filePath.erase(0, pos + 1);
 			}
+			relativeFilePath.erase(relativeFilePath.size() + 1 - filePath.size(), relativeFilePath.size());
+			material.m_FileName = relativeFilePath + filePath;
+			
+			if(App->m_Texture->LoadTexture(material))
+			{
+				m_Material.push_back(material);
+				return true;
+			}
+
 			filePath = "textures/" + filePath;
-			TextureInfo material;
 			material.m_FileName = filePath;
 			if (App->m_Texture->LoadTexture(material))
 			{
 				m_Material.push_back(material);
+				return true;
 			}
 			
 		}

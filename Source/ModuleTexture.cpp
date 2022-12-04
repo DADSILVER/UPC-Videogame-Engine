@@ -36,7 +36,7 @@ bool ModuleTexture::LoadTexture(TextureInfo &InOutTextureInfo)
 		loadResult = DirectX::LoadFromTGAFile(widePath.c_str(), &m_MetaData, *NotFlip);
 		if (FAILED(loadResult))
 		{
-			App->m_Editor->m_console.AddLog(engLOG("Material convertor error : DDS texture loading failed (\%s)", InOutTextureInfo.m_FileName));
+			App->m_Editor->m_console.AddLog(engLOG("Material convertor error : TGA texture loading failed (\%s)", InOutTextureInfo.m_FileName));
 			NotFlip = nullptr;
 			return 0;
 		}
@@ -46,7 +46,7 @@ bool ModuleTexture::LoadTexture(TextureInfo &InOutTextureInfo)
 		loadResult = LoadFromWICFile(widePath.c_str(), DirectX::WIC_FLAGS_DEFAULT_SRGB, &m_MetaData, *NotFlip);
 		if (FAILED(loadResult))
 		{
-			App->m_Editor->m_console.AddLog(engLOG("Material convertor error : DDS texture loading failed (\%s)", InOutTextureInfo.m_FileName));
+			App->m_Editor->m_console.AddLog(engLOG("Material convertor error : WIC texture loading failed (\%s)", InOutTextureInfo.m_FileName));
 			NotFlip = nullptr;
 			return 0;
 		}

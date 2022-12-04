@@ -118,6 +118,12 @@ void ModuleCamera::MoveCamera(moves_camera InMove)
 	case MOVE_LEFT:
 		m_frustum->SetPos(m_frustum->Pos() - (m_frustum->WorldRight().Normalized() * m_MoveDist * App->m_Timer->GetDeltaTime()));
 		break;
+	case MOVE_UP:
+		m_frustum->SetPos(m_frustum->Pos() + float3(0, m_MoveDist * App->m_Timer->GetDeltaTime(),0));
+		break;
+	case MOVE_DOWN:
+		m_frustum->SetPos(m_frustum->Pos() - float3(0, m_MoveDist * App->m_Timer->GetDeltaTime(), 0));
+		break;
 	case ROTATE_UP:		
 		Rotate(0, m_RotateDegrees * DEGTORAD * App->m_Timer->GetDeltaTime());
 		break;
@@ -140,13 +146,11 @@ void ModuleCamera::MoveCamera(moves_camera InMove)
 	
 }
 
-void ModuleCamera::Rotate(const float& InPitch, const float& InYaw)
+void ModuleCamera::Rotate(const float& InPitch, float InYaw)
 {
 	// TODO : change to quat
 
-	
-	if ((float3x3::RotateAxisAngle(m_frustum->WorldRight(), InYaw) * m_frustum->Front().Normalized()).y > 0.96f
-		|| (float3x3::RotateAxisAngle(m_frustum->WorldRight(), InYaw) * m_frustum->Front().Normalized()).y < -0.96f)
+	if (!CanSetPos((float3x3::RotateAxisAngle(m_frustum->WorldRight(), InYaw) * m_frustum->Front().Normalized()).y))
 	{
 		InYaw = 0;
 	}
@@ -177,8 +181,7 @@ void ModuleCamera::OrbitAround()
 	float3 directionNormalize = direction;
 	directionNormalize.Normalize();
 
-	if (directionNormalize.y <= 0.96f
-		&& directionNormalize.y >= -0.96f)
+	if (CanSetPos(directionNormalize.y))
 	{
 		// Set camera to where the rotated vector points from its starting position
 		m_frustum->SetPos(direction + App->m_Renderer->GetModel().GetCenterOfModel());
@@ -186,8 +189,6 @@ void ModuleCamera::OrbitAround()
 		// Rotate camera to the orbit center
 		LookAt(App->m_Renderer->GetModel().GetCenterOfModel());
 	}
-
-	
 }
 
 void ModuleCamera::LookAt(const float3& InLookAt)
@@ -197,15 +198,18 @@ void ModuleCamera::LookAt(const float3& InLookAt)
 	direction.Normalize();
 	vec up = vec::unitY;
 
-	// Special case for when looking straight up
-	if (direction.Cross(up).IsZero())
+	if (CanSetPos(direction.y))
 	{
-		up = vec::unitZ;
+		// Special case for when looking straight up
+		if (direction.Cross(up).IsZero())
+		{
+			up = vec::unitZ;
+		}
+		vec oldFrom = m_frustum->Front().Normalized();
+		vec oldUp = m_frustum->Up().Normalized();
+		m_frustum->SetFront(float3x3::LookAt(oldFrom, direction, oldUp, up) * oldFrom);
+		m_frustum->SetUp(float3x3::LookAt(oldFrom, direction, oldUp, up) * oldUp);
 	}
-	vec oldFrom = m_frustum->Front().Normalized();
-	vec oldUp = m_frustum->Up().Normalized();
-	m_frustum->SetFront(float3x3::LookAt(oldFrom, direction, oldUp,up) * oldFrom);
-	m_frustum->SetUp(float3x3::LookAt(oldFrom, direction, oldUp, up) * oldUp);
 }
 
 void ModuleCamera::GetInputMove() 
@@ -238,6 +242,14 @@ void ModuleCamera::GetInputMove()
 	{
 		MoveCamera(MOVE_LEFT);
 	}
+	if (App->m_Input->GetKeyboardButton(SDL_SCANCODE_Q))
+	{
+		MoveCamera(MOVE_UP);
+	}
+	if (App->m_Input->GetKeyboardButton(SDL_SCANCODE_E))
+	{
+		MoveCamera(MOVE_DOWN);
+	}
 	if (App->m_Input->GetKeyboardButton(SDL_SCANCODE_UP))
 	{
 		MoveCamera(ROTATE_UP);
@@ -265,6 +277,22 @@ void ModuleCamera::GetInputMove()
 		{
 			MoveCamera(ROTATE_FREE);
 		}
+	}
+	if (App->m_Input->GetMouseButton(SDL_BUTTON_MIDDLE - 1))
+	{
+		m_Zoom = true;
+	}
+	else
+	{
+		m_Zoom = false;
+	}
+	if (App->m_Input->GetKeyboardButton(SDL_SCANCODE_LSHIFT) || App->m_Input->GetKeyboardButton(SDL_SCANCODE_RSHIFT))
+	{
+		m_MoveDist = 2.0f;
+	}
+	else
+	{
+		m_MoveDist = 0.6f;
 	}
 }
 

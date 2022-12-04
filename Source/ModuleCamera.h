@@ -32,8 +32,10 @@ public:
 
 private:
 	void MoveCamera(moves_camera _move);
-	void Rotate(const float& InPitch, const float& InYaw);
+	void Rotate(const float& InPitch, float InYaw);
 	void OrbitAround();
+
+	bool CanSetPos(const float InPos) {return InPos <= 0.96f && InPos >= -0.96f;}
 
 private:
 
