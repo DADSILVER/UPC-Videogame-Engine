@@ -3,14 +3,16 @@
 #include "imgui.h"
 #include "imgui_impl_sdl.h"
 #include "imgui_impl_opengl3.h"
+#include <gl/GL.h>
 
 #include "Application.h"
 #include "Console.h"
 
+#include "PanelConfigurationWindow.h"
+
 #include "ModuleWindow.h"
 #include "ModuleRender.h"
 
-#include <gl/GL.h>
 
 
 
@@ -38,6 +40,9 @@ bool ModuleEditor::Init()
     //ImGui::StyleColorsDark();
     ImGui::StyleColorsLight();
 
+
+    m_Panels.push_back(new PanelConfigurationWindow("Configuration"));
+
     return true;
 }
 
@@ -55,14 +60,23 @@ update_status ModuleEditor::PreUpdate()
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplSDL2_NewFrame(App->m_Window->m_Window);
     ImGui::NewFrame();
+
+    if (m_Fps.size() >= 100) {
+        m_Fps.erase(m_Fps.begin(), m_Fps.begin()+50);
+    }
+    m_Fps.emplace_back(ImGui::GetIO().Framerate);
+
     return UPDATE_CONTINUE;
 }
 
 update_status ModuleEditor::Update()
 {
     //NewTestImgUI();
-    //NewHelloWorld();
+    NewHelloWorld();
     m_console.Draw();
+    for (std::list<Panel*>::iterator it = m_Panels.begin(); it != m_Panels.end(); ++it) {
+        (*it)->Draw();
+    }
     return UPDATE_CONTINUE;
 }
 

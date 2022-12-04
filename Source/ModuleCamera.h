@@ -18,7 +18,6 @@ public:
 	bool CleanUp();
 
 	void SetFOV(const float& InhorizontalFov);
-	void SetAspectRatio(const float& Inwidth, const float& Inheigth);
 	void SetPlaneDistances(const float& Innear, const float& Infar);
 	void SetPosition(const float3& InPos);
 
@@ -35,7 +34,7 @@ private:
 	void Rotate(const float& InPitch, float InYaw);
 	void OrbitAround();
 
-	bool CanSetPos(const float InPos) {return InPos <= 0.96f && InPos >= -0.96f;}
+	bool CanSetPos(const float InPos) {return InPos <= 0.99f && InPos >= -0.99f;}
 
 private:
 
@@ -43,10 +42,7 @@ private:
 
 	Frustum* m_frustum;
 
-	float m_aspectRatio;
 	float m_MoveDist;
 	float m_RotateDegrees;
-	float m_VelocityMult;
-	float m_AngelY;
 };
 

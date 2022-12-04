@@ -196,7 +196,12 @@
     <ClCompile Include="Model.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="PanelConfigurationWindow.cpp" />
+    <ClCompile Include="Panel.cpp">
+      <Filter>ImgUI panels</Filter>
+    </ClCompile>
+    <ClCompile Include="PanelConfigurationWindow.cpp">
+      <Filter>ImgUI panels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Module.h">
@@ -509,7 +514,12 @@
     <ClInclude Include="Model.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="PanelConfigurationWindow.h" />
+    <ClInclude Include="Panel.h">
+      <Filter>ImgUI panels</Filter>
+    </ClInclude>
+    <ClInclude Include="PanelConfigurationWindow.h">
+      <Filter>ImgUI panels</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Modules">

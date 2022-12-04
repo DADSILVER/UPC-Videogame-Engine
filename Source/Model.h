@@ -16,7 +16,7 @@ class Model
 public:
 	void Load(const char* inFileName);
 	void LoadMeshes(const aiScene* InScene);
-	bool LoadMaterials(const aiScene* inScene,const char* InFileName);
+	void LoadMaterials(const aiScene* inScene,const char* InFileName);
 	void Draw();
 
 	const float3 GetCenterOfModel();

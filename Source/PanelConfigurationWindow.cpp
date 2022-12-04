@@ -1,1 +1,33 @@
 #include "PanelConfigurationWindow.h"
+
+#include "imgui.h"
+
+#include "Application.h"
+
+#include "ModuleEditor.h"
+
+PanelConfigurationWindow::PanelConfigurationWindow(const char* InTitle) : Panel(InTitle)
+{
+}
+
+bool PanelConfigurationWindow::Draw()
+{
+    ImGui::SetNextWindowSize(ImVec2(300, 500), ImGuiCond_Once);
+    if (!ImGui::Begin(m_Title, &m_Open))
+    {
+        ImGui::End();
+        return false;
+    }
+    
+    if (ImGui::CollapsingHeader("Application"))
+    {
+        std::vector<float> fpsLogs = App->m_Editor->GetFps();
+        char title[25];
+        sprintf_s(title, 25, "Framerate %.1f", fpsLogs[fpsLogs.size() - 1]);
+        ImGui::PlotHistogram("##framerate", &fpsLogs[0], 100, 0, title, 0.0f, 200.0f, ImVec2(310.0f, 100.0f));
+    }
+    ImGui::End();
+
+
+	return true;
+}

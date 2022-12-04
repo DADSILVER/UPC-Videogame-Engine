@@ -44,7 +44,7 @@ void Model::LoadMeshes(const aiScene* InScene)
 
 }
 
-bool Model::LoadMaterials(const aiScene* InScene,const char* InFileName)
+void Model::LoadMaterials(const aiScene* InScene,const char* InFileName)
 {
 	aiString file;
 	m_Material.reserve(InScene->mNumMaterials);
@@ -57,24 +57,29 @@ bool Model::LoadMaterials(const aiScene* InScene,const char* InFileName)
 			if (App->m_Texture->LoadTexture(material)) 
 			{
 				m_Material.push_back(material);
-				return true;
 			}
 
 			std::string filePath = file.data;	
 			std::string relativeFilePath = InFileName;
+			std::string relativeFilePathName = InFileName;
 			size_t pos = 0;
 			while ((pos = filePath.find(92)) != std::string::npos || (pos = filePath.find('/')) != std::string::npos)
 			{
 				
 				filePath.erase(0, pos + 1);
 			}
-			relativeFilePath.erase(relativeFilePath.size() + 1 - filePath.size(), relativeFilePath.size());
+			pos = 0;
+			while ((pos = relativeFilePathName.find(92)) != std::string::npos || (pos = relativeFilePathName.find('/')) != std::string::npos)
+			{
+
+				relativeFilePathName.erase(0, pos + 1);
+			}
+			relativeFilePath.erase(relativeFilePath.size() - relativeFilePathName.size(), relativeFilePath.size());
 			material.m_FileName = relativeFilePath + filePath;
 			
 			if(App->m_Texture->LoadTexture(material))
 			{
 				m_Material.push_back(material);
-				return true;
 			}
 
 			filePath = "textures/" + filePath;
@@ -82,7 +87,6 @@ bool Model::LoadMaterials(const aiScene* InScene,const char* InFileName)
 			if (App->m_Texture->LoadTexture(material))
 			{
 				m_Material.push_back(material);
-				return true;
 			}
 			
 		}

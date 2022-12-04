@@ -16,11 +16,8 @@
 
 ModuleCamera::ModuleCamera()
 {
-	m_aspectRatio = 0;
 	m_MoveDist = 0.6f;
 	m_RotateDegrees = 1.05f;
-	m_VelocityMult = 1.0f;
-	m_AngelY = 0;
 }
 
 ModuleCamera::~ModuleCamera()
@@ -29,11 +26,10 @@ ModuleCamera::~ModuleCamera()
 
 bool ModuleCamera::Init()
 {
-	m_aspectRatio = float(SCREEN_WIDTH) / float(SCREEN_HEIGHT);
 	m_frustum = new Frustum();
 	m_frustum->SetKind(FrustumSpaceGL, FrustumRightHanded);
 	m_frustum->SetViewPlaneDistances(0.1f, 1000.0f);
-	m_frustum->SetHorizontalFovAndAspectRatio(DEGTORAD * 90.0f, m_aspectRatio);
+	m_frustum->SetHorizontalFovAndAspectRatio(DEGTORAD * 90.0f, float(SCREEN_WIDTH) / float(SCREEN_HEIGHT));
 	m_frustum->SetPos(float3(0.0f, 2.0f, 8.0f));
 	m_frustum->SetFront(-float3::unitZ);
 	m_frustum->SetUp(float3::unitY);
@@ -48,7 +44,6 @@ update_status ModuleCamera::PreUpdate()
 
 update_status ModuleCamera::Update()
 {
-	//TODO: Improve
 	GetInputMove();
 	if(m_Zoom)
 	{
@@ -74,12 +69,7 @@ bool ModuleCamera::CleanUp()
 
 void ModuleCamera::SetFOV(const float& InHorizontalFov)
 {
-	m_frustum->SetHorizontalFovAndAspectRatio(InHorizontalFov, m_aspectRatio);
-}
-
-void ModuleCamera::SetAspectRatio(const float& InWidth, const float& InHeigth)
-{
-	m_aspectRatio = InWidth / InHeigth;
+	m_frustum->SetHorizontalFovAndAspectRatio(InHorizontalFov, m_frustum->AspectRatio());
 }
 
 void ModuleCamera::SetPlaneDistances(const float& InNear, const float& InFar)
@@ -300,7 +290,3 @@ void ModuleCamera::ResizeWindow(const float& InWidth, const float& InHeigth)
 {
 	m_frustum->SetHorizontalFovAndAspectRatio(m_frustum->HorizontalFov(), InWidth / InHeigth);
 }
-
-
-
-
