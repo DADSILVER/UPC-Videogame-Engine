@@ -12,6 +12,11 @@ PanelConfigurationWindow::PanelConfigurationWindow(const char* InTitle) : Panel(
 
 bool PanelConfigurationWindow::Draw()
 {
+
+    if (!m_Open)
+    {
+        return true;
+    }
     ImGui::SetNextWindowSize(ImVec2(300, 500), ImGuiCond_Once);
     if (!ImGui::Begin(m_Title, &m_Open))
     {

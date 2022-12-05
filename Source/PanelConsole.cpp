@@ -1,4 +1,4 @@
-#include "Console.h"
+#include "PanelConsole.h"
 
 #include "imgui.h"
 #include "imgui_impl_sdl.h"
@@ -15,21 +15,21 @@ static void  Strtrim(char* s) { char* str_end = s + strlen(s); while (str_end > 
 //}
 
 
-Console::Console()
+PanelConsole::PanelConsole(const char* InTitle) : Panel(InTitle)
 {
     AutoScroll = true;
     ScrollToBottom = false;
     AddLog("Welcome to Dear ImGui!");
 }
 
-void Console::ClearLog()
+void PanelConsole::ClearLog()
 {
     for (int i = 0; i < Items.Size; i++)
         free(Items[i]);
     Items.clear();
 }
 
-void Console::AddLog(const char* fmt, ...) IM_FMTARGS(2)
+void PanelConsole::AddLog(const char* fmt, ...) IM_FMTARGS(2)
 {
     // FIXME-OPT
     char buf[1024];
@@ -43,12 +43,15 @@ void Console::AddLog(const char* fmt, ...) IM_FMTARGS(2)
 }
 
 
-void Console::Draw()
+bool PanelConsole::Draw()
 {
-	ImGui::SetNextWindowSize(ImVec2(1200, 200), 0); //ImGuiCond_FirstUseEver
-	ImGui::Begin("Console");
-
-
+	
+    if (!m_Open)
+    {
+        return true;
+    }
+    ImGui::SetNextWindowSize(ImVec2(1200, 200), 0); //ImGuiCond_FirstUseEver
+	ImGui::Begin(m_Title, &m_Open);
 
     // Options menu
     if (ImGui::BeginPopup("Options"))
@@ -105,6 +108,8 @@ void Console::Draw()
     }
     ImGui::EndChild();
 	ImGui::End();
+
+    return true;
 }
 
 

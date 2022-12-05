@@ -35,7 +35,7 @@ bool ModuleRender::Init()
 	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24); // we want to have a depth buffer with 24 bits
 	SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8); // we want to have a stencil buffer with 8 bits
 	
-	App->m_Editor->m_console.AddLog(engLOG("Creating Renderer context"));
+	App->m_Editor->m_Console->AddLog(engLOG("Creating Renderer context"));
 	App->m_Renderer->m_Context = SDL_GL_CreateContext(App->m_Window->m_Window);
 	SDL_GL_MakeCurrent(App->m_Window->m_Window, App->m_Renderer->m_Context);
 	SDL_GL_SetSwapInterval(0);
@@ -43,13 +43,13 @@ bool ModuleRender::Init()
 
 	GLenum err = glewInit();
 	// … check for errors
-	App->m_Editor->m_console.AddLog(engLOG("Using Glew %s", glewGetString(GLEW_VERSION)));
+	App->m_Editor->m_Console->AddLog(engLOG("Using Glew %s", glewGetString(GLEW_VERSION)));
 	// Should be 2.0
 
-	App->m_Editor->m_console.AddLog(engLOG("Vendor: %s", glGetString(GL_VENDOR)));
-	App->m_Editor->m_console.AddLog(engLOG("Renderer: %s", glGetString(GL_RENDERER)));
-	App->m_Editor->m_console.AddLog(engLOG("OpenGL version supported %s", glGetString(GL_VERSION)));
-	App->m_Editor->m_console.AddLog(engLOG("GLSL: %s\n", glGetString(GL_SHADING_LANGUAGE_VERSION)));
+	App->m_Editor->m_Console->AddLog(engLOG("Vendor: %s", glGetString(GL_VENDOR)));
+	App->m_Editor->m_Console->AddLog(engLOG("Renderer: %s", glGetString(GL_RENDERER)));
+	App->m_Editor->m_Console->AddLog(engLOG("OpenGL version supported %s", glGetString(GL_VERSION)));
+	App->m_Editor->m_Console->AddLog(engLOG("GLSL: %s\n", glGetString(GL_SHADING_LANGUAGE_VERSION)));
 
 	glEnable(GL_DEPTH_TEST); // Enable depth test
 	glEnable(GL_CULL_FACE); // Enable cull backward faces
@@ -110,7 +110,7 @@ update_status ModuleRender::PostUpdate()
 // Called before quitting
 bool ModuleRender::CleanUp()
 {
-	App->m_Editor->m_console.AddLog(engLOG("Destroying renderer"));
+	App->m_Editor->m_Console->AddLog(engLOG("Destroying renderer"));
 	SDL_GL_DeleteContext(m_Context);
 	glDeleteProgram(m_Program);
 	delete m_BakerHause;

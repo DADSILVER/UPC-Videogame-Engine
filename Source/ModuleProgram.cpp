@@ -47,7 +47,7 @@ int ModuleProgram::CompileShader(GLenum InType, const char* InSource)
 			int written = 0;
 			char* info = (char*)malloc(len);
 			glGetShaderInfoLog(shader_id, len, &written, info);
-			App->m_Editor->m_console.AddLog(engLOG("Log Info: %s", info));
+			App->m_Editor->m_Console->AddLog(engLOG("Log Info: %s", info));
 			free(info);
 		}
 	}
@@ -60,7 +60,7 @@ int ModuleProgram::CreateProgram()
 	m_Vertex = CompileShader(GL_VERTEX_SHADER, LoadShaderSource("vertexShader.glsl"));
 
 	unsigned program_id = glCreateProgram();
-	App->m_Editor->m_console.AddLog(engLOG("program: %d", program_id));
+	App->m_Editor->m_Console->AddLog(engLOG("program: %d", program_id));
 	glAttachShader(program_id, m_Vertex);
 	glAttachShader(program_id, m_Fragment);
 	glLinkProgram(program_id);
@@ -75,7 +75,7 @@ int ModuleProgram::CreateProgram()
 			int written = 0;
 			char* info = (char*)malloc(len);
 			glGetProgramInfoLog(program_id, len, &written, info);
-			App->m_Editor->m_console.AddLog(engLOG("Program Log Info: %s", info));
+			App->m_Editor->m_Console->AddLog(engLOG("Program Log Info: %s", info));
 			free(info);
 		}
 	}

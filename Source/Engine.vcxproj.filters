@@ -187,7 +187,7 @@
     <ClCompile Include="libs\imgui-docking\imgui_widgets.cpp">
       <Filter>ImgUI lib</Filter>
     </ClCompile>
-    <ClCompile Include="Console.cpp">
+    <ClCompile Include="PanelConsole.cpp">
       <Filter>ImgUI panels</Filter>
     </ClCompile>
     <ClCompile Include="Mesh.cpp">
@@ -200,6 +200,12 @@
       <Filter>ImgUI panels</Filter>
     </ClCompile>
     <ClCompile Include="PanelConfigurationWindow.cpp">
+      <Filter>ImgUI panels</Filter>
+    </ClCompile>
+    <ClCompile Include="PanelAbout.cpp">
+      <Filter>ImgUI panels</Filter>
+    </ClCompile>
+    <ClCompile Include="PanelProperties.cpp">
       <Filter>ImgUI panels</Filter>
     </ClCompile>
   </ItemGroup>
@@ -505,7 +511,7 @@
     <ClInclude Include="libs\imgui-docking\imstb_truetype.h">
       <Filter>ImgUI lib</Filter>
     </ClInclude>
-    <ClInclude Include="Console.h">
+    <ClInclude Include="PanelConsole.h">
       <Filter>ImgUI panels</Filter>
     </ClInclude>
     <ClInclude Include="Mesh.h">
@@ -518,6 +524,12 @@
       <Filter>ImgUI panels</Filter>
     </ClInclude>
     <ClInclude Include="PanelConfigurationWindow.h">
+      <Filter>ImgUI panels</Filter>
+    </ClInclude>
+    <ClInclude Include="PanelAbout.h">
+      <Filter>ImgUI panels</Filter>
+    </ClInclude>
+    <ClInclude Include="PanelProperties.h">
       <Filter>ImgUI panels</Filter>
     </ClInclude>
   </ItemGroup>

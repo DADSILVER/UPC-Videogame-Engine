@@ -145,7 +145,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
-    <ClCompile Include="Console.cpp" />
+    <ClCompile Include="PanelConsole.cpp" />
     <ClCompile Include="libs\imgui-docking\imgui.cpp" />
     <ClCompile Include="libs\imgui-docking\imgui_demo.cpp" />
     <ClCompile Include="libs\imgui-docking\imgui_draw.cpp" />
@@ -210,11 +210,13 @@
     <ClCompile Include="ModuleTimer.cpp" />
     <ClCompile Include="ModuleWindow.cpp" />
     <ClCompile Include="Panel.cpp" />
+    <ClCompile Include="PanelAbout.cpp" />
     <ClCompile Include="PanelConfigurationWindow.cpp" />
+    <ClCompile Include="PanelProperties.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
-    <ClInclude Include="Console.h" />
+    <ClInclude Include="PanelConsole.h" />
     <ClInclude Include="debugdraw.h" />
     <ClInclude Include="debug_draw.hpp" />
     <ClInclude Include="Dummy.h" />
@@ -317,7 +319,9 @@
     <ClInclude Include="ModuleTimer.h" />
     <ClInclude Include="ModuleWindow.h" />
     <ClInclude Include="Panel.h" />
+    <ClInclude Include="PanelAbout.h" />
     <ClInclude Include="PanelConfigurationWindow.h" />
+    <ClInclude Include="PanelProperties.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>

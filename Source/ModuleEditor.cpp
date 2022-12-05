@@ -6,9 +6,12 @@
 #include <gl/GL.h>
 
 #include "Application.h"
-#include "Console.h"
+#include "PanelConsole.h"
 
+#include "Panel.h"
 #include "PanelConfigurationWindow.h"
+#include "PanelProperties.h"
+#include "PanelAbout.h"
 
 #include "ModuleWindow.h"
 #include "ModuleRender.h"
@@ -18,7 +21,10 @@
 
 ModuleEditor::ModuleEditor()
 {
-
+    m_Panels.push_back(m_ConfigWindow = new PanelConfigurationWindow("Configuration"));
+    m_Panels.push_back(m_Console = new PanelConsole("Console"));
+    m_Panels.push_back(m_About = new PanelAbout("About"));
+    m_Panels.push_back(m_ConfigModel = new PanelProperties("Model"));
     m_clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 }
 
@@ -29,19 +35,13 @@ ModuleEditor::~ModuleEditor()
 bool ModuleEditor::Init()
 {
     // Setup Dear ImGui context
-    
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     m_io = ImGui::GetIO(); (void)m_io;
     m_io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;       // Enable Keyboard Controls
     m_io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
 
-    // Setup Dear ImGui style
-    //ImGui::StyleColorsDark();
     ImGui::StyleColorsLight();
-
-
-    m_Panels.push_back(new PanelConfigurationWindow("Configuration"));
 
     return true;
 }
@@ -73,7 +73,13 @@ update_status ModuleEditor::Update()
 {
     //NewTestImgUI();
     NewHelloWorld();
-    m_console.Draw();
+    
+
+    if (!DrawMenu())
+    {
+        return UPDATE_STOP;
+    }
+
     for (std::list<Panel*>::iterator it = m_Panels.begin(); it != m_Panels.end(); ++it) {
         (*it)->Draw();
     }
@@ -83,9 +89,7 @@ update_status ModuleEditor::Update()
 update_status ModuleEditor::PostUpdate()
 {
     ImGui::Render();
-    //glViewport(0, 0, (int)m_io.DisplaySize.x, (int)m_io.DisplaySize.y);
-    glClearColor(m_clear_color.x * m_clear_color.w, m_clear_color.y * m_clear_color.w, m_clear_color.z * m_clear_color.w, m_clear_color.w);
-    //glClear(GL_COLOR_BUFFER_BIT);
+    //glClearColor(m_clear_color.x * m_clear_color.w, m_clear_color.y * m_clear_color.w, m_clear_color.z * m_clear_color.w, m_clear_color.w);
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
 
@@ -100,10 +104,54 @@ update_status ModuleEditor::PostUpdate()
 
 bool ModuleEditor::CleanUp()
 {
+    for (std::list<Panel*>::iterator it = m_Panels.begin(); it != m_Panels.end(); ++it) {
+        delete (*it);
+    }
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplSDL2_Shutdown();
     ImGui::DestroyContext();
     return false;
+}
+
+
+bool ModuleEditor::DrawMenu() 
+{
+    if (ImGui::BeginMainMenuBar())
+    {
+        if (ImGui::BeginMenu("Menu"))
+        {
+            if (ImGui::MenuItem("Exit")) {
+                return false;
+            }
+            ImGui::EndMenu();
+        }
+
+        if (ImGui::BeginMenu("GitHub"))
+        {
+            if (ImGui::MenuItem("Main Page")) {
+                ShellExecuteA(NULL, "open", "https://github.com/DADSILVER/UPC-Videogame-Engine", NULL, NULL, SW_SHOWNORMAL);
+            }
+            if (ImGui::MenuItem("Documentation")) {
+                ShellExecuteA(NULL, "open", "https://github.com/DADSILVER/UPC-Videogame-Engine", NULL, NULL, SW_SHOWNORMAL);
+            }
+            if (ImGui::MenuItem("Download Latest")) {
+                ShellExecuteA(NULL, "open", "https://github.com/DADSILVER/UPC-Videogame-Engine/releases", NULL, NULL, SW_SHOWNORMAL);
+            }
+            ImGui::EndMenu();
+        }
+
+        if (ImGui::BeginMenu("Windows"))
+        {
+            ImGui::MenuItem("About", NULL, &m_About->GetOpen());
+            ImGui::MenuItem("Console Log", NULL, &m_Console->GetOpen());
+            ImGui::MenuItem("Configuration", NULL, &m_ConfigWindow->GetOpen());
+            ImGui::MenuItem("Model", NULL, &m_ConfigModel->GetOpen());
+            ImGui::EndMenu();
+        }
+
+        ImGui::EndMainMenuBar();
+    }
+    return true;
 }
 
 

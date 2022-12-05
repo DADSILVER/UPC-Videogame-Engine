@@ -12,11 +12,11 @@
 #include "ModuleTexture.h"
 #include "ModuleEditor.h"
 
-#include "Console.h"
+#include "PanelConsole.h"
 
 void Model::Load(const char* InFileName)
 {
-	App->m_Editor->m_console.AddLog(engLOG("Model load from: %s\n", InFileName));
+	App->m_Editor->m_Console->AddLog(engLOG("Model load from: %s\n", InFileName));
 	const aiScene* scene = aiImportFile(InFileName, aiProcessPreset_TargetRealtime_MaxQuality);
 	if (scene)
 	{
@@ -25,7 +25,7 @@ void Model::Load(const char* InFileName)
 	}
 	else
 	{
-		App->m_Editor->m_console.AddLog(engLOG("Error loading %s: %s", InFileName, aiGetErrorString()));
+		App->m_Editor->m_Console->AddLog(engLOG("Error loading %s: %s", InFileName, aiGetErrorString()));
 	}
 }
 

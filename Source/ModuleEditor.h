@@ -1,11 +1,15 @@
 #pragma once
 #include "Module.h"
+
 #include <imgui.h>
 #include <vector>
 #include <list>
 
-#include "Console.h"
 #include "Panel.h"
+#include "PanelAbout.h"
+#include "PanelConfigurationWindow.h"
+#include "PanelConsole.h"
+#include "PanelProperties.h"
 
 class ModuleEditor :
 	public Module
@@ -20,6 +24,7 @@ public:
 	update_status Update();
 	update_status PostUpdate();
 	bool CleanUp();
+	bool DrawMenu();
 	void NewTestImgUI();
 
 	void NewHelloWorld();
@@ -39,5 +44,8 @@ private:
 	std::list<Panel*> m_Panels;
 
 public:
-	Console m_console;
+	PanelConsole* m_Console;
+	PanelAbout* m_About;
+	PanelConfigurationWindow* m_ConfigWindow;
+	PanelProperties* m_ConfigModel;
 };
