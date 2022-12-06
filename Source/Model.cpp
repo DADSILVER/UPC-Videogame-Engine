@@ -59,7 +59,6 @@ void Model::Load(const char* InFileName)
 	{
 		App->m_Editor->m_Console->AddLog(engLOG("Error loading %s: %s", InFileName, aiGetErrorString()));
 	}
-	delete scene;
 }
 
 void Model::LoadMeshes(const aiScene* InScene)

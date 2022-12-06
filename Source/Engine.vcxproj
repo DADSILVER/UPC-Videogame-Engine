@@ -334,6 +334,9 @@
   <ItemGroup>
     <ResourceCompile Include="Engine.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <Library Include="libs\assimp\assimp-vc142-mt.lib" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

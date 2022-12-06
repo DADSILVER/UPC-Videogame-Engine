@@ -576,4 +576,7 @@
   <ItemGroup>
     <ResourceCompile Include="Engine.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <Library Include="libs\assimp\assimp-vc142-mt.lib" />
+  </ItemGroup>
 </Project>
