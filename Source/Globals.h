@@ -40,5 +40,5 @@ enum moves_camera
 #define SCREEN_HEIGHT 800
 #define FULLSCREENINIT false
 #define VSYNC true
-#define TITLE "Super Awesome Engine"
+#define TITLE "Ultimate Concergence"
 #define GLSL_VERSION "#version 440"
