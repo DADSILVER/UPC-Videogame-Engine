@@ -61,8 +61,8 @@ bool ModuleRender::Init()
 
 
 	//Load Model BakerHouse
-	m_BakerHause = new Model();
-	m_BakerHause->Load("source/BakerHouse.fbx");
+	m_Model = new Model();
+	m_Model->Load("source/BakerHouse.fbx");
 	//m_BakerHause->SetModelMatrix(
 	//	float4x4::FromTRS(float3(10.0f, -10.0f, 0.0f),
 	//		float4x4::RotateZ(0),
@@ -96,7 +96,7 @@ update_status ModuleRender::Update()
 	}
 
 	App->m_DebugDraw->Draw(App->m_Camera->GetViewMatrix(), App->m_Camera->GetProjectionMatrix(), SCREEN_WIDTH, SCREEN_HEIGHT);
-	m_BakerHause->Draw();
+	m_Model->Draw();
 
 	return UPDATE_CONTINUE;
 }
@@ -113,8 +113,7 @@ bool ModuleRender::CleanUp()
 	App->m_Editor->m_Console->AddLog(engLOG("Destroying renderer"));
 	SDL_GL_DeleteContext(m_Context);
 	glDeleteProgram(m_Program);
-	delete m_BakerHause;
-	delete m_NotTextureModel;
+	delete m_Model;
 
 	return true;
 }
@@ -126,11 +125,11 @@ void ModuleRender::WindowResized(float InWidth, float InHeight)
 
 void ModuleRender::LoadModel(const char* InFileName)
 {
-	delete m_BakerHause;
-	m_BakerHause = new Model();
-	m_BakerHause->Load(InFileName);
-	App->m_Camera->SetPosition(m_BakerHause->GetInitVisionPos());
-	App->m_Camera->LookAt(m_BakerHause->GetCenterOfModel());
+	delete m_Model;
+	m_Model = new Model();
+	m_Model->Load(InFileName);
+	App->m_Camera->SetPosition(m_Model->GetInitVisionPos());
+	App->m_Camera->LookAt(m_Model->GetCenterOfModel());
 }
 
 

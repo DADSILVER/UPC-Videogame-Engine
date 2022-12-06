@@ -16,7 +16,27 @@
 
 void Model::Load(const char* InFileName)
 {
+
 	App->m_Editor->m_Console->AddLog(engLOG("Model load from: %s\n", InFileName));
+
+	//Get name form path
+	m_Name = InFileName;
+	if (m_Name.find_last_of("\\/") != std::string::npos)
+	{
+		m_Name.erase(0, m_Name.find_last_of("\\/")+1);
+	}
+	else if (m_Name.find_last_of("/") != std::string::npos)
+	{
+		m_Name.erase(0, m_Name.find_last_of("/")+1);
+	}
+
+	if (m_Name.find_last_of(".") != std::string::npos)
+	{
+		m_Name.erase(m_Name.find_last_of("."), m_Name.size());
+	}
+	
+
+
 	const aiScene* scene = aiImportFile(InFileName, aiProcessPreset_TargetRealtime_MaxQuality);
 	if (scene)
 	{
@@ -48,42 +68,55 @@ void Model::LoadMaterials(const aiScene* InScene,const char* InFileName)
 {
 	aiString file;
 	m_Material.reserve(InScene->mNumMaterials);
+	std::string name = InFileName;
+
 	for (unsigned i = 0; i < InScene->mNumMaterials; ++i)
 	{
 		if (InScene->mMaterials[i]->GetTexture(aiTextureType_DIFFUSE, 0, &file) == AI_SUCCESS)
 		{
+			//Local path from texture model
 			TextureInfo material;
 			material.m_FileName = file.data;
 			if (App->m_Texture->LoadTexture(material)) 
 			{
 				m_Material.push_back(material);
+				continue;
 			}
 
+			//Relative path from the dir of the model
 			std::string filePath = file.data;	
 			std::string relativeFilePath = InFileName;
 			std::string relativeFilePathName = InFileName;
-			size_t pos = 0;
-			while ((pos = filePath.find(92)) != std::string::npos || (pos = filePath.find('/')) != std::string::npos)
-			{
-				
-				filePath.erase(0, pos + 1);
-			}
-			pos = 0;
-			while ((pos = relativeFilePathName.find(92)) != std::string::npos || (pos = relativeFilePathName.find('/')) != std::string::npos)
-			{
+			size_t pos = relativeFilePathName.find_last_of("\\/");
 
-				relativeFilePathName.erase(0, pos + 1);
+			if (relativeFilePath.find_last_of("\\/") != std::string::npos)
+			{
+				relativeFilePath.erase(relativeFilePath.find_last_of("\\/") + 1, relativeFilePath.size());
 			}
-			relativeFilePath.erase(relativeFilePath.size() - relativeFilePathName.size(), relativeFilePath.size());
+			else if (relativeFilePath.find_last_of("/") != std::string::npos)
+			{
+				relativeFilePath.erase(relativeFilePath.find_last_of("/") + 1, relativeFilePath.size());
+			}
+
+			if (filePath.find_last_of("\\/") != std::string::npos)
+			{
+				filePath.erase(0, filePath.find_last_of("\\/"));
+			}
+			else if (filePath.find_last_of("/") != std::string::npos)
+			{
+				filePath.erase(0, filePath.find_last_of("/"));
+			}
+
 			material.m_FileName = relativeFilePath + filePath;
 			
 			if(App->m_Texture->LoadTexture(material))
 			{
 				m_Material.push_back(material);
+				continue;
 			}
 
-			filePath = "textures/" + filePath;
-			material.m_FileName = filePath;
+			//Load from texture dir
+			material.m_FileName = "textures/" + filePath;
 			if (App->m_Texture->LoadTexture(material))
 			{
 				m_Material.push_back(material);

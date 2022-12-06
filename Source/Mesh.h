@@ -21,6 +21,8 @@ public:
 	inline const float3 GetCenterOfMesh()	{return (m_model * m_CenterOfMesh.ToPos4()).xyz();}
 	inline const float3 GetMaxVertices()	{return (m_model * m_MaxOfMesh.ToPos4()).xyz();}
 	inline const float3 GetMinVertices()	{return (m_model * m_MinOfMesh.ToPos4()).xyz();}
+	inline const int& GetNumVertices()		{return m_NumVetices;}
+	inline const int& GetNumOfTriangles()	{return m_NumTriangles;}
 
 	inline void SetModelMatrix(const float4x4& InModel) {m_model = InModel;}
 
@@ -31,7 +33,7 @@ private:
 	unsigned m_ebo = 0;
 
 	int m_NumVetices = 0;
-	int m_NumIndices = 0;
+	int m_NumTriangles = 0;
 	int m_MaterialIndex = 0;
 
 	float3 m_CenterOfMesh = { 0,0,0 };

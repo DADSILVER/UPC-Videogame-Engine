@@ -20,7 +20,7 @@ public:
 	bool CleanUp();
 	void WindowResized(float InWidth, float InHeight);
 
-	inline Model GetModel() {return *m_BakerHause;}
+	inline Model GetModel() {return *m_Model;}
 
 	void LoadModel(const char* InFileName);
 
@@ -32,6 +32,5 @@ private:
 
 	int m_win_width, m_win_height;
 
-	Model* m_BakerHause;
-	Model* m_NotTextureModel;
+	Model* m_Model;
 };
