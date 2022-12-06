@@ -25,7 +25,7 @@ public:
 	float4x4 GetViewMatrix() const;
 
 	void GetInputMove();
-	void ResizeWindow(const float& Inwidth, const float& Inheigth);
+	void ResizeWindow(const int& InWidth, const int& InHeigth);
 	void LookAt(const float3& InLookUp);
 	
 

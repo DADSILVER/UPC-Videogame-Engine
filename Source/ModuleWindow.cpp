@@ -3,6 +3,7 @@
 
 #include "ModuleWindow.h"
 #include "ModuleEditor.h"
+#include "ModuleCamera.h"
 
 ModuleWindow::ModuleWindow()
 {
@@ -27,16 +28,23 @@ bool ModuleWindow::Init()
 	else
 	{
 		//Create window
-		int width = SCREEN_WIDTH;
-		int height = SCREEN_HEIGHT;
+		//Create window
+		SDL_DisplayMode dm;
+		SDL_GetCurrentDisplayMode(0, &dm);
+		m_MaxWidth = dm.w;
+		m_MaxHeight = dm.h;
+		m_Width = SCREEN_WIDTH;
+		m_Height = SCREEN_HEIGHT;
+
+	
 		Uint32 flags = SDL_WINDOW_SHOWN |  SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE;
 
-		if(FULLSCREEN == true)
+		if(FULLSCREENINIT == true)
 		{
 			flags |= SDL_WINDOW_FULLSCREEN;
 		}
 
-		m_Window = SDL_CreateWindow(TITLE, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, flags);
+		m_Window = SDL_CreateWindow(TITLE, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, m_Width, m_Height, flags);
 
 		if(m_Window == NULL)
 		{
@@ -70,3 +78,57 @@ bool ModuleWindow::CleanUp()
 	return true;
 }
 
+
+void ModuleWindow::WindowResized(int InWidth, int InHeight)
+{
+	m_Width = InWidth;
+	m_Height = InHeight;
+	App->m_Camera->ResizeWindow(m_Width, m_Height);
+}
+
+void ModuleWindow::SetTypeScreen(type_screen InTypeScreen)
+{
+	
+	switch (InTypeScreen)
+	{
+	case FULLSCREEN:
+		SDL_SetWindowFullscreen(m_Window, SDL_TRUE);
+		SDL_SetWindowBordered(m_Window, SDL_FALSE);
+		SDL_SetWindowResizable(m_Window, SDL_FALSE);
+		break;
+	case RESIZABLE:
+		SDL_SetWindowResizable(m_Window, SDL_TRUE);
+		SDL_SetWindowFullscreen(m_Window, SDL_FALSE);
+		SDL_SetWindowBordered(m_Window, SDL_FALSE);
+		break;
+	case BORDERLESS:
+		SDL_SetWindowBordered(m_Window, SDL_TRUE);
+		SDL_SetWindowFullscreen(m_Window, SDL_FALSE);
+		SDL_SetWindowResizable(m_Window, SDL_FALSE);
+		break;
+	}
+
+	m_ActualTypeScreen = InTypeScreen;
+}
+
+float ModuleWindow::GetBrightness()
+{
+	return SDL_GetWindowBrightness(m_Window);
+}
+
+void ModuleWindow::SetBrightness(float& InBrightness)
+{
+	SDL_SetWindowBrightness(m_Window, InBrightness);
+}
+
+void ModuleWindow::SetWidth(int& InWidth)
+{
+	m_Width = InWidth;
+	SDL_SetWindowSize(App->m_Window->m_Window, m_Width, m_Height);
+}
+
+void ModuleWindow::SetHeight(int& InHeight)
+{
+	m_Height = InHeight;
+	SDL_SetWindowSize(App->m_Window->m_Window, m_Width, m_Height);
+}

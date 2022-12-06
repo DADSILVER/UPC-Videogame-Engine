@@ -63,13 +63,6 @@ bool ModuleRender::Init()
 	//Load Model BakerHouse
 	m_Model = new Model();
 	m_Model->Load("source/BakerHouse.fbx");
-	//m_BakerHause->SetModelMatrix(
-	//	float4x4::FromTRS(float3(10.0f, -10.0f, 0.0f),
-	//		float4x4::RotateZ(0),
-	//		//float3(0.01f, 0.01f, 0.01f)
-	//		float3(1.0f, 1.0f, 1.0f)
-	//	)
-	//);
 
 	m_Program = App->m_Program->CreateProgram();
 
@@ -78,10 +71,11 @@ bool ModuleRender::Init()
 
 update_status ModuleRender::PreUpdate()
 {
+	int h, w;
+	SDL_GetWindowSize(App->m_Window->m_Window, &w, &h);
+	glViewport(0, 0, w, h);
 	
-	SDL_GetWindowSize(App->m_Window->m_Window, &m_win_width, &m_win_height);
-	glViewport(0, 0, m_win_width, m_win_height);
-	
+	glClearColor(M_BackGroundColor.x, M_BackGroundColor.y, M_BackGroundColor.z, 0.5f);
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	return UPDATE_CONTINUE;
@@ -95,7 +89,7 @@ update_status ModuleRender::Update()
 		return UPDATE_STOP;
 	}
 
-	App->m_DebugDraw->Draw(App->m_Camera->GetViewMatrix(), App->m_Camera->GetProjectionMatrix(), SCREEN_WIDTH, SCREEN_HEIGHT);
+	App->m_DebugDraw->Draw(App->m_Camera->GetViewMatrix(), App->m_Camera->GetProjectionMatrix(), SCREEN_WIDTH, SCREEN_HEIGHT, m_GridColor);
 	m_Model->Draw();
 
 	return UPDATE_CONTINUE;
@@ -103,7 +97,6 @@ update_status ModuleRender::Update()
 
 update_status ModuleRender::PostUpdate()
 {
-	//SDL_GL_SwapWindow(App->m_Window->window);
 	return UPDATE_CONTINUE;
 }
 
@@ -118,13 +111,6 @@ bool ModuleRender::CleanUp()
 	return true;
 }
 
-void ModuleRender::WindowResized(float InWidth, float InHeight)
-{
-	m_win_width = InWidth; 
-	m_win_height = InHeight;
-	App->m_Camera->ResizeWindow(m_win_width, m_win_height);
-}
-
 void ModuleRender::LoadModel(const char* InFileName)
 {
 	delete m_Model;
@@ -133,5 +119,7 @@ void ModuleRender::LoadModel(const char* InFileName)
 	App->m_Camera->SetPosition(m_Model->GetInitVisionPos());
 	App->m_Camera->LookAt(m_Model->GetCenterOfModel());
 }
+
+
 
 

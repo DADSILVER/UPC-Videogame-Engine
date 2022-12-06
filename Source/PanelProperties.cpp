@@ -10,6 +10,7 @@
 
 #include "Module.h"
 #include "ModuleRender.h"
+#include "ModuleWindow.h"
 
 
 PanelProperties::PanelProperties(const char* InTitle) : Panel(InTitle)
@@ -22,10 +23,9 @@ bool PanelProperties::Draw()
 	{
 		return false;
 	}
-	App->m_Renderer->GetWidth();
-	App->m_Renderer->GetHeight();
-	ImGui::SetNextWindowSize(ImVec2(300, (float)App->m_Renderer->GetHeight() / 1.5f), ImGuiCond_Always);
-	ImGui::SetNextWindowPos(ImVec2((float)App->m_Renderer->GetWidth() - 300, 18) , ImGuiCond_Always);
+	
+	ImGui::SetNextWindowSize(ImVec2(300, (float)App->m_Window->GetHeight() / 1.5f), ImGuiCond_Always);
+	ImGui::SetNextWindowPos(ImVec2((float)App->m_Window->GetWidth() - 300, 18) , ImGuiCond_Always);
 
 	ImGui::Begin(m_Title);
 

@@ -2,8 +2,9 @@
 #include "Application.h"
 
 #include "ModuleInput.h"
-#include "ModuleRender.h"
+#include "ModuleWindow.h"
 #include "ModuleEditor.h"
+#include "ModuleRender.h"
 
 #include "SDL/include/SDL.h"
 #include "imgui_impl_sdl.h"
@@ -47,7 +48,7 @@ update_status ModuleInput::Update()
                 return UPDATE_STOP;
             case SDL_WINDOWEVENT:
                 if (m_sdlEvent.window.event == SDL_WINDOWEVENT_RESIZED || m_sdlEvent.window.event == SDL_WINDOWEVENT_SIZE_CHANGED)
-                    App->m_Renderer->WindowResized(m_sdlEvent.window.data1, m_sdlEvent.window.data2);
+                    App->m_Window->WindowResized(m_sdlEvent.window.data1, m_sdlEvent.window.data2);
                 break;
 			case SDL_KEYDOWN:
 				m_keyboard[m_sdlEvent.key.keysym.scancode] = KS_DOWN;
@@ -78,11 +79,11 @@ update_status ModuleInput::Update()
     return UPDATE_CONTINUE;
 }
 
-const bool& ModuleInput::GetKeyboardButton(int InScancode) {
+const bool ModuleInput::GetKeyboardButton(int InScancode) {
 	return m_keyboard[InScancode];
 }
 
-const bool& ModuleInput::GetMouseButton(int InScancode) {
+const bool ModuleInput::GetMouseButton(int InScancode) {
 	return m_mouseButtons[InScancode];
 }
 

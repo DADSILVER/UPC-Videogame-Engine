@@ -18,21 +18,22 @@ public:
 	update_status Update();
 	update_status PostUpdate();
 	bool CleanUp();
-	void WindowResized(float InWidth, float InHeight);
+	
 
 	inline Model GetModel() { return *m_Model; }
-	inline int GetWidth()  { return m_win_width; }
-	inline int GetHeight() { return m_win_height; }
+
 
 	void LoadModel(const char* InFileName);
+
+	
 
 public:
 	void* m_Context;
 	int m_Program;
+	float3 M_BackGroundColor{ 1, 1, 1 };
+	float3 m_GridColor{ 0, 0, 0 };
 
 private:
-
-	int m_win_width, m_win_height;
 
 	Model* m_Model;
 };

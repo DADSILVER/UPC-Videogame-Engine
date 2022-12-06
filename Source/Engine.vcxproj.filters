@@ -19,9 +19,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>Globals</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleRenderExercise.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
     <ClCompile Include="ModuleProgram.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
@@ -230,9 +227,6 @@
     </ClInclude>
     <ClInclude Include="Globals.h">
       <Filter>Globals</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleRenderExercise.h">
-      <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="ModuleProgram.h">
       <Filter>Modules</Filter>

@@ -26,8 +26,6 @@ public:
 	bool CleanUp();
 	bool DrawMenu();
 
-	void NewHelloWorld();
-
 	const std::vector<float>& GetFps() const {return m_Fps;}
 	const std::vector<float>& GetMs() const { return m_Ms; }
 

@@ -38,7 +38,7 @@ enum moves_camera
 // Configuration -----------
 #define SCREEN_WIDTH 1200
 #define SCREEN_HEIGHT 800
-#define FULLSCREEN false
+#define FULLSCREENINIT false
 #define VSYNC true
 #define TITLE "Super Awesome Engine"
 #define GLSL_VERSION "#version 440"

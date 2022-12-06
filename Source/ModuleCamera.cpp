@@ -138,7 +138,6 @@ void ModuleCamera::MoveCamera(moves_camera InMove)
 
 void ModuleCamera::Rotate(const float& InPitch, float InYaw)
 {
-	// TODO : change to quat
 
 	if (!CanSetPos((float3x3::RotateAxisAngle(m_frustum->WorldRight(), InYaw) * m_frustum->Front().Normalized()).y))
 	{
@@ -286,7 +285,7 @@ void ModuleCamera::GetInputMove()
 	}
 }
 
-void ModuleCamera::ResizeWindow(const float& InWidth, const float& InHeigth)
+void ModuleCamera::ResizeWindow(const int& InWidth, const int& InHeigth)
 {
-	m_frustum->SetHorizontalFovAndAspectRatio(m_frustum->HorizontalFov(), InWidth / InHeigth);
+	m_frustum->SetHorizontalFovAndAspectRatio(m_frustum->HorizontalFov(), (float)InWidth / (float)InHeigth);
 }

@@ -27,8 +27,8 @@ public:
 
 	bool Init();
 	update_status Update();
-	const bool& GetKeyboardButton(int InScancode);
-	const bool& GetMouseButton(int InScancode);
+	const bool GetKeyboardButton(int InScancode);
+	const bool GetMouseButton(int InScancode);
 	float2 GetMouseMotion();
 	bool CleanUp();
 

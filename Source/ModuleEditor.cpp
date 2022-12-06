@@ -17,9 +17,6 @@
 #include "ModuleRender.h"
 #include "ModuleTimer.h"
 
-
-
-
 ModuleEditor::ModuleEditor()
 {
     m_Panels.push_back(m_ConfigWindow = new PanelConfigurationWindow("Configuration"));
@@ -74,8 +71,6 @@ update_status ModuleEditor::PreUpdate()
 
 update_status ModuleEditor::Update()
 {
-    NewHelloWorld();
-
 
     if (!DrawMenu())
     {
@@ -111,9 +106,9 @@ bool ModuleEditor::CleanUp()
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplSDL2_Shutdown();
     ImGui::DestroyContext();
-    return false;
+    SDL_Quit();
+    return true;
 }
-
 
 bool ModuleEditor::DrawMenu() 
 {
@@ -154,21 +149,3 @@ bool ModuleEditor::DrawMenu()
     }
     return true;
 }
-
-void ModuleEditor::NewHelloWorld()
-{
-    static char buf[32];
-    ImGui::Begin("Hello, world 2!");
-    ImGui::Text("Hello, world %d", 123);
-    ImGui::Checkbox("Demo Window", &show_demo_window);
-
-    if (show_demo_window)
-    {
-        ImGui::ShowDemoWindow(&show_demo_window);
-    }
-    ImGui::InputText("string", buf, IM_ARRAYSIZE(buf));
-    //ImGui::SliderFloat("float", &f, 0.0f, 1.0f);
-    ImGui::End();
-
-}
-
