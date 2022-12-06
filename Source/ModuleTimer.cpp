@@ -15,7 +15,17 @@ bool ModuleTimer::Start()
 
 update_status ModuleTimer::PreUpdate()
 {
-    m_LastDeltaTime = float (Clock::Time());
+    m_Milisecond = float(Clock::Time() - m_LastDeltaTime);
+
+    m_DeltaTime = m_Milisecond / 1000.0f;
+    if (m_DeltaTime < LOW_LIMIT) {
+        m_DeltaTime = LOW_LIMIT;
+    }
+    else if (m_DeltaTime > HIGH_LIMIT) {
+        m_DeltaTime = HIGH_LIMIT;
+    }
+
+    m_LastDeltaTime = float(Clock::Time());
     return UPDATE_CONTINUE;
 }
 
@@ -29,15 +39,3 @@ bool ModuleTimer::CleanUp()
     return true;
 }
 
-
-const float ModuleTimer::GetDeltaTime() const
-{
-    float OutDeltaTime = float(Clock::Time() - m_LastDeltaTime) / 1000.0f;
-    if (OutDeltaTime < LOW_LIMIT) {
-        OutDeltaTime = LOW_LIMIT;
-    }
-    else if (OutDeltaTime > HIGH_LIMIT) {
-        OutDeltaTime = HIGH_LIMIT;
-    }
-    return OutDeltaTime;
-}

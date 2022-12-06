@@ -63,20 +63,19 @@ update_status ModuleEditor::PreUpdate()
     ImGui::NewFrame();
 
     if (m_Fps.size() >= 100) {
-        m_Fps.erase(m_Fps.end() - 1, m_Fps.end());
-        m_Ms.erase(m_Ms.end() - 1, m_Ms.end());
+        m_Fps.erase(m_Fps.begin(), m_Fps.begin() + 1);
+        m_Ms.erase(m_Ms.begin(), m_Ms.begin() + 1);
     }
     m_Fps.emplace_back(ImGui::GetIO().Framerate);
-    m_Fps.emplace_back(App->m_Timer->GetDeltaTime());
+    m_Ms.emplace_back(App->m_Timer->GetMiliseconds());
 
     return UPDATE_CONTINUE;
 }
 
 update_status ModuleEditor::Update()
 {
-    //NewTestImgUI();
     NewHelloWorld();
-    
+
 
     if (!DrawMenu())
     {

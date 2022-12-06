@@ -12,10 +12,13 @@ public:
 	update_status Update();
 	bool CleanUp();
 
-	const float GetDeltaTime() const;
+	inline const float GetDeltaTime() const { return m_DeltaTime; }
+	inline const float GetMiliseconds() const { return m_Milisecond; }
 
 private:
-	float m_LastDeltaTime;
+	float m_LastDeltaTime = 0;
+	float m_DeltaTime;
+	float m_Milisecond;
 
 };
 
