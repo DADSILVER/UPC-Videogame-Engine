@@ -1,0 +1,1741 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float2::x\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float2.h"
+                },
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 2,
+                  "endLine": 53,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float2@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float2::x"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float2::y\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float2.h"
+                },
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 2,
+                  "endLine": 53,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float2@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float2::y"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3::x\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3.h"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 2,
+                  "endLine": 55,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3::x"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3::z\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3.h"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 2,
+                  "endLine": 55,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3::z"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3::y\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3.h"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 2,
+                  "endLine": 55,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3::y"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4::y\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4.h"
+                },
+                "region": {
+                  "startLine": 78,
+                  "startColumn": 2,
+                  "endLine": 78,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4::y"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4::x\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4.h"
+                },
+                "region": {
+                  "startLine": 78,
+                  "startColumn": 2,
+                  "endLine": 78,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4::x"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4::z\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4.h"
+                },
+                "region": {
+                  "startLine": 78,
+                  "startColumn": 2,
+                  "endLine": 78,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4::z"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4::w\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4.h"
+                },
+                "region": {
+                  "startLine": 78,
+                  "startColumn": 2,
+                  "endLine": 78,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4::w"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4_storage::y\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4.h"
+                },
+                "region": {
+                  "startLine": 838,
+                  "startColumn": 2,
+                  "endLine": 838,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4_storage@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4_storage::y"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4_storage::x\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4.h"
+                },
+                "region": {
+                  "startLine": 838,
+                  "startColumn": 2,
+                  "endLine": 838,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4_storage@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4_storage::x"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4_storage::z\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4.h"
+                },
+                "region": {
+                  "startLine": 838,
+                  "startColumn": 2,
+                  "endLine": 838,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4_storage@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4_storage::z"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4_storage::w\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4.h"
+                },
+                "region": {
+                  "startLine": 838,
+                  "startColumn": 2,
+                  "endLine": 838,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4_storage@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4_storage::w"
+          }
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Desbordamiento aritmético: el operador \"*\" se usa en un valor de 4 bytes y, a continuación, el resultado se convierte a un valor de 8 bytes. Convierta el valor al tipo más amplio antes de llamar al operador \"*\" para evitar el desbordamiento (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/MathFunc.cpp"
+                },
+                "region": {
+                  "startLine": 574,
+                  "startColumn": 27,
+                  "endLine": 574,
+                  "endColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?CombinatorialTab@math@@YAHHH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.29.30145.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "commandLine": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x64\\c1xx.dll\" -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x00F1C1B0 -il C:\\Users\\david\\AppData\\Local\\Temp\\_CL_3e5969e1ast -typedil -f libs\\MathGeoLib_Source\\Math\\MathFunc.cpp -Ze -D_MSC_EXTENSIONS -Zp16 -pc \\:/ -D_MSC_VER=1929 -D_MSC_FULL_VER=192930145 -D_MSC_BUILD=0 -D_M_AMD64=100 -ZILP448 -D_M_X64=100 -D_WIN64 -D_WIN32 -GR -D_CPPRTTI -I C:\\Users\\david\\OneDrive\\Escritorio\\Master\\Grafico 3d\\Engine\\Engine\\UPC-Videogame-Engine\\Source\\SDL\\include -I C:\\Users\\david\\OneDrive\\Escritorio\\Master\\Grafico 3d\\Engine\\Engine\\UPC-Videogame-Engine\\Source\\libs\\glew-2.1.0\\include -I C:\\Users\\david\\OneDrive\\Escritorio\\Master\\Grafico 3d\\Engine\\Engine\\UPC-Videogame-Engine\\Source\\libs\\MathGeoLib_Source -nologo -W 3 -diagnostics:column -D_GUARDOVERFLOW_CRT_ALLOCATORS=1 -Ot -DCODE_ANALYSIS -D_CRT_SECURE_NO_WARNINGS -D_DEBUG -D_CONSOLE -D_MBCS -EHs -D_CPPUNWIND -EHc -D__MSVC_RUNTIME_CHECKS -RTCs -RTCu -MDd -D_DEBUG -D_MT -D_DLL -GS -D_M_FP_PRECISE -permissive- -Zc:wchar_t -Zc:forScope -Fox64\\Debug\\MathFunc.obj -Fdx64\\Debug\\vc142.pdb -external:W 3 -Gd -analyze:projectdirectory C:\\Users\\david\\OneDrive\\Escritorio\\Master\\Grafico 3d\\Engine\\Engine\\UPC-Videogame-Engine\\Source -analyze:rulesetdirectory ;C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Team Tools\\Static Analysis Tools\\Rule Sets\\NativeRecommendedRules.ruleset -analyze:quiet -analyze:plugin C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x86\\EspXEngine.dll -FC -errorreport:prompt -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -I C:\\Users\\david\\OneDrive\\Escritorio\\Master\\Grafico 3d\\Engine\\Engine\\UPC-Videogame-Engine\\Source\\Include\\um -external:I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\include -external:I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -external:I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\VS\\include -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -external:I C:\\Users\\david\\OneDrive\\Escritorio\\Master\\Grafico 3d\\Engine\\Engine\\UPC-Videogame-Engine\\Source\\Include\\um -I C:\\Users\\david\\OneDrive\\Escritorio\\Master\\Grafico 3d\\Engine\\Engine\\UPC-Videogame-Engine\\Source\\Include\\um",
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "3cb1ab87264110298b26620578f0bf50"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "a674d0500c610593571b2c1b2a1d67f0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Sphere.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "f162083c16e2c8361233fead9f276354"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Capsule.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "6f91a9e76c12a8285604f3e6cd61f33a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float2.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "5b77ba9779e9346b37008be2dd969325"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x4.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "10ca27bf7683700dabb7bcbf53527f1a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4x4.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "850349c9951eeeeb0ea7065c9480019d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Frustum.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "e169bd609e7148ba74a1b4506df657fc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Polyhedron.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "1fdb297de06e2ee2c072ebde80110b1f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Plane.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "6816ca659250363cc18caf3816bfe193"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Circle.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "8b6de69da1b5f8cc7521b4b3ab7bda8c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x3.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "4a5ebc3e462556b29ba0a4cda7c8495c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/Quat.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "d32ee6aa2969636116c3f8e720e17b93"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Sphere.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "0c45462cae8eaedc484a1bc63e58ecc8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/mathgeolibfwd.h"
+          },
+          "hashes": {
+            "md5": "dee65e1a1357607e0a0771cfc7e2a2ee"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/mathbuildconfig.h"
+          },
+          "hashes": {
+            "md5": "0e8a57c6c507387f16ceca03db8529d5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/mathtypes.h"
+          },
+          "hashes": {
+            "md5": "7ca68e0a6c53752a15da2924a21409c5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/mathnamespace.h"
+          },
+          "hashes": {
+            "md5": "6c1ddf4ebe97b8b7d9be70e6a2fc65ef"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/mathconstants.h"
+          },
+          "hashes": {
+            "md5": "14194726b9a54feefe033ce73342a2bb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/assume.h"
+          },
+          "hashes": {
+            "md5": "06ee462c8c043da864847896b79cdd2f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/myassert.h"
+          },
+          "hashes": {
+            "md5": "12f70f627fefbf3847268bcb8316abe8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/mathlog.h"
+          },
+          "hashes": {
+            "md5": "591d01044aaccca09111b7f5832b4302"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/multilinemacro.h"
+          },
+          "hashes": {
+            "md5": "358ac05323536905e04fc7f9e116f5d1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/ssemath.h"
+          },
+          "hashes": {
+            "md5": "703cb08f08138b61df0b3794eabe8ced"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/reinterpret.h"
+          },
+          "hashes": {
+            "md5": "32ca3b474c7df35addca5e77bb078d1f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/simd.h"
+          },
+          "hashes": {
+            "md5": "f6f32aa27cea062ac6fd0bb00f901ae6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/mathfunc.h"
+          },
+          "hashes": {
+            "md5": "90e7f518a89702207734fa73d2e925c9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/obb.h"
+          },
+          "hashes": {
+            "md5": "c3e141189c22cbd3e4f5199c8c535576"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/aabb.h"
+          },
+          "hashes": {
+            "md5": "e3ddd5e9276448235b40d4778ac3354c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/linesegment.h"
+          },
+          "hashes": {
+            "md5": "87a0c6c3a41f9d6b633bb9898e5a38d0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/matrixproxy.h"
+          },
+          "hashes": {
+            "md5": "01d4814723ea1c77df5eba017a962617"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/ray.h"
+          },
+          "hashes": {
+            "md5": "e0774fc230a15a7429ddc3ea9931781f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/algorithm/random/lcg.h"
+          },
+          "hashes": {
+            "md5": "cd1a2333ec87484768529a5316819c5e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/line.h"
+          },
+          "hashes": {
+            "md5": "78c2f2f03c609e0e1306b4d98c93fc3c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/polygon.h"
+          },
+          "hashes": {
+            "md5": "4ac79a487af4eff1070bf50397f4227a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/triangle.h"
+          },
+          "hashes": {
+            "md5": "cccbd15a672f175dbd53d41f7e3297d8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/ray.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "b40465678ef8924d9128b4ee47837d14"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4d.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "31fa035efd1c6905d994c20fde274c42"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Polyhedron.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "2e80402d2e8b2a9726d404d715c693ae"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/swap.h"
+          },
+          "hashes": {
+            "md5": "724f9df81030a0f2ffcdb403d357ffd4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/time/clock.h"
+          },
+          "hashes": {
+            "md5": "bd5dbd630fd415eea25156d5b57aa95e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/float4_sse.h"
+          },
+          "hashes": {
+            "md5": "5f90e55858c836cef1af1d00158dc275"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Polygon.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "c75d7764be3fd0ec5f9fb881256ab655"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/algorithm/gjk.h"
+          },
+          "hashes": {
+            "md5": "6728bdcbf955a46982aa88b90d44acf2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/plane.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "2d152121f571998206348f377268d920"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/polynomial.h"
+          },
+          "hashes": {
+            "md5": "b0ef28516d8512ee3ab1247d8e8f3867"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/pbvolume.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "d6a51e222c79b80fb2d4adc89af647f8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/pbvolume.h"
+          },
+          "hashes": {
+            "md5": "b5d78fe4aeac5b9bf003087bd7afc86b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/obb.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "095f777aba9d601d19a8b593e1c535b5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/float2.inl"
+          },
+          "hashes": {
+            "md5": "e7d105a8a612a71e85ce43d8f376878c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/linesegment2d.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "108ba4046cb4bf45d670cb20667874ef"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/linesegment2d.h"
+          },
+          "hashes": {
+            "md5": "8f3cd979e34931fd1b28a081e4d5d3b9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/vec2d.h"
+          },
+          "hashes": {
+            "md5": "549a61713d0bcfb8727e5bf82438112b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/aabb2d.h"
+          },
+          "hashes": {
+            "md5": "631c24cf53aa1c205e1f96f3eb13203d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/obb2d.h"
+          },
+          "hashes": {
+            "md5": "c26b80caee4bedda6c7192d17c0f9932"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/triangle2d.h"
+          },
+          "hashes": {
+            "md5": "741cb834b56acc2f077eea8a2ad0bf9e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/linesegment.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "d8ac271e5069ac9a0bceb4be27d2c809"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/line.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "19e07d0a6980f54a82927da8745b147e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Frustum.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "2073ee748abc0fb03ff9117698662050"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Circle2D.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "03332937cecfbfd639efaf3f99a1c0cc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Circle2D.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "e016bf5bb37478eb7204106c2f4231f2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/circle.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "04977c5b661defd094a8eb16b62e6a72"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/capsule.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "f1d5d3ea97c71e50fbad00a99e8df111"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/aabb.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "0b67f0644b06945e4367b6ec3ef180fa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/float4x4_neon.h"
+          },
+          "hashes": {
+            "md5": "01af98f0b8dcd82e54766e7592f2c01e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/algorithm/sat.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "fa128188ddfa6098b67cd727af66441c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/algorithm/sat.h"
+          },
+          "hashes": {
+            "md5": "9b5a184fe1d232e51af46659f92b6e77"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/algorithm/random/lcg.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "f53bac95c7440364dc3edaa1ce92b812"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/algorithm/gjk2d.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "1796414fc50736a1879763f1ed7a6edd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/algorithm/gjk2d.h"
+          },
+          "hashes": {
+            "md5": "bc0788f56f6891fa3c1c893aed0f03d5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/polygon2dref.h"
+          },
+          "hashes": {
+            "md5": "bd109b2e68ef34767fa7cd922d32f69e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/algorithm/gjk.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "224f850e4d0a540583a9ccbdb193e4ae"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/Module.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "8ca4ce44efb28f97c5994cd8003d6d1e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/SDL/include/SDL_rect.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "afd186f969d6d95b341257f88ca5f104"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/application.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "902072292ff7e6f5c9d8f4795d39591f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/application.h"
+          },
+          "hashes": {
+            "md5": "47afd8c67cbcb9208baaf521039c6633"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/globals.h"
+          },
+          "hashes": {
+            "md5": "ca317208940d1131136ec056cb5064fe"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/modulewindow.h"
+          },
+          "hashes": {
+            "md5": "68d236d2b82dfe4c58d75ae859375027"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl.h"
+          },
+          "hashes": {
+            "md5": "1cde4efcb34c523759e33ebf4473adc3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_main.h"
+          },
+          "hashes": {
+            "md5": "b88bc709072469bf02d27e556ac1fabb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_stdinc.h"
+          },
+          "hashes": {
+            "md5": "f4c5d7bcaee48a9cbe1eb8bdf5160141"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_config.h"
+          },
+          "hashes": {
+            "md5": "d92b2487a04fac36c1d442198cd245fa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_platform.h"
+          },
+          "hashes": {
+            "md5": "3b7f94169ae8344fab5edb92b89b3854"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/begin_code.h"
+          },
+          "hashes": {
+            "md5": "8e52ebea784a11dd64caa2d1ed5064bb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/close_code.h"
+          },
+          "hashes": {
+            "md5": "7b6b8e4df66cbbd5d2b3b84d99fd57bb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_assert.h"
+          },
+          "hashes": {
+            "md5": "6436e364b304693dd353def40aedf160"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_atomic.h"
+          },
+          "hashes": {
+            "md5": "9d3e1e298e9effd381cfe8b761a56d7e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_audio.h"
+          },
+          "hashes": {
+            "md5": "a148ae990e96319ba873468d010fa261"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_error.h"
+          },
+          "hashes": {
+            "md5": "a22e78171081a58bda2e5613f47b1425"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_endian.h"
+          },
+          "hashes": {
+            "md5": "f640f3b3bcf363959c1c4dc13a68103d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_mutex.h"
+          },
+          "hashes": {
+            "md5": "6945688f687051543d67d42137a79ab5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_thread.h"
+          },
+          "hashes": {
+            "md5": "1b19f9d0eecb167716d46cd0adf31b16"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_rwops.h"
+          },
+          "hashes": {
+            "md5": "d22f05585e4657bda3ad754f9c9d9969"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_clipboard.h"
+          },
+          "hashes": {
+            "md5": "8c920df7ea01ddb9d68d635295c1cc13"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_cpuinfo.h"
+          },
+          "hashes": {
+            "md5": "992d3b1c34853e331d4bfa622fa2dd4e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_events.h"
+          },
+          "hashes": {
+            "md5": "ce3ca58d8a1eb003fbb0887e81128559"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_video.h"
+          },
+          "hashes": {
+            "md5": "b9bd7a91a755766d944303450ed70432"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_pixels.h"
+          },
+          "hashes": {
+            "md5": "c8f026513c4454a8edd827a9b88aec5f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_surface.h"
+          },
+          "hashes": {
+            "md5": "cd3b84a59db66d0bc0c5ca03f7e384aa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_blendmode.h"
+          },
+          "hashes": {
+            "md5": "aa8afe49f152ab8f1afc6d99f794b28e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_keyboard.h"
+          },
+          "hashes": {
+            "md5": "cc72701da154376b8e102a0ff3617621"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_keycode.h"
+          },
+          "hashes": {
+            "md5": "b20bf46b01506667297eb8b37c47bc2a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_scancode.h"
+          },
+          "hashes": {
+            "md5": "e99fada689e4cf90b81cc537da5083f4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_mouse.h"
+          },
+          "hashes": {
+            "md5": "3dd95fe6c2eaf8ad3e0efef4a3c946d3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_joystick.h"
+          },
+          "hashes": {
+            "md5": "935cafa7a456a069006b07d5321ac379"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_gamecontroller.h"
+          },
+          "hashes": {
+            "md5": "01322563a34c5a402f3ddbcb7c58c90a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_sensor.h"
+          },
+          "hashes": {
+            "md5": "c4542448fc4ff1e461feaa75ad9fa8c0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_quit.h"
+          },
+          "hashes": {
+            "md5": "2a67a02e57463b876d975b3e6bd71e0c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_gesture.h"
+          },
+          "hashes": {
+            "md5": "de2e73748f374cba1be79b48672de001"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_touch.h"
+          },
+          "hashes": {
+            "md5": "d1940941cf6b4786393bbdf30d2437c3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_filesystem.h"
+          },
+          "hashes": {
+            "md5": "eb7afec496bb4b44fd1668eada2ecfa2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_haptic.h"
+          },
+          "hashes": {
+            "md5": "c19c10bdf7df4e9e71dfc0753d8727e4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_hints.h"
+          },
+          "hashes": {
+            "md5": "d5df373f7c59aafcd92f82e6285055bd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_loadso.h"
+          },
+          "hashes": {
+            "md5": "22fdd8e014747dd84e3c4f1e234d0e8b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_log.h"
+          },
+          "hashes": {
+            "md5": "6be8a305116a54b16ef85c11d44d04f3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_messagebox.h"
+          },
+          "hashes": {
+            "md5": "eeced17a9a9441fe6060c74e7cdf5966"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_metal.h"
+          },
+          "hashes": {
+            "md5": "ad77bf11c0082c2ad6f586b7a4cc6b12"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_power.h"
+          },
+          "hashes": {
+            "md5": "e1d4b030e6555a5bf01153a17b09cf7d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_render.h"
+          },
+          "hashes": {
+            "md5": "b808ad1c19fb174f8f9f5f9c3ba17066"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_shape.h"
+          },
+          "hashes": {
+            "md5": "4d21f6ac2a0ac222a0664dcd7c63310b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_system.h"
+          },
+          "hashes": {
+            "md5": "02b12614fb0a6ddd4fd6c9551c9e6d45"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_timer.h"
+          },
+          "hashes": {
+            "md5": "e7535fcf28b07e2b032d400688d3be8f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_version.h"
+          },
+          "hashes": {
+            "md5": "9342aba7f4f3ebccbadad8d7c017f6b8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_locale.h"
+          },
+          "hashes": {
+            "md5": "a525a0ad22f62f52d931ab556af68744"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/sdl/include/sdl_misc.h"
+          },
+          "hashes": {
+            "md5": "f7636158cc2942c3a89f4134503a3593"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/modulerender.h"
+          },
+          "hashes": {
+            "md5": "58a214c7f56acf36c986557d8ebc3651"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/moduleinput.h"
+          },
+          "hashes": {
+            "md5": "ca32feee46bcb6e7b127f79d07520d15"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/moduleprogram.h"
+          },
+          "hashes": {
+            "md5": "05bdfbaebef18dac1cbaef0f4410e933"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/glew-2.1.0/include/gl/glew.h"
+          },
+          "hashes": {
+            "md5": "ed03b570ce4f82b44f8f05414b55d9a9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/modulerenderexercise.h"
+          },
+          "hashes": {
+            "md5": "29fc9f78c533ac4e3ae8bd527de822a7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/moduledebugdraw.h"
+          },
+          "hashes": {
+            "md5": "6209e85becfbc9483d42c446d6240cee"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/modulecamera.h"
+          },
+          "hashes": {
+            "md5": "3d04fbe907fc4d4bbe2b7cd4b4dce8b5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/ssemath.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "b23a65e1e95f4858facda84d3ecac90b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/quat.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "9cb005432249a4f94348501b81062a03"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/float4x4_sse.h"
+          },
+          "hashes": {
+            "md5": "edb0efdf6fc73ca7541db3c087253436"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/quat_simd.h"
+          },
+          "hashes": {
+            "md5": "daca749b098638a548dd43e613cb3090"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/float4_neon.h"
+          },
+          "hashes": {
+            "md5": "48c1e1969df36e7062cf0fa184cdf3c3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/polynomial.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "83aaae98c72e2163c4442f0799a4bca4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/minifloat.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "1afd0eab21ddb25f86c569f2e0d26102"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/minifloat.h"
+          },
+          "hashes": {
+            "md5": "1dea5af98882fbdb1bea449abdbd4ada"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/mathops.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "a8cd1fe2d39443a171826b5c839f8fec"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/mathlog.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "d5fcf489f856a1fefd99dd0c43934018"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/callstack.h"
+          },
+          "hashes": {
+            "md5": "1d1d7a2c31988e6c6a521ba32834cf60"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/MathFunc.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "596667bb1a46d8e1b8f46ab9952e8895"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/grisu3.h"
+          },
+          "hashes": {
+            "md5": "053e552d9252e7c725bf6c5807c3e039"
+          }
+        }
+      ]
+    }
+  ]
+}

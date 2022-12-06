@@ -1,0 +1,2703 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3::z\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3.h"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 2,
+                  "endLine": 55,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3::z"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3::y\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3.h"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 2,
+                  "endLine": 55,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3::y"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3::x\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3.h"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 2,
+                  "endLine": 55,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3::x"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4::w\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4.h"
+                },
+                "region": {
+                  "startLine": 78,
+                  "startColumn": 2,
+                  "endLine": 78,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4::w"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4::x\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4.h"
+                },
+                "region": {
+                  "startLine": 78,
+                  "startColumn": 2,
+                  "endLine": 78,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4::x"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4::z\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4.h"
+                },
+                "region": {
+                  "startLine": 78,
+                  "startColumn": 2,
+                  "endLine": 78,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4::z"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4::y\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4.h"
+                },
+                "region": {
+                  "startLine": 78,
+                  "startColumn": 2,
+                  "endLine": 78,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4::y"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4_storage::w\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4.h"
+                },
+                "region": {
+                  "startLine": 838,
+                  "startColumn": 2,
+                  "endLine": 838,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4_storage@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4_storage::w"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4_storage::y\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4.h"
+                },
+                "region": {
+                  "startLine": 838,
+                  "startColumn": 2,
+                  "endLine": 838,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4_storage@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4_storage::y"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4_storage::z\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4.h"
+                },
+                "region": {
+                  "startLine": 838,
+                  "startColumn": 2,
+                  "endLine": 838,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4_storage@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4_storage::z"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4_storage::x\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4.h"
+                },
+                "region": {
+                  "startLine": 838,
+                  "startColumn": 2,
+                  "endLine": 838,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4_storage@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4_storage::x"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float2::x\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float2.h"
+                },
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 2,
+                  "endLine": 53,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float2@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float2::x"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float2::y\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float2.h"
+                },
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 2,
+                  "endLine": 53,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float2@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float2::y"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x4::<unnamed-tag>::<unnamed-tag>::shearZy\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x4.h"
+                },
+                "region": {
+                  "startLine": 127,
+                  "startColumn": 2,
+                  "endLine": 127,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x4::<unnamed-tag>::<unnamed-tag>::shearZy"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x4::<unnamed-tag>::<unnamed-tag>::y\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x4.h"
+                },
+                "region": {
+                  "startLine": 127,
+                  "startColumn": 2,
+                  "endLine": 127,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x4::<unnamed-tag>::<unnamed-tag>::y"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x4::<unnamed-tag>::<unnamed-tag>::shearXy\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x4.h"
+                },
+                "region": {
+                  "startLine": 127,
+                  "startColumn": 2,
+                  "endLine": 127,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x4::<unnamed-tag>::<unnamed-tag>::shearXy"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x4::<unnamed-tag>::<unnamed-tag>::scaleX\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x4.h"
+                },
+                "region": {
+                  "startLine": 127,
+                  "startColumn": 2,
+                  "endLine": 127,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x4::<unnamed-tag>::<unnamed-tag>::scaleX"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x4::<unnamed-tag>::<unnamed-tag>::scaleY\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x4.h"
+                },
+                "region": {
+                  "startLine": 127,
+                  "startColumn": 2,
+                  "endLine": 127,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x4::<unnamed-tag>::<unnamed-tag>::scaleY"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x4::<unnamed-tag>::<unnamed-tag>::shearYx\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x4.h"
+                },
+                "region": {
+                  "startLine": 127,
+                  "startColumn": 2,
+                  "endLine": 127,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x4::<unnamed-tag>::<unnamed-tag>::shearYx"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x4::<unnamed-tag>::<unnamed-tag>::scaleZ\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x4.h"
+                },
+                "region": {
+                  "startLine": 127,
+                  "startColumn": 2,
+                  "endLine": 127,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x4::<unnamed-tag>::<unnamed-tag>::scaleZ"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x4::<unnamed-tag>::<unnamed-tag>::z\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x4.h"
+                },
+                "region": {
+                  "startLine": 127,
+                  "startColumn": 2,
+                  "endLine": 127,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x4::<unnamed-tag>::<unnamed-tag>::z"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x4::<unnamed-tag>::<unnamed-tag>::shearYz\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x4.h"
+                },
+                "region": {
+                  "startLine": 127,
+                  "startColumn": 2,
+                  "endLine": 127,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x4::<unnamed-tag>::<unnamed-tag>::shearYz"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x4::<unnamed-tag>::v\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x4.h"
+                },
+                "region": {
+                  "startLine": 127,
+                  "startColumn": 2,
+                  "endLine": 127,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x4::<unnamed-tag>::v"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x4::<unnamed-tag>::<unnamed-tag>::shearZx\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x4.h"
+                },
+                "region": {
+                  "startLine": 127,
+                  "startColumn": 2,
+                  "endLine": 127,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x4::<unnamed-tag>::<unnamed-tag>::shearZx"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x4::<unnamed-tag>::<unnamed-tag>::x\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x4.h"
+                },
+                "region": {
+                  "startLine": 127,
+                  "startColumn": 2,
+                  "endLine": 127,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x4::<unnamed-tag>::<unnamed-tag>::x"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x4::<unnamed-tag>::<unnamed-tag>::shearXz\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x4.h"
+                },
+                "region": {
+                  "startLine": 127,
+                  "startColumn": 2,
+                  "endLine": 127,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x4::<unnamed-tag>::<unnamed-tag>::shearXz"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4x4::<unnamed-tag>::<unnamed-tag>::shearYx\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4x4.h"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 2,
+                  "endLine": 140,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4x4::<unnamed-tag>::<unnamed-tag>::shearYx"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4x4::<unnamed-tag>::<unnamed-tag>::shearWz\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4x4.h"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 2,
+                  "endLine": 140,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4x4::<unnamed-tag>::<unnamed-tag>::shearWz"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4x4::<unnamed-tag>::<unnamed-tag>::shearWx\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4x4.h"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 2,
+                  "endLine": 140,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4x4::<unnamed-tag>::<unnamed-tag>::shearWx"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4x4::<unnamed-tag>::<unnamed-tag>::z\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4x4.h"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 2,
+                  "endLine": 140,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4x4::<unnamed-tag>::<unnamed-tag>::z"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4x4::<unnamed-tag>::<unnamed-tag>::scaleY\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4x4.h"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 2,
+                  "endLine": 140,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4x4::<unnamed-tag>::<unnamed-tag>::scaleY"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4x4::<unnamed-tag>::<unnamed-tag>::shearXy\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4x4.h"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 2,
+                  "endLine": 140,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4x4::<unnamed-tag>::<unnamed-tag>::shearXy"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4x4::<unnamed-tag>::<unnamed-tag>::w\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4x4.h"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 2,
+                  "endLine": 140,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4x4::<unnamed-tag>::<unnamed-tag>::w"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4x4::<unnamed-tag>::<unnamed-tag>::shearXz\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4x4.h"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 2,
+                  "endLine": 140,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4x4::<unnamed-tag>::<unnamed-tag>::shearXz"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4x4::<unnamed-tag>::v\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4x4.h"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 2,
+                  "endLine": 140,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4x4::<unnamed-tag>::v"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4x4::<unnamed-tag>::<unnamed-tag>::shearZy\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4x4.h"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 2,
+                  "endLine": 140,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4x4::<unnamed-tag>::<unnamed-tag>::shearZy"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4x4::<unnamed-tag>::<unnamed-tag>::shearZx\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4x4.h"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 2,
+                  "endLine": 140,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4x4::<unnamed-tag>::<unnamed-tag>::shearZx"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4x4::<unnamed-tag>::<unnamed-tag>::y\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4x4.h"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 2,
+                  "endLine": 140,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4x4::<unnamed-tag>::<unnamed-tag>::y"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4x4::<unnamed-tag>::<unnamed-tag>::shearWy\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4x4.h"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 2,
+                  "endLine": 140,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4x4::<unnamed-tag>::<unnamed-tag>::shearWy"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4x4::<unnamed-tag>::<unnamed-tag>::scaleZ\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4x4.h"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 2,
+                  "endLine": 140,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4x4::<unnamed-tag>::<unnamed-tag>::scaleZ"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4x4::<unnamed-tag>::<unnamed-tag>::scaleX\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4x4.h"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 2,
+                  "endLine": 140,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4x4::<unnamed-tag>::<unnamed-tag>::scaleX"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4x4::<unnamed-tag>::<unnamed-tag>::shearYz\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4x4.h"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 2,
+                  "endLine": 140,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4x4::<unnamed-tag>::<unnamed-tag>::shearYz"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4x4::<unnamed-tag>::<unnamed-tag>::x\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4x4.h"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 2,
+                  "endLine": 140,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4x4@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4x4::<unnamed-tag>::<unnamed-tag>::x"
+          }
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "El tipo de enumeración \"math::FrustumHandedness\" no tiene ámbito. Prefiera \"enum class\" a \"enum\" (Enum.3)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Frustum.h"
+                },
+                "region": {
+                  "startLine": 223,
+                  "startColumn": 41,
+                  "endLine": 223,
+                  "endColumn": 48
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?Handedness@Frustum@math@@QEBA?AW4FrustumHandedness@2@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "El tipo de enumeración \"math::FrustumType\" no tiene ámbito. Prefiera \"enum class\" a \"enum\" (Enum.3)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Frustum.h"
+                },
+                "region": {
+                  "startLine": 227,
+                  "startColumn": 29,
+                  "endLine": 227,
+                  "endColumn": 36
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?Type@Frustum@math@@QEBA?AW4FrustumType@2@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "El tipo de enumeración \"math::FrustumProjectiveSpace\" no tiene ámbito. Prefiera \"enum class\" a \"enum\" (Enum.3)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Frustum.h"
+                },
+                "region": {
+                  "startLine": 231,
+                  "startColumn": 51,
+                  "endLine": 231,
+                  "endColumn": 58
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?ProjectiveSpace@Frustum@math@@QEBA?AW4FrustumProjectiveSpace@2@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::Plane::d\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Plane.h"
+                },
+                "region": {
+                  "startLine": 48,
+                  "startColumn": 2,
+                  "endLine": 48,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0Plane@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::Plane::d"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::Plane_storage::d\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Plane.h"
+                },
+                "region": {
+                  "startLine": 406,
+                  "startColumn": 2,
+                  "endLine": 406,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0Plane_storage@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::Plane_storage::d"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::Polyhedron::numSearchStepsDone\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Polyhedron.h"
+                },
+                "region": {
+                  "startLine": 67,
+                  "startColumn": 2,
+                  "endLine": 67,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0Polyhedron@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::Polyhedron::numSearchStepsDone"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::Polyhedron::numImprovementsMade\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Polyhedron.h"
+                },
+                "region": {
+                  "startLine": 67,
+                  "startColumn": 2,
+                  "endLine": 67,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0Polyhedron@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::Polyhedron::numImprovementsMade"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::Sphere::r\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Sphere.h"
+                },
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 2,
+                  "endLine": 39,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0Sphere@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::Sphere::r"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::Capsule::r\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Capsule.h"
+                },
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 2,
+                  "endLine": 39,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0Capsule@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::Capsule::r"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x3::<unnamed-tag>::<unnamed-tag>::scaleZ\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x3.h"
+                },
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 2,
+                  "endLine": 123,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x3@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x3::<unnamed-tag>::<unnamed-tag>::scaleZ"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x3::<unnamed-tag>::<unnamed-tag>::shearZy\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x3.h"
+                },
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 2,
+                  "endLine": 123,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x3@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x3::<unnamed-tag>::<unnamed-tag>::shearZy"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x3::<unnamed-tag>::<unnamed-tag>::shearZx\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x3.h"
+                },
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 2,
+                  "endLine": 123,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x3@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x3::<unnamed-tag>::<unnamed-tag>::shearZx"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x3::<unnamed-tag>::<unnamed-tag>::shearYz\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x3.h"
+                },
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 2,
+                  "endLine": 123,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x3@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x3::<unnamed-tag>::<unnamed-tag>::shearYz"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x3::<unnamed-tag>::<unnamed-tag>::scaleY\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x3.h"
+                },
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 2,
+                  "endLine": 123,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x3@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x3::<unnamed-tag>::<unnamed-tag>::scaleY"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x3::<unnamed-tag>::<unnamed-tag>::shearYx\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x3.h"
+                },
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 2,
+                  "endLine": 123,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x3@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x3::<unnamed-tag>::<unnamed-tag>::shearYx"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x3::<unnamed-tag>::<unnamed-tag>::shearXz\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x3.h"
+                },
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 2,
+                  "endLine": 123,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x3@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x3::<unnamed-tag>::<unnamed-tag>::shearXz"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x3::<unnamed-tag>::<unnamed-tag>::scaleX\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x3.h"
+                },
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 2,
+                  "endLine": 123,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x3@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x3::<unnamed-tag>::<unnamed-tag>::scaleX"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x3::<unnamed-tag>::<unnamed-tag>::shearXy\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x3.h"
+                },
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 2,
+                  "endLine": 123,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x3@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x3::<unnamed-tag>::<unnamed-tag>::shearXy"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float3x3::<unnamed-tag>::v\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x3.h"
+                },
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 2,
+                  "endLine": 123,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float3x3@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float3x3::<unnamed-tag>::v"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::Quat::x\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/Quat.h"
+                },
+                "region": {
+                  "startLine": 62,
+                  "startColumn": 2,
+                  "endLine": 62,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0Quat@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::Quat::x"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::Quat::y\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/Quat.h"
+                },
+                "region": {
+                  "startLine": 62,
+                  "startColumn": 2,
+                  "endLine": 62,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0Quat@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::Quat::y"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::Quat::z\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/Quat.h"
+                },
+                "region": {
+                  "startLine": 62,
+                  "startColumn": 2,
+                  "endLine": 62,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0Quat@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::Quat::z"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::Quat::w\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/Quat.h"
+                },
+                "region": {
+                  "startLine": 62,
+                  "startColumn": 2,
+                  "endLine": 62,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0Quat@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::Quat::w"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4d::y\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4d.h"
+                },
+                "region": {
+                  "startLine": 47,
+                  "startColumn": 2,
+                  "endLine": 47,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4d@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4d::y"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4d::x\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4d.h"
+                },
+                "region": {
+                  "startLine": 47,
+                  "startColumn": 2,
+                  "endLine": 47,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4d@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4d::x"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4d::w\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4d.h"
+                },
+                "region": {
+                  "startLine": 47,
+                  "startColumn": 2,
+                  "endLine": 47,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4d@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4d::w"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::float4d::z\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4d.h"
+                },
+                "region": {
+                  "startLine": 47,
+                  "startColumn": 2,
+                  "endLine": 47,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0float4d@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::float4d::z"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::double4_storage::w\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4d.h"
+                },
+                "region": {
+                  "startLine": 250,
+                  "startColumn": 2,
+                  "endLine": 250,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0double4_storage@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::double4_storage::w"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::double4_storage::z\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4d.h"
+                },
+                "region": {
+                  "startLine": 250,
+                  "startColumn": 2,
+                  "endLine": 250,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0double4_storage@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::double4_storage::z"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::double4_storage::x\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4d.h"
+                },
+                "region": {
+                  "startLine": 250,
+                  "startColumn": 2,
+                  "endLine": 250,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0double4_storage@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::double4_storage::x"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable \"math::double4_storage::y\" no está inicializada. Siempre debe inicializarse una variable miembro (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4d.h"
+                },
+                "region": {
+                  "startLine": 250,
+                  "startColumn": 2,
+                  "endLine": 250,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0double4_storage@math@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "math::double4_storage::y"
+          }
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.29.30145.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "commandLine": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x64\\c1xx.dll\" -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x00F1C1B0 -il C:\\Users\\david\\AppData\\Local\\Temp\\_CL_dee436ebast -typedil -f libs\\MathGeoLib_Source\\Geometry\\OBB.cpp -Ze -D_MSC_EXTENSIONS -Zp16 -pc \\:/ -D_MSC_VER=1929 -D_MSC_FULL_VER=192930145 -D_MSC_BUILD=0 -D_M_AMD64=100 -ZILP448 -D_M_X64=100 -D_WIN64 -D_WIN32 -GR -D_CPPRTTI -I C:\\Users\\david\\OneDrive\\Escritorio\\Master\\Grafico 3d\\Engine\\Engine\\UPC-Videogame-Engine\\Source\\SDL\\include -I C:\\Users\\david\\OneDrive\\Escritorio\\Master\\Grafico 3d\\Engine\\Engine\\UPC-Videogame-Engine\\Source\\libs\\glew-2.1.0\\include -I C:\\Users\\david\\OneDrive\\Escritorio\\Master\\Grafico 3d\\Engine\\Engine\\UPC-Videogame-Engine\\Source\\libs\\MathGeoLib_Source -nologo -W 3 -diagnostics:column -D_GUARDOVERFLOW_CRT_ALLOCATORS=1 -Ot -DCODE_ANALYSIS -D_CRT_SECURE_NO_WARNINGS -D_DEBUG -D_CONSOLE -D_MBCS -EHs -D_CPPUNWIND -EHc -D__MSVC_RUNTIME_CHECKS -RTCs -RTCu -MDd -D_DEBUG -D_MT -D_DLL -GS -D_M_FP_PRECISE -permissive- -Zc:wchar_t -Zc:forScope -Fox64\\Debug\\OBB.obj -Fdx64\\Debug\\vc142.pdb -external:W 3 -Gd -analyze:projectdirectory C:\\Users\\david\\OneDrive\\Escritorio\\Master\\Grafico 3d\\Engine\\Engine\\UPC-Videogame-Engine\\Source -analyze:rulesetdirectory ;C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Team Tools\\Static Analysis Tools\\Rule Sets\\NativeRecommendedRules.ruleset -analyze:quiet -analyze:plugin C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x86\\EspXEngine.dll -FC -errorreport:prompt -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -I C:\\Users\\david\\OneDrive\\Escritorio\\Master\\Grafico 3d\\Engine\\Engine\\UPC-Videogame-Engine\\Source\\Include\\um -external:I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\include -external:I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -external:I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\VS\\include -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -external:I C:\\Users\\david\\OneDrive\\Escritorio\\Master\\Grafico 3d\\Engine\\Engine\\UPC-Videogame-Engine\\Source\\Include\\um -I C:\\Users\\david\\OneDrive\\Escritorio\\Master\\Grafico 3d\\Engine\\Engine\\UPC-Videogame-Engine\\Source\\Include\\um",
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "3cb1ab87264110298b26620578f0bf50"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "a674d0500c610593571b2c1b2a1d67f0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Sphere.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "f162083c16e2c8361233fead9f276354"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Capsule.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "6f91a9e76c12a8285604f3e6cd61f33a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float2.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "5b77ba9779e9346b37008be2dd969325"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x4.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "10ca27bf7683700dabb7bcbf53527f1a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4x4.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "850349c9951eeeeb0ea7065c9480019d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Frustum.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "e169bd609e7148ba74a1b4506df657fc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Polyhedron.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "1fdb297de06e2ee2c072ebde80110b1f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Plane.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "6816ca659250363cc18caf3816bfe193"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Circle.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "8b6de69da1b5f8cc7521b4b3ab7bda8c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float3x3.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "4a5ebc3e462556b29ba0a4cda7c8495c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/Quat.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "d32ee6aa2969636116c3f8e720e17b93"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Sphere.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "0c45462cae8eaedc484a1bc63e58ecc8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/mathgeolibfwd.h"
+          },
+          "hashes": {
+            "md5": "dee65e1a1357607e0a0771cfc7e2a2ee"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/mathbuildconfig.h"
+          },
+          "hashes": {
+            "md5": "0e8a57c6c507387f16ceca03db8529d5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/mathtypes.h"
+          },
+          "hashes": {
+            "md5": "7ca68e0a6c53752a15da2924a21409c5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/mathnamespace.h"
+          },
+          "hashes": {
+            "md5": "6c1ddf4ebe97b8b7d9be70e6a2fc65ef"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/mathconstants.h"
+          },
+          "hashes": {
+            "md5": "14194726b9a54feefe033ce73342a2bb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/assume.h"
+          },
+          "hashes": {
+            "md5": "06ee462c8c043da864847896b79cdd2f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/myassert.h"
+          },
+          "hashes": {
+            "md5": "12f70f627fefbf3847268bcb8316abe8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/mathlog.h"
+          },
+          "hashes": {
+            "md5": "591d01044aaccca09111b7f5832b4302"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/multilinemacro.h"
+          },
+          "hashes": {
+            "md5": "358ac05323536905e04fc7f9e116f5d1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/ssemath.h"
+          },
+          "hashes": {
+            "md5": "703cb08f08138b61df0b3794eabe8ced"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/reinterpret.h"
+          },
+          "hashes": {
+            "md5": "32ca3b474c7df35addca5e77bb078d1f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/simd.h"
+          },
+          "hashes": {
+            "md5": "f6f32aa27cea062ac6fd0bb00f901ae6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/mathfunc.h"
+          },
+          "hashes": {
+            "md5": "90e7f518a89702207734fa73d2e925c9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/obb.h"
+          },
+          "hashes": {
+            "md5": "c3e141189c22cbd3e4f5199c8c535576"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/aabb.h"
+          },
+          "hashes": {
+            "md5": "e3ddd5e9276448235b40d4778ac3354c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/linesegment.h"
+          },
+          "hashes": {
+            "md5": "87a0c6c3a41f9d6b633bb9898e5a38d0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/matrixproxy.h"
+          },
+          "hashes": {
+            "md5": "01d4814723ea1c77df5eba017a962617"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/ray.h"
+          },
+          "hashes": {
+            "md5": "e0774fc230a15a7429ddc3ea9931781f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/algorithm/random/lcg.h"
+          },
+          "hashes": {
+            "md5": "cd1a2333ec87484768529a5316819c5e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/line.h"
+          },
+          "hashes": {
+            "md5": "78c2f2f03c609e0e1306b4d98c93fc3c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/polygon.h"
+          },
+          "hashes": {
+            "md5": "4ac79a487af4eff1070bf50397f4227a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/triangle.h"
+          },
+          "hashes": {
+            "md5": "cccbd15a672f175dbd53d41f7e3297d8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/ray.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "b40465678ef8924d9128b4ee47837d14"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Math/float4d.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "31fa035efd1c6905d994c20fde274c42"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Polyhedron.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "2e80402d2e8b2a9726d404d715c693ae"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/swap.h"
+          },
+          "hashes": {
+            "md5": "724f9df81030a0f2ffcdb403d357ffd4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/time/clock.h"
+          },
+          "hashes": {
+            "md5": "bd5dbd630fd415eea25156d5b57aa95e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/float4_sse.h"
+          },
+          "hashes": {
+            "md5": "5f90e55858c836cef1af1d00158dc275"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/david/OneDrive/Escritorio/Master/Grafico 3d/Engine/Engine/UPC-Videogame-Engine/Source/libs/MathGeoLib_Source/Geometry/Polygon.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "c75d7764be3fd0ec5f9fb881256ab655"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/algorithm/gjk.h"
+          },
+          "hashes": {
+            "md5": "6728bdcbf955a46982aa88b90d44acf2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/plane.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "2d152121f571998206348f377268d920"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/polynomial.h"
+          },
+          "hashes": {
+            "md5": "b0ef28516d8512ee3ab1247d8e8f3867"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/pbvolume.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "d6a51e222c79b80fb2d4adc89af647f8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/pbvolume.h"
+          },
+          "hashes": {
+            "md5": "b5d78fe4aeac5b9bf003087bd7afc86b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/geometry/obb.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "095f777aba9d601d19a8b593e1c535b5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/onedrive/escritorio/master/grafico 3d/engine/engine/upc-videogame-engine/source/libs/mathgeolib_source/math/float2.inl"
+          },
+          "hashes": {
+            "md5": "e7d105a8a612a71e85ce43d8f376878c"
+          }
+        }
+      ]
+    }
+  ]
+}
