@@ -56,8 +56,8 @@ int ModuleProgram::CompileShader(GLenum InType, const char* InSource)
 
 int ModuleProgram::CreateProgram()
 {
-	m_Fragment = CompileShader(GL_FRAGMENT_SHADER, LoadShaderSource("fragmentShader.glsl"));
-	m_Vertex = CompileShader(GL_VERTEX_SHADER, LoadShaderSource("vertexShader.glsl"));
+	m_Fragment = CompileShader(GL_FRAGMENT_SHADER, LoadShaderSource("Shaders/fragmentShader.glsl"));
+	m_Vertex = CompileShader(GL_VERTEX_SHADER, LoadShaderSource("Shaders/vertexShader.glsl"));
 
 	unsigned program_id = glCreateProgram();
 	App->m_Editor->m_Console->AddLog(engLOG("program: %d", program_id));
