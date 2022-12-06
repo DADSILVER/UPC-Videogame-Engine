@@ -2,6 +2,7 @@
 
 #include "imgui.h"
 #include <string>
+#include "Math/float4x4.h"
 
 #include "Application.h"
 
@@ -21,6 +22,10 @@ bool PanelProperties::Draw()
 	{
 		return false;
 	}
+	App->m_Renderer->GetWidth();
+	App->m_Renderer->GetHeight();
+	ImGui::SetNextWindowSize(ImVec2(300, (float)App->m_Renderer->GetHeight() / 1.5f), ImGuiCond_Always);
+	ImGui::SetNextWindowPos(ImVec2((float)App->m_Renderer->GetWidth() - 300, 18) , ImGuiCond_Always);
 
 	ImGui::Begin(m_Title);
 
@@ -81,6 +86,33 @@ bool PanelProperties::Draw()
 			ImGui::Separator();
 		}
 	}
+
+	if (ImGui::CollapsingHeader("Transformation"))
+	{
+		float4x4 matrixModel = App->m_Renderer->GetModel().GetModelMatrix();
+	
+		//Set Position
+		float position[3] = { matrixModel.x, matrixModel.y ,matrixModel.z };
+		ImGui::DragFloat3("Position: ", position, 0.01f);
+
+		//Set Rotation
+		float4x4 rotation = float4x4::identity;
+		float rot[3] = { App->m_Renderer->GetModel().GetRotationModel()[0], App->m_Renderer->GetModel().GetRotationModel()[1] ,App->m_Renderer->GetModel().GetRotationModel()[2] };
+		ImGui::DragFloat3("Rotation: ", rot, 0.50f);
+		rotation = float4x4::RotateX(rot[0] * DEGTORAD);
+		rotation = rotation * float4x4::RotateY(rot[1] * DEGTORAD);
+		rotation = rotation * float4x4::RotateZ(rot[2] * DEGTORAD);	
+		App->m_Renderer->GetModel().SetRotationModel({ rot[0], rot[1], rot[2] });
+
+		//SetScale
+		float Scale[3] = { App->m_Renderer->GetModel().GetScaleModel()[0], App->m_Renderer->GetModel().GetScaleModel()[1] ,App->m_Renderer->GetModel().GetScaleModel()[2] };
+		ImGui::DragFloat3("Scale; ", Scale, 0.01f);
+		App->m_Renderer->GetModel().SetScaleModel({ Scale[0], Scale[1], Scale[2] });
+
+		//Set TRS in the Matrix model
+		App->m_Renderer->GetModel().SetModelMatrix(matrixModel.FromTRS({ position[0] , position[1] , position[2] }, rotation, { Scale[0] , Scale[1] , Scale[2] }));
+	}
+
 	ImGui::End();
     return true;
 }

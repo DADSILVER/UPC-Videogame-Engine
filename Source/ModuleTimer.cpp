@@ -29,6 +29,7 @@ bool ModuleTimer::CleanUp()
     return true;
 }
 
+
 const float ModuleTimer::GetDeltaTime() const
 {
     float OutDeltaTime = float(Clock::Time() - m_LastDeltaTime) / 1000.0f;

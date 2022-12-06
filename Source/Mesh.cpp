@@ -14,11 +14,9 @@
 
 Mesh::Mesh(const aiMesh* InMesh)
 {
-	m_model = float4x4::FromTRS(float3(0.0f, 0.0f, 0.0f),
-		//float4x4::RotateX(-pi/2),
-		float4x4::RotateX(0),
-		//float3(0.01f, 0.01f, 0.01f)
-		float3(1.0f, 1.0f, 1.0f)
+	m_MatrixModel = float4x4::FromTRS(float3(0.0f, 0.0f, 0.0f),
+		float4x4::RotateX(m_RotationAngles[0]),
+		m_Scale
 	);
 	LoadVBO(InMesh);
 	LoadEBO(InMesh);
@@ -144,7 +142,7 @@ void Mesh::Draw(const std::vector<TextureInfo>& InModelTexture)
 
 	glUseProgram(program);
 
-	glUniformMatrix4fv(2, 1, GL_TRUE, &m_model[0][0]);
+	glUniformMatrix4fv(2, 1, GL_TRUE, &m_MatrixModel[0][0]);
 	glUniformMatrix4fv(1, 1, GL_TRUE, &App->m_Camera->GetViewMatrix()[0][0]);
 	glUniformMatrix4fv(0, 1, GL_TRUE, &App->m_Camera->GetProjectionMatrix()[0][0]);
 

@@ -27,9 +27,12 @@ bool PanelConfigurationWindow::Draw()
     if (ImGui::CollapsingHeader("Application"))
     {
         std::vector<float> fpsLogs = App->m_Editor->GetFps();
+        std::vector<float> msLogs = App->m_Editor->GetFps();
         char title[25];
         sprintf_s(title, 25, "Framerate %.1f", fpsLogs[fpsLogs.size() - 1]);
         ImGui::PlotHistogram("##framerate", &fpsLogs[0], 100, 0, title, 0.0f, 200.0f, ImVec2(310.0f, 100.0f));
+        sprintf_s(title, 25, "Miliseconds %.1f", msLogs[msLogs.size() - 1]);
+        ImGui::PlotHistogram("##framerate", &msLogs[0], 100, 0, title, 0.0f, 200.0f, ImVec2(310.0f, 100.0f));
     }
     ImGui::End();
 

@@ -25,11 +25,11 @@ public:
 	update_status PostUpdate();
 	bool CleanUp();
 	bool DrawMenu();
-	void NewTestImgUI();
 
 	void NewHelloWorld();
 
 	const std::vector<float>& GetFps() const {return m_Fps;}
+	const std::vector<float>& GetMs() const { return m_Ms; }
 
 private:
 	ImGuiIO m_io;
@@ -40,6 +40,7 @@ private:
 	void* m_context;
 
 	std::vector<float> m_Fps;
+	std::vector<float> m_Ms;
 
 	std::list<Panel*> m_Panels;
 

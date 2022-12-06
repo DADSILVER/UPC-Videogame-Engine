@@ -15,6 +15,7 @@
 
 #include "ModuleWindow.h"
 #include "ModuleRender.h"
+#include "ModuleTimer.h"
 
 
 
@@ -62,9 +63,11 @@ update_status ModuleEditor::PreUpdate()
     ImGui::NewFrame();
 
     if (m_Fps.size() >= 100) {
-        m_Fps.erase(m_Fps.begin(), m_Fps.begin()+50);
+        m_Fps.erase(m_Fps.end() - 1, m_Fps.end());
+        m_Ms.erase(m_Ms.end() - 1, m_Ms.end());
     }
     m_Fps.emplace_back(ImGui::GetIO().Framerate);
+    m_Fps.emplace_back(App->m_Timer->GetDeltaTime());
 
     return UPDATE_CONTINUE;
 }

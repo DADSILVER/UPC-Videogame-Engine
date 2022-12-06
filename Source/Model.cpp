@@ -198,3 +198,19 @@ void Model::SetModelMatrix(const float4x4& InModel)
 		 m_Meshes[i]->SetModelMatrix(InModel);
 	 }
 }
+
+void Model::SetRotationModel(const float3& InRotation)
+{
+	for (size_t i = 0; i < m_Meshes.size(); i++)
+	{
+		m_Meshes[i]->SetRotation(InRotation);
+	}
+}
+
+void Model::SetScaleModel(const float3& InScale)
+{
+	for (size_t i = 0; i < m_Meshes.size(); i++)
+	{
+		m_Meshes[i]->SetScale(InScale);
+	}
+}

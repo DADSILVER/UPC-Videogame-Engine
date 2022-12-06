@@ -120,7 +120,9 @@ bool ModuleRender::CleanUp()
 
 void ModuleRender::WindowResized(float InWidth, float InHeight)
 {
-	App->m_Camera->ResizeWindow(InWidth, InHeight);
+	m_win_width = InWidth; 
+	m_win_height = InHeight;
+	App->m_Camera->ResizeWindow(m_win_width, m_win_height);
 }
 
 void ModuleRender::LoadModel(const char* InFileName)

@@ -20,7 +20,9 @@ public:
 	bool CleanUp();
 	void WindowResized(float InWidth, float InHeight);
 
-	inline Model GetModel() {return *m_Model;}
+	inline Model GetModel() { return *m_Model; }
+	inline int GetWidth()  { return m_win_width; }
+	inline int GetHeight() { return m_win_height; }
 
 	void LoadModel(const char* InFileName);
 
