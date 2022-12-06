@@ -103,6 +103,8 @@ bool ModuleEditor::CleanUp()
     for (std::list<Panel*>::iterator it = m_Panels.begin(); it != m_Panels.end(); ++it) {
         delete (*it);
     }
+    m_Fps.clear();
+    m_Ms.clear();
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplSDL2_Shutdown();
     ImGui::DestroyContext();

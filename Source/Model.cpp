@@ -13,6 +13,18 @@
 #include "ModuleEditor.h"
 
 #include "PanelConsole.h"
+#include <GL/glew.h>
+
+Model::~Model()
+{
+	for (int i = 0; i < m_Material.size(); i++) {
+		glDeleteTextures(1, &m_Material[i].m_Texture);
+	}
+
+	for (int i = 0; i < m_Meshes.size(); i++) {
+		delete m_Meshes[i];
+	}
+}
 
 void Model::Load(const char* InFileName)
 {
@@ -47,6 +59,7 @@ void Model::Load(const char* InFileName)
 	{
 		App->m_Editor->m_Console->AddLog(engLOG("Error loading %s: %s", InFileName, aiGetErrorString()));
 	}
+	delete scene;
 }
 
 void Model::LoadMeshes(const aiScene* InScene)
@@ -59,7 +72,7 @@ void Model::LoadMeshes(const aiScene* InScene)
 	{
 		Mesh* mesh = new Mesh(InScene->mMeshes[i]);
 		m_CenterOfModel += mesh->GetCenterOfMesh();
-		m_Meshes.push_back(mesh);		
+		m_Meshes.push_back(mesh);	
 	}
 
 }

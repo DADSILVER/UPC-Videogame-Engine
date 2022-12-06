@@ -8,10 +8,5 @@ public:
     PanelProperties(const char* InTitle);
 
     bool Draw();
-
-    
-
-
-
 };
 

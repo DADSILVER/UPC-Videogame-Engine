@@ -13,8 +13,9 @@ struct aiMesh;
 class Model
 {
 
-
 public:
+	
+	~Model();
 	void Load(const char* inFileName);
 	void LoadMeshes(const aiScene* InScene);
 	void LoadMaterials(const aiScene* inScene,const char* InFileName);

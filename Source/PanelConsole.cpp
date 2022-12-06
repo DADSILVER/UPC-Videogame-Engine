@@ -22,6 +22,11 @@ PanelConsole::PanelConsole(const char* InTitle) : Panel(InTitle)
     AddLog("Welcome to Dear ImGui!");
 }
 
+PanelConsole::~PanelConsole()
+{
+    Items.clear_destruct();
+}
+
 void PanelConsole::ClearLog()
 {
     for (int i = 0; i < Items.Size; i++)

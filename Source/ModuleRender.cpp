@@ -103,7 +103,7 @@ update_status ModuleRender::PostUpdate()
 // Called before quitting
 bool ModuleRender::CleanUp()
 {
-	App->m_Editor->m_Console->AddLog(engLOG("Destroying renderer"));
+	engLOG("Destroying renderer");
 	SDL_GL_DeleteContext(m_Context);
 	glDeleteProgram(m_Program);
 	delete m_Model;

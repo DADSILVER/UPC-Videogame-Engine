@@ -20,7 +20,7 @@ public:
 	bool CleanUp();
 	
 
-	inline Model GetModel() { return *m_Model; }
+	inline Model* GetModel() { return m_Model; }
 
 
 	void LoadModel(const char* InFileName);

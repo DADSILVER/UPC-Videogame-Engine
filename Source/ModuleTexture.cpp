@@ -10,6 +10,7 @@
 
 bool ModuleTexture::CleanUp()
 {
+	delete m_Image;
 	return true;
 }
 
@@ -23,7 +24,7 @@ bool ModuleTexture::LoadTexture(TextureInfo &InOutTextureInfo)
 
 	if (extension == ".dds")
 	{
-		loadResult = LoadFromDDSFile(widePath.c_str(), DirectX::DDS_FLAGS_NONE, &m_MetaData, *NotFlip);
+		loadResult = LoadFromDDSFile(widePath.c_str(), DirectX::DDS_FLAGS_NONE, NULL, *NotFlip);
 		if (FAILED(loadResult))
 		{
 			App->m_Editor->m_Console->AddLog(engLOG("Material convertor error : DDS texture loading failed (\%s)", InOutTextureInfo.m_FileName));
@@ -33,7 +34,7 @@ bool ModuleTexture::LoadTexture(TextureInfo &InOutTextureInfo)
 	}
 	else if (extension == ".tga")
 	{
-		loadResult = DirectX::LoadFromTGAFile(widePath.c_str(), &m_MetaData, *NotFlip);
+		loadResult = DirectX::LoadFromTGAFile(widePath.c_str(), NULL, *NotFlip);
 		if (FAILED(loadResult))
 		{
 			App->m_Editor->m_Console->AddLog(engLOG("Material convertor error : TGA texture loading failed (\%s)", InOutTextureInfo.m_FileName));
@@ -43,7 +44,7 @@ bool ModuleTexture::LoadTexture(TextureInfo &InOutTextureInfo)
 	}
 	else
 	{
-		loadResult = LoadFromWICFile(widePath.c_str(), DirectX::WIC_FLAGS_DEFAULT_SRGB, &m_MetaData, *NotFlip);
+		loadResult = LoadFromWICFile(widePath.c_str(), DirectX::WIC_FLAGS_DEFAULT_SRGB, NULL, *NotFlip);
 		if (FAILED(loadResult))
 		{
 			App->m_Editor->m_Console->AddLog(engLOG("Material convertor error : WIC texture loading failed (\%s)", InOutTextureInfo.m_FileName));
@@ -53,7 +54,7 @@ bool ModuleTexture::LoadTexture(TextureInfo &InOutTextureInfo)
 	}
 	DirectX::FlipRotate(NotFlip->GetImages(), NotFlip->GetImageCount(), NotFlip->GetMetadata(), DirectX::TEX_FR_FLIP_VERTICAL, *m_Image);
 
-
+	delete NotFlip;
 	//texture
 	unsigned texture;
 	glGenTextures(1, &texture);
@@ -64,7 +65,7 @@ bool ModuleTexture::LoadTexture(TextureInfo &InOutTextureInfo)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-	DirectX::TexMetadata metadata = GetMetadata();
+	DirectX::TexMetadata metadata = m_Image->GetMetadata();
 	int internalFormat, format, type;
 	switch (metadata.format)
 	{
@@ -98,11 +99,6 @@ bool ModuleTexture::LoadTexture(TextureInfo &InOutTextureInfo)
 
 
 	return 1;
-}
-
-const DirectX::TexMetadata& ModuleTexture::GetMetadata()
-{
-	return m_MetaData;
 }
 
 DirectX::ScratchImage* ModuleTexture::GetImage()

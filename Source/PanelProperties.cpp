@@ -24,47 +24,24 @@ bool PanelProperties::Draw()
 		return false;
 	}
 	
+	Model* model = App->m_Renderer->GetModel();
+
 	ImGui::SetNextWindowSize(ImVec2(300, (float)App->m_Window->GetHeight() / 1.5f), ImGuiCond_Always);
 	ImGui::SetNextWindowPos(ImVec2((float)App->m_Window->GetWidth() - 300, 18) , ImGuiCond_Always);
 
 	ImGui::Begin(m_Title);
 
 	ImGui::Text("Mesh Name:");
-	ImGui::Text(App->m_Renderer->GetModel().GetName().c_str());
-
-	if (ImGui::CollapsingHeader("Meshes"))
-	{
-		ImGui::Text("Number of meshes:");
-		ImGui::SameLine();
-		ImGui::TextColored(ImVec4(0.0f, 185, 255, 1.0f), "%i", App->m_Renderer->GetModel().GetMeshes().size());
-		ImGui::Separator();
-
-		for (int i = 0; i < App->m_Renderer->GetModel().GetMeshes().size(); i++)
-		{
-			std::string SubTittle = "Mesh " + std::to_string(i+1);
-			
-			if (ImGui::TreeNode(SubTittle.c_str()))
-			{
-				ImGui::Text("Number of triangles:");
-				ImGui::SameLine();
-				ImGui::TextColored(ImVec4(0.0f, 185, 255, 1.0f), "%i", App->m_Renderer->GetModel().GetMeshes()[i]->GetNumOfTriangles());
-				ImGui::Text("Number of Vertices:");
-				ImGui::SameLine();
-				ImGui::TextColored(ImVec4(0.0f, 185, 255, 1.0f), "%i", App->m_Renderer->GetModel().GetMeshes()[i]->GetNumVertices());
-				ImGui::TreePop();
-			}
-			ImGui::Separator();
-		}
-	}
+	ImGui::Text(model->GetName().c_str());
 
 	if (ImGui::CollapsingHeader("Textures"))
 	{
 		ImGui::Text("Number of textures:");
 		ImGui::SameLine();
-		ImGui::TextColored(ImVec4(0.0f, 185, 255, 1.0f), "%i", App->m_Renderer->GetModel().GetTextures().size());
+		ImGui::TextColored(ImVec4(0.0f, 185, 255, 1.0f), "%i", model->GetTextures().size());
 		ImGui::Separator();
 
-		for (int i = 0; i < App->m_Renderer->GetModel().GetTextures().size(); i++)
+		for (int i = 0; i < model->GetTextures().size(); i++)
 		{
 			std::string SubTittle = "Texture " + std::to_string(i + 1);
 
@@ -72,14 +49,14 @@ bool PanelProperties::Draw()
 			{
 				ImGui::Text("-  Id:");
 				ImGui::SameLine();
-				ImGui::TextColored(ImVec4(1.0f, 1.0f, 0.0f, 1.0f), "%u", App->m_Renderer->GetModel().GetTextures()[i].m_Texture);
+				ImGui::TextColored(ImVec4(1.0f, 1.0f, 0.0f, 1.0f), "%u", model->GetTextures()[i].m_Texture);
 				ImGui::SameLine();
 				ImGui::Text("Name:");
 				ImGui::SameLine();
-				ImGui::TextColored(ImVec4(1.0f, 1.0f, 0.0f, 1.0f), "%s", App->m_Renderer->GetModel().GetTextures()[i].m_FileName.c_str());
+				ImGui::TextColored(ImVec4(1.0f, 1.0f, 0.0f, 1.0f), "%s", model->GetTextures()[i].m_FileName.c_str());
 				ImGui::Text("  ");
 				ImGui::SameLine();
-				ImGui::Image((void*)(intptr_t)App->m_Renderer->GetModel().GetTextures()[i].m_Texture, ImVec2(100, 100));
+				ImGui::Image((void*)(intptr_t)model->GetTextures()[i].m_Texture, ImVec2(100, 100));
 
 				ImGui::TreePop();
 			}
@@ -87,9 +64,36 @@ bool PanelProperties::Draw()
 		}
 	}
 
+	if (ImGui::CollapsingHeader("Meshes"))
+	{
+		ImGui::Text("Number of meshes:");
+		ImGui::SameLine();
+		ImGui::TextColored(ImVec4(0.0f, 185, 255, 1.0f), "%i", model->GetMeshes().size());
+		ImGui::Separator();
+
+		for (int i = 0; i < model->GetMeshes().size(); i++)
+		{
+			std::string SubTittle = "Mesh " + std::to_string(i+1);
+			
+			if (ImGui::TreeNode(SubTittle.c_str()))
+			{
+				ImGui::Text("Number of triangles:");
+				ImGui::SameLine();
+				ImGui::TextColored(ImVec4(0.0f, 185, 255, 1.0f), "%i", model->GetMeshes()[i]->GetNumOfTriangles());
+				ImGui::Text("Number of Vertices:");
+				ImGui::SameLine();
+				ImGui::TextColored(ImVec4(0.0f, 185, 255, 1.0f), "%i", model->GetMeshes()[i]->GetNumVertices());
+				ImGui::TreePop();
+			}
+			ImGui::Separator();
+		}
+	}
+
+	
+
 	if (ImGui::CollapsingHeader("Transformation"))
 	{
-		float4x4 matrixModel = App->m_Renderer->GetModel().GetModelMatrix();
+		float4x4 matrixModel = App->m_Renderer->GetModel()->GetModelMatrix();
 	
 		//Set Position
 		float position[3] = { matrixModel.x, matrixModel.y ,matrixModel.z };
@@ -97,20 +101,20 @@ bool PanelProperties::Draw()
 
 		//Set Rotation
 		float4x4 rotation = float4x4::identity;
-		float rot[3] = { App->m_Renderer->GetModel().GetRotationModel()[0], App->m_Renderer->GetModel().GetRotationModel()[1] ,App->m_Renderer->GetModel().GetRotationModel()[2] };
+		float rot[3] = { App->m_Renderer->GetModel()->GetRotationModel()[0], App->m_Renderer->GetModel()->GetRotationModel()[1] ,App->m_Renderer->GetModel()->GetRotationModel()[2] };
 		ImGui::DragFloat3("Rotation: ", rot, 0.50f);
 		rotation = float4x4::RotateX(rot[0] * DEGTORAD);
 		rotation = rotation * float4x4::RotateY(rot[1] * DEGTORAD);
 		rotation = rotation * float4x4::RotateZ(rot[2] * DEGTORAD);	
-		App->m_Renderer->GetModel().SetRotationModel({ rot[0], rot[1], rot[2] });
+		App->m_Renderer->GetModel()->SetRotationModel({ rot[0], rot[1], rot[2] });
 
 		//SetScale
-		float Scale[3] = { App->m_Renderer->GetModel().GetScaleModel()[0], App->m_Renderer->GetModel().GetScaleModel()[1] ,App->m_Renderer->GetModel().GetScaleModel()[2] };
+		float Scale[3] = { App->m_Renderer->GetModel()->GetScaleModel()[0], App->m_Renderer->GetModel()->GetScaleModel()[1] ,App->m_Renderer->GetModel()->GetScaleModel()[2] };
 		ImGui::DragFloat3("Scale; ", Scale, 0.01f);
-		App->m_Renderer->GetModel().SetScaleModel({ Scale[0], Scale[1], Scale[2] });
+		App->m_Renderer->GetModel()->SetScaleModel({ Scale[0], Scale[1], Scale[2] });
 
 		//Set TRS in the Matrix model
-		App->m_Renderer->GetModel().SetModelMatrix(matrixModel.FromTRS({ position[0] , position[1] , position[2] }, rotation, { Scale[0] , Scale[1] , Scale[2] }));
+		App->m_Renderer->GetModel()->SetModelMatrix(matrixModel.FromTRS({ position[0] , position[1] , position[2] }, rotation, { Scale[0] , Scale[1] , Scale[2] }));
 	}
 
 	ImGui::End();

@@ -94,7 +94,7 @@ float2 ModuleInput::GetMouseMotion() {
 // Called before quitting
 bool ModuleInput::CleanUp()
 {
-	App->m_Editor->m_Console->AddLog(engLOG("Quitting SDL input event subsystem"));
+	engLOG("Quitting SDL input event subsystem");
 	SDL_QuitSubSystem(SDL_INIT_EVENTS);
 	return true;
 }

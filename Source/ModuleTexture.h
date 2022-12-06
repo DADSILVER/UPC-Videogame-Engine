@@ -17,11 +17,10 @@ public:
 	bool CleanUp();
 
 	bool LoadTexture(TextureInfo& InOutTextureInfo);
-	const DirectX::TexMetadata& GetMetadata();
 	DirectX::ScratchImage* GetImage();
 
 private:
-	DirectX::TexMetadata m_MetaData;
+	
 	DirectX::ScratchImage *m_Image;
 
 };

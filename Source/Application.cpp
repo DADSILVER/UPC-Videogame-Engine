@@ -4,7 +4,6 @@
 #include "ModuleRender.h"
 #include "ModuleInput.h"
 #include "ModuleProgram.h"
-#include "ModuleRenderExercise.h"
 #include "ModuleDebugDraw.h"
 #include "ModuleCamera.h"
 #include "ModuleTimer.h"
@@ -24,7 +23,6 @@ Application::Application()
 	m_modules.push_back(m_Program = new ModuleProgram());
 	m_modules.push_back(m_Texture = new ModuleTexture());
 	m_modules.push_back(m_DebugDraw = new ModuleDebugDraw());
-	m_modules.push_back(m_RendererExercise = new ModuleRenderExercise());
 	m_modules.push_back(m_Renderer = new ModuleRender());
 	
 }

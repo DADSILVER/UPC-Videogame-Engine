@@ -65,8 +65,6 @@ bool ModuleWindow::Init()
 // Called before quitting
 bool ModuleWindow::CleanUp()
 {
-	App->m_Editor->m_Console->AddLog(engLOG("Destroying SDL window and quitting all SDL systems"));
-
 	//Destroy window
 	if(m_Window != NULL)
 	{

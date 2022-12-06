@@ -35,7 +35,7 @@ private:
 
 	bool show_demo_window = true;
 	bool show_another_window = false;
-	void* m_context;
+	//void* m_context;
 
 	std::vector<float> m_Fps;
 	std::vector<float> m_Ms;

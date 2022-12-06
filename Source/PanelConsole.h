@@ -12,6 +12,7 @@ class PanelConsole :
 
 public:
 	PanelConsole(const char* InTitle);
+	~PanelConsole();
 	void ClearLog();
 	void AddLog(const char* fmt, ...) IM_FMTARGS(2);
 	//static int TextEditCallbackStub(ImGuiInputTextCallbackData* data);
