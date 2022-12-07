@@ -130,7 +130,7 @@ bool ModuleEditor::DrawMenu()
                 ShellExecuteA(NULL, "open", "https://github.com/DADSILVER/UPC-Videogame-Engine", NULL, NULL, SW_SHOWNORMAL);
             }
             if (ImGui::MenuItem("Documentation")) {
-                ShellExecuteA(NULL, "open", "https://github.com/DADSILVER/UPC-Videogame-Engine/README.md", NULL, NULL, SW_SHOWNORMAL);
+                ShellExecuteA(NULL, "open", "https://github.com/DADSILVER/UPC-Videogame-Engine/blob/main/README.md", NULL, NULL, SW_SHOWNORMAL);
             }
             if (ImGui::MenuItem("Download Latest")) {
                 ShellExecuteA(NULL, "open", "https://github.com/DADSILVER/UPC-Videogame-Engine/releases", NULL, NULL, SW_SHOWNORMAL);
