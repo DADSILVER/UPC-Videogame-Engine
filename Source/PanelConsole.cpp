@@ -55,7 +55,7 @@ bool PanelConsole::Draw()
     {
         return true;
     }
-    ImGui::SetNextWindowSize(ImVec2(1200, 200), 0); //ImGuiCond_FirstUseEver
+    ImGui::SetNextWindowSize(ImVec2(1200, 200), 2); //ImGuiCond_FirstUseEver
 	ImGui::Begin(m_Title, &m_Open);
 
     // Options menu

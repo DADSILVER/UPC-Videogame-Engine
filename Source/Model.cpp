@@ -65,6 +65,8 @@ void Model::LoadMeshes(const aiScene* InScene)
 {
 	aiString file;
 
+	App->m_Editor->m_Console->AddLog(engLOG("Trying load meshes.\n"));
+
 	m_Meshes.reserve(InScene->mNumMeshes);
 
 	for (unsigned i = 0; i < InScene->mNumMeshes; ++i)
@@ -74,6 +76,8 @@ void Model::LoadMeshes(const aiScene* InScene)
 		m_Meshes.push_back(mesh);	
 	}
 
+	App->m_Editor->m_Console->AddLog(engLOG("%i meshes loaded.\n", InScene->mNumMeshes));
+
 }
 
 void Model::LoadMaterials(const aiScene* InScene,const char* InFileName)
@@ -81,7 +85,6 @@ void Model::LoadMaterials(const aiScene* InScene,const char* InFileName)
 	aiString file;
 	m_Material.reserve(InScene->mNumMaterials);
 	std::string name = InFileName;
-
 	for (unsigned i = 0; i < InScene->mNumMaterials; ++i)
 	{
 		if (InScene->mMaterials[i]->GetTexture(aiTextureType_DIFFUSE, 0, &file) == AI_SUCCESS)
